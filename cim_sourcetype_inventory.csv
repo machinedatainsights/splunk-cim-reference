@@ -1,685 +1,658 @@
 sourcetype,events,mapped_status,scope,security_classification,security_relevance,data_models,vendor,description,exclude,exclude_reason,reviewed_by,reviewed_date
-XmlWinEventLog,12427934604,mapped,security,EDR,high,"Authentication.Authentication, Change.All_Changes, Endpoint.Processes",Microsoft,Windows XML Event Logs,N,,AI Analysis,3/25/2026
-aws:cloudwatchlogs:vpcflow,3141547906,mapped,security,CTD,high,Network_Traffic.All_Traffic,Amazon Web Services,AWS VPC Flow Logs,N,,AI Analysis,3/25/2026
-linux_audit,1587022365,mapped,security,EDR,high,"Authentication.Authentication, Change.All_Changes, Intrusion_Detection.IDS_Attacks",Linux,Linux audit daemon logs,N,,AI Analysis,3/25/2026
-WinEventLog:Microsoft-Windows-CodeIntegrity/Operational,961581406,mapped,security,EPP,high,Malware.Malware_Operations,Microsoft,Windows Code Integrity events,N,,AI Analysis,3/25/2026
-auditd,863877748,mapped,security,EDR,high,"Authentication.Authentication, Change.All_Changes, Intrusion_Detection.IDS_Attacks",Linux,Linux auditd logs,N,,AI Analysis,3/25/2026
-syslog,679553634,mapped,security,N/A,med,"Alerts.Alerts, Change.All_Changes, Intrusion_Detection.IDS_Attacks",Unix/Linux,Generic syslog messages,N,,AI Analysis,3/25/2026
-pan:traffic,666372652,mapped,security,NGFW,high,Network_Traffic.All_Traffic,Palo Alto Networks,Palo Alto firewall traffic logs,N,,AI Analysis,3/25/2026
-pan:threat,239068184,mapped,security,NGFW,high,"Intrusion_Detection.IDS_Attacks, Web.Web",Palo Alto Networks,Palo Alto threat logs,N,,AI Analysis,3/25/2026
-aws:route53:queries,74545409,mapped,security,CTD,high,Network_Resolution.DNS,Amazon Web Services,AWS Route53 DNS query logs,N,,AI Analysis,3/25/2026
-linux_secure,55748343,mapped,security,IAM,high,Authentication.Authentication,Linux,Linux /var/log/secure authentication logs,N,,AI Analysis,3/25/2026
-pan:userid,54750035,mapped,security,NGFW,high,Authentication.Authentication,Palo Alto Networks,Palo Alto user identification logs,N,,AI Analysis,3/25/2026
-aws:cloudtrail,48128278,mapped,security,CSPM,high,"Authentication.Authentication, Change.All_Changes",Amazon Web Services,AWS CloudTrail API activity logs,N,,AI Analysis,3/25/2026
-linux_messages_syslog,30779137,mapped,security,N/A,med,"Alerts.Alerts, Change.All_Changes",Linux,Linux /var/log/messages syslog,N,,AI Analysis,3/25/2026
-TrendMicro,25550685,mapped,security,EPP,high,Malware.Malware_Operations,Trend Micro,Trend Micro antivirus logs,N,,AI Analysis,3/25/2026
-o365:management:activity,21156829,mapped,security,CASB,high,"Authentication.Authentication, Change.All_Changes, Email.All_Email",Microsoft,Office 365 management activity logs,N,,AI Analysis,3/25/2026
-crowdstrike:device:json,10966956,mapped,security,EDR,high,Endpoint.Processes,CrowdStrike,CrowdStrike device telemetry (JSON),N,,AI Analysis,3/25/2026
-pan:system,659887,mapped,security,NGFW,med,Authentication.Authentication,Palo Alto Networks,Palo Alto system logs,N,,AI Analysis,3/25/2026
-MSAD:NT6:DNS-Zone-Information,534214,mapped,security,IAM,med,Network_Resolution.DNS,Microsoft,Active Directory DNS zone information,N,,AI Analysis,3/25/2026
-rsa:securid:runtime:syslog,253228,mapped,security,MFA,high,"Authentication.Authentication, Change.All_Changes",RSA Security,RSA SecurID runtime logs,N,,AI Analysis,3/25/2026
-CrowdStrike:Event:Streams:JSON,144465,mapped,security,EDR,high,Authentication.Authentication,CrowdStrike,CrowdStrike event streams (JSON),N,,AI Analysis,3/25/2026
-OktaIM2:log,98196,mapped,security,IAM,high,"Authentication.Authentication, Change.All_Changes",Okta,Okta identity management logs,N,,AI Analysis,3/25/2026
-WinEventLog,92801,mapped,security,EDR,high,"Authentication.Authentication, Malware.Malware_Operations",Microsoft,Windows Event Log,N,,AI Analysis,3/25/2026
-auth,88022,mapped,security,IAM,high,"Authentication.Authentication, Change.All_Changes",Unix/Linux,Generic authentication logs,N,,AI Analysis,3/25/2026
-rsa:securid:admin:syslog,44151,mapped,security,MFA,med,Change.All_Changes,RSA Security,RSA SecurID admin logs,N,,AI Analysis,3/25/2026
-docker:keycloak,27962,mapped,security,IAM,high,Authentication.Authentication,Keycloak,Keycloak authentication logs (Docker),N,,AI Analysis,3/25/2026
-crowdstrike:unified:alert:json,25057,mapped,security,EDR,high,Alerts.Alerts,CrowdStrike,CrowdStrike unified alert data (JSON),N,,AI Analysis,3/25/2026
-beyondtrust:rs:session:cef,8667,mapped,security,PAM,high,"Authentication.Authentication, Change.All_Changes, Network_Sessions.All_Sessions",BeyondTrust,BeyondTrust remote support session logs,N,,AI Analysis,3/25/2026
-snow:sys_audit,14896519,mapped,operational,N/A,med,Change.Audit_Logs,ServiceNow,ServiceNow system audit logs,N,,AI Analysis,3/25/2026
-netstat,5189529,mapped,operational,N/A,low,Endpoint.Ports,Linux/Unix,Network statistics output,N,,AI Analysis,3/25/2026
-Script:ListeningPorts,5033042,mapped,operational,,low,Endpoint.Ports,Splunk,Splunk scripted input: listening ports,N,,AI Analysis,3/25/2026
-cron,2308909,mapped,operational,N/A,low,Change.All_Changes,Linux/Unix,Cron job execution logs,N,,AI Analysis,3/25/2026
-snow:sys_audit_delete,1796994,mapped,operational,N/A,med,Change.Audit_Logs,ServiceNow,ServiceNow system audit delete records,N,,AI Analysis,3/25/2026
-openPorts,1441034,mapped,operational,N/A,low,Endpoint.Ports,,Open ports inventory,N,,AI Analysis,3/25/2026
-Unix:Update,68905,mapped,operational,N/A,low,Updates.All_Updates,Unix/Linux,Unix system update logs,N,,AI Analysis,3/25/2026
-appservice,55834,mapped,operational,N/A,med,Alerts.Alerts,,Application service alerts,N,,AI Analysis,3/25/2026
-snow:change_request,20320,mapped,operational,N/A,med,Change.All_Changes,ServiceNow,ServiceNow change request records,N,,AI Analysis,3/25/2026
-snow:change_task,10818,mapped,operational,N/A,med,Change.All_Changes,ServiceNow,ServiceNow change task records,N,,AI Analysis,3/25/2026
-pan:netflow,7189183366,unmapped,security,NGFW,med,Network_Traffic.All_Traffic,Palo Alto Networks,Palo Alto NetFlow data,N,,AI Analysis,3/25/2026
-MSAD:NT6:DNS,709283378,unmapped,security,IAM,med,Network_Resolution.DNS,Microsoft,Active Directory DNS logs,N,,AI Analysis,3/25/2026
-linux_auditd,584804801,unmapped,security,EDR,high,"Authentication.Authentication, Change.All_Changes, Intrusion_Detection.IDS_Attacks",Linux,Linux audit daemon logs,N,,AI Analysis,3/25/2026
-pan:traffic:json,439822891,unmapped,security,NGFW,high,Network_Traffic.All_Traffic,Palo Alto Networks,Palo Alto firewall traffic logs,N,,AI Analysis,3/25/2026
-pan:threat:json,139070765,unmapped,security,"NGFW, IPS",high,"Intrusion_Detection.IDS_Attacks, Network_Traffic.All_Traffic",Palo Alto Networks,Palo Alto threat logs,N,,AI Analysis,3/25/2026
-cisco:ios,133609614,unmapped,security,FW,med,"Network_Traffic.All_Traffic, Change.All_Changes",Cisco,Cisco IOS device logs,N,,AI Analysis,3/25/2026
-aws:s3:ssm:complianceitem,117193967,unmapped,security,VMS,med,Vulnerabilities.Vulnerabilities,Amazon Web Services,AWS SSM compliance data,N,,AI Analysis,3/25/2026
-cisco:netflow,74468647,unmapped,security,FW,med,Network_Traffic.All_Traffic,Cisco,Cisco NetFlow data,N,,AI Analysis,3/25/2026
-crowdstrike:indicators:json,61201224,unmapped,security,"EDR, TIP",high,Intrusion_Detection.IDS_Attacks,CrowdStrike,CrowdStrike threat intelligence,N,,AI Analysis,3/25/2026
-azure:aad:user,52741768,unmapped,security,IAM,med,Compute_Inventory.All_Inventory,Microsoft,Azure AD identity data,N,,AI Analysis,3/25/2026
-ms:defender:ent,50314898,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-azure:aad:device,49949741,unmapped,security,IAM,med,Compute_Inventory.All_Inventory,Microsoft,Azure AD identity data,N,,AI Analysis,3/25/2026
-azure:aad:group,43056079,unmapped,security,IAM,med,Compute_Inventory.All_Inventory,Microsoft,Azure AD identity data,N,,AI Analysis,3/25/2026
-aws:s3:ssm:windowsrole,19024083,unmapped,security,EDR,med,,Microsoft,Microsoft aws:s3:ssm:windowsrole,N,,AI Analysis,3/25/2026
-gitlab:nginx:access,18151824,unmapped,security,,med,Web.Web,GitLab,GitLab access logs,N,,AI Analysis,3/25/2026
-nessus_messages,12239185,unmapped,security,VMS,low,,Tenable,Tenable Nessus scan messages,N,,AI Analysis,3/25/2026
-vault,11104372,unmapped,security,PAM,high,"Authentication.Authentication, Change.Audit_Logs",HashiCorp,HashiCorp Vault secrets management logs,N,,AI Analysis,3/25/2026
-tenable:sc:vuln,8866591,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Tenable,Tenable Security Center vulnerability data,N,,AI Analysis,3/25/2026
-microsoft:defender:core,7271623,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-ms:defender:core,6817989,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender_core_err-too_small,3610786,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-aws:s3:ssm:windowsupdate,3233857,unmapped,security,EDR,med,,Microsoft,Microsoft aws:s3:ssm:windowsupdate,N,,AI Analysis,3/25/2026
-pan:system:json,2455807,unmapped,security,NGFW,med,Change.All_Changes,Palo Alto Networks,Palo Alto system logs,N,,AI Analysis,3/25/2026
-bash_history,2312797,unmapped,security,,med,Endpoint.Processes,,Command history logs,N,,AI Analysis,3/25/2026
-access_log-too_small,1685445,unmapped,security,,med,Web.Web,,Web/SSL access logs,N,,AI Analysis,3/25/2026
-OktaIM2:appUser,1664826,unmapped,security,IAM,med,,Okta,Okta application data,N,,AI Analysis,3/25/2026
-aws:ssm:compliance:summary,1479448,unmapped,security,CSPM,med,"Change.All_Changes, Vulnerabilities.Vulnerabilities",Amazon Web Services,AWS SSM compliance summary data,N,,AI Analysis,03/25/2026
-aws:ssm:complianceitem,1372800,unmapped,security,CSPM,med,"Change.All_Changes, Vulnerabilities.Vulnerabilities",Amazon Web Services,AWS SSM compliance item details,N,,AI Analysis,03/25/2026
-aws:cloudwatchlogs:guardduty,1372800,unmapped,security,CTD,high,"Alerts.Alerts, Intrusion_Detection.IDS_Attacks",Amazon Web Services,AWS GuardDuty logs via CloudWatch,N,,AI Analysis,03/25/2026
-aws:rds:audit,1372800,unmapped,security,N/A,med,"Change.Audit_Logs, Databases.Database_Audit",Amazon Web Services,AWS RDS database audit logs,N,,AI Analysis,03/25/2026
-aws:inspector:finding,1372800,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Amazon Web Services,AWS Inspector vulnerability findings,N,,AI Analysis,03/25/2026
-nessus:scan,1372800,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Tenable,Tenable Nessus vulnerability scan results,N,,AI Analysis,03/25/2026
-MSAD:NT6:Netlogon,1102224,unmapped,security,IAM,high,Authentication.Authentication,Microsoft,AD Netlogon events,N,,AI Analysis,3/25/2026
-squid:access,1050607,unmapped,security,SWG,med,Web.Web,Squid,Squid proxy access logs,N,,AI Analysis,3/25/2026
-sssd_SAPGSS,824811,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
-sssd,736741,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
-aws:s3:ssm:compliancesummary,725295,unmapped,security,VMS,med,Vulnerabilities.Vulnerabilities,Amazon Web Services,AWS SSM compliance data,N,,AI Analysis,3/25/2026
-ms:defender:alerts,686400,unmapped,security,EDR,high,"Alerts.Alerts, Intrusion_Detection.IDS_Attacks",Microsoft,Microsoft Defender alert data,N,,AI Analysis,03/25/2026
-ms:defender:events,686400,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Operations",Microsoft,Microsoft Defender event data,N,,AI Analysis,03/25/2026
-ms:aad:signin,686400,unmapped,security,IAM,high,Authentication.Authentication,Microsoft,Azure Active Directory sign-in logs,N,,AI Analysis,03/25/2026
-ms:aad:audit,686400,unmapped,security,IAM,med,Change.Audit_Logs,Microsoft,Azure Active Directory audit logs,N,,AI Analysis,03/25/2026
-ms:azure:activity,686400,unmapped,security,CSPM,med,Change.All_Changes,Microsoft,Azure Activity Log,N,,AI Analysis,03/25/2026
-ms:azure:securitycenter,686400,unmapped,security,CSPM,high,"Alerts.Alerts, Vulnerabilities.Vulnerabilities",Microsoft,Azure Security Center alerts,N,,AI Analysis,03/25/2026
-azure:aad:signin,521338,unmapped,security,IAM,high,Authentication.Authentication,Microsoft,Azure AD sign-in logs,N,,AI Analysis,3/25/2026
-o365:graph:api,434226,unmapped,security,IAM,med,,Microsoft,Office 365 Graph API data,N,,AI Analysis,3/25/2026
-pan:globalprotect:json,380753,unmapped,security,VPN,high,"Authentication.Authentication, Network_Sessions.All_Sessions",Palo Alto Networks,Palo Alto GlobalProtect VPN logs,N,,AI Analysis,3/25/2026
-azure:aad:audit,343507,unmapped,security,IAM,high,Change.All_Changes,Microsoft,Azure AD audit logs,N,,AI Analysis,3/25/2026
-crowdstrike:events:sensor,343200,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Operations",CrowdStrike,CrowdStrike Falcon sensor events,N,,AI Analysis,03/25/2026
-crowdstrike:events:detections,343200,unmapped,security,EDR,high,"Alerts.Alerts, Intrusion_Detection.IDS_Attacks",CrowdStrike,CrowdStrike Falcon detection events,N,,AI Analysis,03/25/2026
-crowdstrike:events:incidents,343200,unmapped,security,EDR,high,Alerts.Alerts,CrowdStrike,CrowdStrike Falcon incident data,N,,AI Analysis,03/25/2026
-crowdstrike:events:indicators,343200,unmapped,security,TIP,high,Threat_Intelligence.Threat_Intel,CrowdStrike,CrowdStrike threat indicators,N,,AI Analysis,03/25/2026
-ssl_access_log,260440,unmapped,security,,med,Web.Web,,Web/SSL access logs,N,,AI Analysis,3/25/2026
-ssl_request_log,260439,unmapped,security,,med,Web.Web,,Web/SSL access logs,N,,AI Analysis,3/25/2026
-OktaIM2:groupUser,223340,unmapped,security,IAM,med,Compute_Inventory.All_Inventory.User,Okta,Okta user data,N,,AI Analysis,3/25/2026
-tenable:sc:plugins,218251,unmapped,security,VMS,med,,Tenable,Tenable plugin data,N,,AI Analysis,3/25/2026
-microsoft_defender_core-7,180084,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-pan:globalprotect,171600,unmapped,security,VPN,high,"Authentication.Authentication, Network_Sessions.All_Sessions",Palo Alto Networks,Palo Alto GlobalProtect VPN logs,N,,AI Analysis,03/25/2026
-microsoft_defender_core-10,122466,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender_core-15,101256,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-usersWithLoginPrivs,86752,unmapped,security,IAM,high,Authentication.Authentication,,Authentication logs (usersWithLoginPrivs),N,,AI Analysis,3/25/2026
-cisco:asa,85800,unmapped,security,FW,high,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",Cisco,Cisco ASA firewall logs,N,,AI Analysis,03/25/2026
-citrix:netscaler,85800,unmapped,security,FW,med,"Network_Traffic.All_Traffic, Web.Proxy",Citrix,Citrix NetScaler logs,N,,AI Analysis,03/25/2026
-sssd_nss,81385,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
-Linux:SELinuxConfig,73156,unmapped,security,EDR,med,,Linux,Linux SELinux config/policy data,N,,AI Analysis,3/25/2026
-nessus_agent,66566,unmapped,security,VMS,med,,Tenable,Tenable Nessus agent logs,N,,AI Analysis,3/25/2026
-gitlab:api:json,52393,unmapped,security,,med,Web.Web,GitLab,GitLab access logs,N,,AI Analysis,3/25/2026
-linux:sssd,42900,unmapped,security,IAM,high,Authentication.Authentication,Linux,Linux SSSD authentication logs,N,,AI Analysis,03/25/2026
-linux:radius,42900,unmapped,security,IAM,high,Authentication.Authentication,Linux,Linux RADIUS authentication logs,N,,AI Analysis,03/25/2026
-linux:ldap,42900,unmapped,security,IAM,med,Authentication.Authentication,Linux,Linux LDAP logs,N,,AI Analysis,03/25/2026
-linux:kerberos,42900,unmapped,security,IAM,high,Authentication.Authentication,Linux,Linux Kerberos authentication logs,N,,AI Analysis,03/25/2026
-tenable:sc:assets,39389,unmapped,security,VMS,med,Compute_Inventory.All_Inventory,Tenable,Tenable asset data,N,,AI Analysis,3/25/2026
-fapolicyd-access,37802,unmapped,security,EDR,med,Endpoint.Processes,Linux,File Access Policy Daemon logs,N,,AI Analysis,3/25/2026
-azure:securityCenter:task,37550,unmapped,security,CSPM,high,Alerts.Alerts,Microsoft,Azure Security Center data,N,,AI Analysis,3/25/2026
-radius,34599,unmapped,security,NAC,high,Authentication.Authentication,RADIUS,RADIUS authentication logs,N,,AI Analysis,3/25/2026
-microsoft_defender_core-12,34271,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-aws:s3:ssm:scans,29338,unmapped,security,VMS,med,Vulnerabilities.Vulnerabilities,Amazon Web Services,AWS SSM compliance data,N,,AI Analysis,3/25/2026
-microsoft_defender_core_err-2,25365,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-sssd_pam,14945,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
-microsoft_defender_core-8,12838,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-azure:securityCenter:alert,12690,unmapped,security,CSPM,high,Alerts.Alerts,Microsoft,Azure Security Center data,N,,AI Analysis,3/25/2026
-microsoft_defender_core_err,11536,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-tenable:io:vuln,10725,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Tenable,Tenable.io vulnerability data,N,,AI Analysis,03/25/2026
-tenable:sc:scanresult,10725,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Tenable,Tenable Security Center scan results,N,,AI Analysis,03/25/2026
-nessus:scan:results,10725,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Tenable,Nessus scan result details,N,,AI Analysis,03/25/2026
-OktaIM2:app,10682,unmapped,security,IAM,med,,Okta,Okta application data,N,,AI Analysis,3/25/2026
-keeper_security,10407,unmapped,security,PAM,high,Authentication.Authentication,Keeper Security,Keeper password manager logs,N,,AI Analysis,3/25/2026
-aide,8293,unmapped,security,EPP,med,Change.All_Changes,AIDE,AIDE file integrity monitoring logs,N,,AI Analysis,3/25/2026
-microsoft_defender_core-6,7129,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender_core-3,6750,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-sssd_kcm,5926,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
-privacyidea,5594,unmapped,security,MFA,high,Authentication.Authentication,privacyIDEA,privacyIDEA MFA logs,N,,AI Analysis,3/25/2026
-gitlab:audit,5464,unmapped,security,IAM,high,"Authentication.Authentication, Change.All_Changes",GitLab,GitLab audit logs,N,,AI Analysis,3/25/2026
-linux:audit:execve,5363,unmapped,security,EDR,high,"Endpoint.Processes, Change.All_Changes",Linux,Linux audit execve system calls,N,,AI Analysis,03/25/2026
-linux:audit:syscall,5363,unmapped,security,EDR,high,"Endpoint.Processes, Intrusion_Detection.IDS_Attacks",Linux,Linux audit system calls,N,,AI Analysis,03/25/2026
-linux:audit:path,5363,unmapped,security,EDR,med,"Endpoint.Filesystem, Change.All_Changes",Linux,Linux audit file path events,N,,AI Analysis,03/25/2026
-linux:audit:sockaddr,5363,unmapped,security,EDR,med,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",Linux,Linux audit socket address events,N,,AI Analysis,03/25/2026
-linux:audit:proctitle,5363,unmapped,security,EDR,med,Endpoint.Processes,Linux,Linux audit process title events,N,,AI Analysis,03/25/2026
-linux:audit:cwd,5363,unmapped,security,EDR,low,Endpoint.Processes,Linux,Linux audit current working directory,N,,AI Analysis,03/25/2026
-linux:audit:user,5363,unmapped,security,IAM,high,Authentication.Authentication,Linux,Linux audit user events,N,,AI Analysis,03/25/2026
-linux:audit:avc,5363,unmapped,security,EDR,med,Intrusion_Detection.IDS_Attacks,Linux,Linux audit SELinux AVC denials,N,,AI Analysis,03/25/2026
-linux:audit:selinux,5363,unmapped,security,EDR,med,Intrusion_Detection.IDS_Attacks,Linux,Linux audit SELinux events,N,,AI Analysis,03/25/2026
-linux:audit:apparmor,5363,unmapped,security,EDR,med,Intrusion_Detection.IDS_Attacks,Linux,Linux audit AppArmor events,N,,AI Analysis,03/25/2026
-microsoft_defender_core-29,4556,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender_mplog-2,3295,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender_core-18,3269,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-ms:o365:security:events,2904,unmapped,security,CASB,high,Alerts.Alerts,Microsoft,Office 365 security events,N,,AI Analysis,3/25/2026
-ms:o365:audit:general,2903,unmapped,security,CASB,high,"Authentication.Authentication, Change.All_Changes",Microsoft,Office 365 audit logs,N,,AI Analysis,3/25/2026
-ms:o365:audit:all,2902,unmapped,security,CASB,high,"Authentication.Authentication, Change.All_Changes",Microsoft,Office 365 audit logs,N,,AI Analysis,3/25/2026
-ms:security:alerts,2902,unmapped,security,EDR,med,,Microsoft,Microsoft ms:security:alerts,N,,AI Analysis,3/25/2026
-history,2826,unmapped,security,,med,Endpoint.Processes,,Command history logs,N,,AI Analysis,3/25/2026
-aws:s3:ssm:inspectormetricdatapackagescanner,2590,unmapped,security,VMS,med,Vulnerabilities.Vulnerabilities,Amazon Web Services,AWS SSM compliance data,N,,AI Analysis,3/25/2026
-sap:hana:audit,2256,unmapped,security,,med,Change.All_Changes,,Audit logs (sap:hana:audit),N,,AI Analysis,3/25/2026
-sssd_tmatenant.com-2,1786,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
-microsoft_defender_core-5,1336,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender_core_err-3,1317,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-clamav_scan,1225,unmapped,security,EPP,med,Malware.Malware_Attacks,ClamAV,ClamAV antivirus logs,N,,AI Analysis,3/25/2026
-microsoft_defender_enterprise_err-2,719,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender-3,681,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-mail,671,unmapped,security,ESG,med,Email.All_Email,Linux/Unix,Mail server logs,N,,AI Analysis,03/25/2026
-postfix,671,unmapped,security,ESG,med,Email.All_Email,Postfix,Postfix mail server logs,N,,AI Analysis,03/25/2026
-sendmail,671,unmapped,security,ESG,med,Email.All_Email,Sendmail,Sendmail mail server logs,N,,AI Analysis,03/25/2026
-exim,671,unmapped,security,ESG,med,Email.All_Email,Exim,Exim mail server logs,N,,AI Analysis,03/25/2026
-dovecot,671,unmapped,security,ESG,med,Email.All_Email,Dovecot,Dovecot IMAP/POP3 server logs,N,,AI Analysis,03/25/2026
-squid,671,unmapped,security,SWG,med,"Web.Proxy, Network_Traffic.All_Traffic",Squid,Squid proxy server logs,N,,AI Analysis,03/25/2026
-microsoft_defender_mplog-too_small,537,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender_diagnostic-3,481,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender_core-11,471,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender_core-2,469,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender_enterprise_err,459,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-apache,336,unmapped,security,N/A,med,Web.Web,Apache,Apache web server logs,N,,AI Analysis,03/25/2026
-apache:access,336,unmapped,security,N/A,med,Web.Web,Apache,Apache access logs,N,,AI Analysis,03/25/2026
-apache:error,336,unmapped,security,N/A,med,Web.Web,Apache,Apache error logs,N,,AI Analysis,03/25/2026
-nginx,336,unmapped,security,N/A,med,Web.Web,NGINX,NGINX web server logs,N,,AI Analysis,03/25/2026
-nginx:access,336,unmapped,security,N/A,med,Web.Web,NGINX,NGINX access logs,N,,AI Analysis,03/25/2026
-nginx:error,336,unmapped,security,N/A,med,Web.Web,NGINX,NGINX error logs,N,,AI Analysis,03/25/2026
-iis,336,unmapped,security,N/A,med,Web.Web,Microsoft,Microsoft IIS web server logs,N,,AI Analysis,03/25/2026
-tomcat,336,unmapped,security,N/A,med,Web.Web,Apache,Apache Tomcat application server logs,N,,AI Analysis,03/25/2026
-jboss,336,unmapped,security,N/A,med,Web.Web,Red Hat,JBoss application server logs,N,,AI Analysis,03/25/2026
-weblogic,336,unmapped,security,N/A,med,Web.Web,Oracle,Oracle WebLogic server logs,N,,AI Analysis,03/25/2026
-websphere,336,unmapped,security,N/A,med,Web.Web,IBM,IBM WebSphere server logs,N,,AI Analysis,03/25/2026
-sssd_pac-too_small,284,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
-cron-too_small,220,unmapped,security,,med,Endpoint.Processes,Linux,Linux cron job execution logs,N,,AI Analysis,3/25/2026
-microsoft_defender_core-21,215,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-OktaIM2:user,206,unmapped,security,IAM,med,Compute_Inventory.All_Inventory.User,Okta,Okta user data,N,,AI Analysis,3/25/2026
-microsoft_defender_core-39,204,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender_core-14,196,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender_core-35,190,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender_enterprise-12,185,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender-75,182,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender-69,179,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender-51,175,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender_core-4,168,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender-70,167,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender-76,157,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender-52,152,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-pan:config,117,unmapped,security,NGFW,med,Change.All_Changes,Palo Alto Networks,Palo Alto configuration change logs,N,,AI Analysis,3/25/2026
-vmware-vgauthsvc.log,114,unmapped,security,IAM,high,Authentication.Authentication,,Authentication logs (vmware-vgauthsvc.log),N,,AI Analysis,3/25/2026
-microsoft_defender_diagnostic-too_small,110,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender_core-19,109,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender-8,105,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-tenable:io:vuln_summary:ar,102,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Tenable,Tenable vulnerability data,N,,AI Analysis,3/25/2026
-microsoft_defender_enterprise_err-3,97,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender-72,96,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender-71,95,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-apt_history,91,unmapped,security,,med,Endpoint.Processes,,Command history logs,N,,AI Analysis,3/25/2026
-microsoft_defender_diagnostic_err-too_small,84,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-sssd_nss-too_small,66,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
-microsoft_defender_core-25,63,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender_err-too_small,62,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-OktaIM2:group,42,unmapped,security,IAM,med,,Okta,Okta group data,N,,AI Analysis,3/25/2026
-sssd-too_small,38,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
-microsoft_defender_core-9,35,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender_core-24,23,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-sssd_kcm-too_small,12,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
-sssd_pam-too_small,12,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
-f5,6,unmapped,security,FW,med,"Web.Proxy, Network_Traffic.All_Traffic",F5,F5 BIG-IP load balancer logs,N,,AI Analysis,03/25/2026
-WinEventLog:Microsoft-Windows-Sysmon/Operational,4,unmapped,security,EDR,high,"Endpoint.Processes, Endpoint.Registry, Network_Traffic.All_Traffic",Microsoft,Windows Sysmon event logs,N,,AI Analysis,3/25/2026
-microsoft_defender_core-13,4,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-microsoft_defender_core-33,4,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
-netflow,3,unmapped,security,N/A,med,Network_Traffic.All_Traffic,,NetFlow network traffic data,N,,AI Analysis,03/25/2026
-sflow,3,unmapped,security,N/A,med,Network_Traffic.All_Traffic,,sFlow network traffic data,N,,AI Analysis,03/25/2026
-ipfix,3,unmapped,security,N/A,med,Network_Traffic.All_Traffic,,IPFIX network flow data,N,,AI Analysis,03/25/2026
-aws:guardduty,2,unmapped,security,CTD,high,Intrusion_Detection.IDS_Attacks,Amazon Web Services,AWS GuardDuty threat findings,N,,AI Analysis,3/25/2026
-sssd_pac-2,2,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
-dns,2,unmapped,security,N/A,med,Network_Resolution.DNS,,DNS server logs,N,,AI Analysis,03/25/2026
-bind,2,unmapped,security,N/A,med,Network_Resolution.DNS,ISC,BIND DNS server logs,N,,AI Analysis,03/25/2026
-named,2,unmapped,security,N/A,med,Network_Resolution.DNS,ISC,Named DNS server logs,N,,AI Analysis,03/25/2026
-aws:cloudwatch:guardduty,1,unmapped,security,CTD,high,"Alerts.Alerts, Intrusion_Detection.IDS_Attacks",Amazon Web Services,AWS GuardDuty threat detection findings,N,,AI Analysis,3/25/2026
-ftp,1,unmapped,security,N/A,med,"Network_Traffic.All_Traffic, Web.Web",,FTP server logs,N,,AI Analysis,03/25/2026
-sftp,1,unmapped,security,N/A,med,"Network_Traffic.All_Traffic, Web.Web",,SFTP server logs,N,,AI Analysis,03/25/2026
-ssh,1,unmapped,security,IAM,high,Authentication.Authentication,,SSH server logs,N,,AI Analysis,03/25/2026
-telnet,1,unmapped,security,IAM,med,Authentication.Authentication,,Telnet server logs,N,,AI Analysis,03/25/2026
-snort,1,unmapped,security,IDS,high,Intrusion_Detection.IDS_Attacks,Snort,Snort IDS/IPS logs,N,,AI Analysis,03/25/2026
-suricata,1,unmapped,security,IDS,high,Intrusion_Detection.IDS_Attacks,Suricata,Suricata IDS/IPS logs,N,,AI Analysis,03/25/2026
-zeek,1,unmapped,security,IDS,high,"Intrusion_Detection.IDS_Attacks, Network_Traffic.All_Traffic",Zeek,Zeek network security monitor logs,N,,AI Analysis,03/25/2026
-bro,1,unmapped,security,IDS,high,"Intrusion_Detection.IDS_Attacks, Network_Traffic.All_Traffic",Zeek,Bro (Zeek) network security monitor logs,N,,AI Analysis,03/25/2026
-ossec,1,unmapped,security,EDR,high,"Intrusion_Detection.IDS_Attacks, Alerts.Alerts",OSSEC,OSSEC host-based IDS logs,N,,AI Analysis,03/25/2026
-wazuh,1,unmapped,security,EDR,high,"Intrusion_Detection.IDS_Attacks, Alerts.Alerts",Wazuh,Wazuh security monitoring logs,N,,AI Analysis,03/25/2026
-clamav,1,unmapped,security,EPP,high,Malware.Malware_Operations,ClamAV,ClamAV antivirus logs,N,,AI Analysis,03/25/2026
-tripwire,1,unmapped,security,EPP,med,Change.All_Changes,Tripwire,Tripwire file integrity monitoring logs,N,,AI Analysis,03/25/2026
-samhain,1,unmapped,security,EPP,med,Change.All_Changes,Samhain,Samhain file integrity monitoring logs,N,,AI Analysis,03/25/2026
-fapolicyd,1,unmapped,security,EPP,med,"Change.All_Changes, Endpoint.Processes",Linux,File Access Policy Daemon logs,N,,AI Analysis,03/25/2026
-selinux,1,unmapped,security,EDR,med,Intrusion_Detection.IDS_Attacks,Linux,SELinux security policy logs,N,,AI Analysis,03/25/2026
-apparmor,1,unmapped,security,EDR,med,Intrusion_Detection.IDS_Attacks,Linux,AppArmor security policy logs,N,,AI Analysis,03/25/2026
-fail2ban,1,unmapped,security,IDS,high,"Intrusion_Detection.IDS_Attacks, Authentication.Authentication",Fail2ban,Fail2ban intrusion prevention logs,N,,AI Analysis,03/25/2026
-iptables,1,unmapped,security,FW,med,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",Linux,Linux iptables firewall logs,N,,AI Analysis,03/25/2026
-firewalld,1,unmapped,security,FW,med,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",Linux,Linux firewalld logs,N,,AI Analysis,03/25/2026
-ufw,1,unmapped,security,FW,med,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",Linux,Ubuntu UFW firewall logs,N,,AI Analysis,03/25/2026
-pf,1,unmapped,security,FW,med,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",BSD,BSD Packet Filter firewall logs,N,,AI Analysis,03/25/2026
-ipfw,1,unmapped,security,FW,med,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",BSD,BSD IPFW firewall logs,N,,AI Analysis,03/25/2026
-tcpdump,1,unmapped,security,N/A,med,Network_Traffic.All_Traffic,,tcpdump packet capture data,N,,AI Analysis,03/25/2026
-wireshark,1,unmapped,security,N/A,med,Network_Traffic.All_Traffic,Wireshark,Wireshark packet capture data,N,,AI Analysis,03/25/2026
-tshark,1,unmapped,security,N/A,med,Network_Traffic.All_Traffic,Wireshark,TShark packet capture data,N,,AI Analysis,03/25/2026
-nmap,1,unmapped,security,VMS,med,Vulnerabilities.Vulnerabilities,Nmap,Nmap network scan results,N,,AI Analysis,03/25/2026
-openvas,1,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Greenbone,OpenVAS vulnerability scan results,N,,AI Analysis,03/25/2026
-qualys,1,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Qualys,Qualys vulnerability scan results,N,,AI Analysis,03/25/2026
-rapid7,1,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Rapid7,Rapid7 vulnerability scan results,N,,AI Analysis,03/25/2026
-metasploit,1,unmapped,security,PTS,med,Vulnerabilities.Vulnerabilities,Rapid7,Metasploit penetration testing logs,N,,AI Analysis,03/25/2026
-burpsuite,1,unmapped,security,PTS,med,Vulnerabilities.Vulnerabilities,PortSwigger,Burp Suite web app testing logs,N,,AI Analysis,03/25/2026
-keeper,1,unmapped,security,PAM,high,"Authentication.Authentication, Change.Audit_Logs",Keeper Security,Keeper password manager logs,N,,AI Analysis,03/25/2026
-lastpass,1,unmapped,security,PAM,high,"Authentication.Authentication, Change.Audit_Logs",LastPass,LastPass password manager logs,N,,AI Analysis,03/25/2026
-onelogin,1,unmapped,security,IAM,high,Authentication.Authentication,OneLogin,OneLogin SSO logs,N,,AI Analysis,03/25/2026
-duo,1,unmapped,security,MFA,high,Authentication.Authentication,Duo Security,Duo MFA logs,N,,AI Analysis,03/25/2026
-yubikey,1,unmapped,security,MFA,high,Authentication.Authentication,Yubico,YubiKey authentication logs,N,,AI Analysis,03/25/2026
-freeradius,1,unmapped,security,IAM,high,Authentication.Authentication,FreeRADIUS,FreeRADIUS authentication logs,N,,AI Analysis,03/25/2026
-openldap,1,unmapped,security,IAM,med,Authentication.Authentication,OpenLDAP,OpenLDAP directory service logs,N,,AI Analysis,03/25/2026
-389ds,1,unmapped,security,IAM,med,Authentication.Authentication,389 Directory Server,389 Directory Server logs,N,,AI Analysis,03/25/2026
-activedirectory,1,unmapped,security,IAM,high,"Authentication.Authentication, Change.All_Changes",Microsoft,Active Directory logs,N,,AI Analysis,03/25/2026
-msexchange,1,unmapped,security,ESG,med,Email.All_Email,Microsoft,Microsoft Exchange server logs,N,,AI Analysis,03/25/2026
-o365,1,unmapped,security,CASB,high,"Email.All_Email, Authentication.Authentication",Microsoft,Office 365 logs,N,,AI Analysis,03/25/2026
-gsuite,1,unmapped,security,CASB,high,"Email.All_Email, Authentication.Authentication",Google,Google Workspace logs,N,,AI Analysis,03/25/2026
-box,1,unmapped,security,CASB,med,"Change.All_Changes, Authentication.Authentication",Box,Box cloud storage logs,N,,AI Analysis,03/25/2026
-dropbox,1,unmapped,security,CASB,med,"Change.All_Changes, Authentication.Authentication",Dropbox,Dropbox cloud storage logs,N,,AI Analysis,03/25/2026
-onedrive,1,unmapped,security,CASB,med,"Change.All_Changes, Authentication.Authentication",Microsoft,OneDrive cloud storage logs,N,,AI Analysis,03/25/2026
-sharepoint,1,unmapped,security,CASB,med,"Change.All_Changes, Authentication.Authentication",Microsoft,SharePoint collaboration logs,N,,AI Analysis,03/25/2026
-carbonblack,1,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Operations",VMware,Carbon Black EDR logs,N,,AI Analysis,03/25/2026
-sentinelone,1,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Operations",SentinelOne,SentinelOne EDR logs,N,,AI Analysis,03/25/2026
-cylance,1,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Operations",Cylance,Cylance EDR logs,N,,AI Analysis,03/25/2026
-sophos,1,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Operations",Sophos,Sophos endpoint protection logs,N,,AI Analysis,03/25/2026
-mcafee,1,unmapped,security,EPP,high,Malware.Malware_Operations,McAfee,McAfee antivirus logs,N,,AI Analysis,03/25/2026
-symantec,1,unmapped,security,EPP,high,Malware.Malware_Operations,Symantec,Symantec antivirus logs,N,,AI Analysis,03/25/2026
-kaspersky,1,unmapped,security,EPP,high,Malware.Malware_Operations,Kaspersky,Kaspersky antivirus logs,N,,AI Analysis,03/25/2026
-avast,1,unmapped,security,EPP,high,Malware.Malware_Operations,Avast,Avast antivirus logs,N,,AI Analysis,03/25/2026
-avg,1,unmapped,security,EPP,high,Malware.Malware_Operations,AVG,AVG antivirus logs,N,,AI Analysis,03/25/2026
-eset,1,unmapped,security,EPP,high,Malware.Malware_Operations,ESET,ESET antivirus logs,N,,AI Analysis,03/25/2026
-bitdefender,1,unmapped,security,EPP,high,Malware.Malware_Operations,Bitdefender,Bitdefender antivirus logs,N,,AI Analysis,03/25/2026
-fortinet,1,unmapped,security,NGFW,high,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",Fortinet,Fortinet FortiGate firewall logs,N,,AI Analysis,03/25/2026
-checkpoint,1,unmapped,security,NGFW,high,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",Check Point,Check Point firewall logs,N,,AI Analysis,03/25/2026
-juniper,1,unmapped,security,NGFW,high,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",Juniper,Juniper firewall logs,N,,AI Analysis,03/25/2026
-sonicwall,1,unmapped,security,NGFW,high,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",SonicWall,SonicWall firewall logs,N,,AI Analysis,03/25/2026
-watchguard,1,unmapped,security,NGFW,high,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",WatchGuard,WatchGuard firewall logs,N,,AI Analysis,03/25/2026
-barracuda,1,unmapped,security,NGFW,high,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",Barracuda,Barracuda firewall logs,N,,AI Analysis,03/25/2026
-zscaler,1,unmapped,security,SWG,high,"Web.Proxy, Network_Traffic.All_Traffic",Zscaler,Zscaler secure web gateway logs,N,,AI Analysis,03/25/2026
-bluecoat,1,unmapped,security,SWG,high,"Web.Proxy, Network_Traffic.All_Traffic",Symantec,Blue Coat proxy logs,N,,AI Analysis,03/25/2026
-websense,1,unmapped,security,SWG,high,"Web.Proxy, Network_Traffic.All_Traffic",Forcepoint,Websense web security logs,N,,AI Analysis,03/25/2026
-forcepoint,1,unmapped,security,SWG,high,"Web.Proxy, Network_Traffic.All_Traffic",Forcepoint,Forcepoint web security logs,N,,AI Analysis,03/25/2026
-proofpoint,1,unmapped,security,ESG,high,"Email.All_Email, Malware.Malware_Operations",Proofpoint,Proofpoint email security logs,N,,AI Analysis,03/25/2026
-mimecast,1,unmapped,security,ESG,high,"Email.All_Email, Malware.Malware_Operations",Mimecast,Mimecast email security logs,N,,AI Analysis,03/25/2026
-ironport,1,unmapped,security,ESG,high,"Email.All_Email, Malware.Malware_Operations",Cisco,Cisco IronPort email security logs,N,,AI Analysis,03/25/2026
-fireeye,1,unmapped,security,XDR,high,"Malware.Malware_Operations, Intrusion_Detection.IDS_Attacks",FireEye,FireEye threat detection logs,N,,AI Analysis,03/25/2026
-paloaltonetworks:cortex,1,unmapped,security,XDR,high,"Alerts.Alerts, Intrusion_Detection.IDS_Attacks",Palo Alto Networks,Palo Alto Cortex XDR logs,N,,AI Analysis,03/25/2026
-microsoft:defender:atp,1,unmapped,security,XDR,high,"Endpoint.Processes, Malware.Malware_Operations",Microsoft,Microsoft Defender ATP logs,N,,AI Analysis,03/25/2026
-crowdstrike:spotlight,1,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,CrowdStrike,CrowdStrike Spotlight vulnerability data,N,,AI Analysis,03/25/2026
-tanium,1,unmapped,security,EDR,high,"Endpoint.Processes, Vulnerabilities.Vulnerabilities",Tanium,Tanium endpoint management logs,N,,AI Analysis,03/25/2026
-bigfix,1,unmapped,security,EDR,med,"Endpoint.Processes, Updates.All_Updates",HCL,HCL BigFix endpoint management logs,N,,AI Analysis,03/25/2026
-aws:firehose:cloudwatchevents:unknown:no_processor,395905833,unmapped,"security,operational",,med,,Amazon Web Services,AWS CloudWatch Events,N,,AI Analysis,3/25/2026
-mscs:azure:eventhub,51137,unmapped,"security,operational",,med,,Microsoft,Azure Event Hub data,N,,AI Analysis,3/25/2026
-azure:metrics,337979169,unmapped,operational,,low,Performance.All_Performance,Microsoft,Azure resource metrics,N,,AI Analysis,3/25/2026
-aws:s3:ssm:application,182327245,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
-cta_linux_agent,176030728,unmapped,operational,,low,,Linux,Linux cta_linux_agent,N,,AI Analysis,3/25/2026
-PerfmonMk:CPU,152647654,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows Perfmon metrics,N,,AI Analysis,3/25/2026
-kubes:application,129773705,unmapped,operational,,low,,Kubernetes,Kubernetes/container logs,N,,AI Analysis,3/25/2026
-collectd.conf,88453737,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
-skylight,71024265,unmapped,operational,,low,,,Infrastructure logs (skylight),N,,AI Analysis,3/25/2026
-snow:cmdb,66746281,unmapped,operational,,low,Compute_Inventory.All_Inventory,ServiceNow,ServiceNow CMDB records,N,,AI Analysis,3/25/2026
-snow:cmdb_ci,66653322,unmapped,operational,N/A,low,Inventory.Inventory,ServiceNow,ServiceNow CMDB configuration items,N,,AI Analysis,3/25/2026
-citrix:netscaler:syslog,54599365,unmapped,operational,,low,,Linux,Linux citrix:netscaler:syslog,N,,AI Analysis,3/25/2026
-kubes:performance,50858025,unmapped,operational,,low,Performance.All_Performance,Kubernetes,Kubernetes metrics,N,,AI Analysis,3/25/2026
-snow:syslog_transaction,28681542,unmapped,operational,,low,,Linux,Linux snow:syslog_transaction,N,,AI Analysis,3/25/2026
-gitlab:workhorse,17084181,unmapped,operational,,low,,GitLab,GitLab application logs,N,,AI Analysis,3/25/2026
-gitlab:application,16312057,unmapped,operational,,low,,GitLab,GitLab application logs,N,,AI Analysis,3/25/2026
-aws:s3:ssm:service,15310818,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
-Unix:Service,14804997,unmapped,operational,,low,,Unix/Linux,Unix system data (Unix:Service),N,,AI Analysis,3/25/2026
-Perfmon:NTDS,14085948,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows Perfmon metrics,N,,AI Analysis,3/25/2026
-cpu,11777780,unmapped,operational,N/A,none,Performance.CPU,Linux/Unix,CPU utilization metrics,N,,AI Analysis,3/25/2026
-ps,10378899,unmapped,operational,N/A,low,Endpoint.Processes,Linux/Unix,Process status output,N,,AI Analysis,3/25/2026
-cribl:internal,9604177,unmapped,operational,,none,,Cribl,Cribl internal logs,Y,Data pipeline internal,AI Analysis,3/25/2026
-gitlab:shell,7059063,unmapped,operational,,low,,GitLab,GitLab application logs,N,,AI Analysis,3/25/2026
-wsp,6803177,unmapped,operational,,low,,,Infrastructure logs (wsp),N,,AI Analysis,3/25/2026
-snow:sysevent,6102212,unmapped,operational,,med,Alerts.Alerts,ServiceNow,ServiceNow event management,N,,AI Analysis,3/25/2026
-top,5189563,unmapped,operational,N/A,none,Performance.CPU,Linux/Unix,Top process statistics,N,,AI Analysis,3/25/2026
-aws:description,4275431,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS resource descriptions,N,,AI Analysis,3/25/2026
-Perfmon:Network_Interface,4264351,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows Perfmon metrics,N,,AI Analysis,3/25/2026
-Unix:UserAccounts,3913838,unmapped,operational,,low,,Linux,Linux Unix:UserAccounts,N,,AI Analysis,3/25/2026
-Perfmon:DFS_Replicated_Folders,3336927,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows Perfmon metrics,N,,AI Analysis,3/25/2026
-bandwidth,2870528,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
-vmstat,2869076,unmapped,operational,N/A,none,Performance.Performance,Linux/Unix,Virtual memory statistics,N,,AI Analysis,3/25/2026
-iostat,2868754,unmapped,operational,N/A,none,Performance.Storage,Linux/Unix,I/O statistics,N,,AI Analysis,3/25/2026
-gitlab:production,2498756,unmapped,operational,,low,,GitLab,GitLab application logs,N,,AI Analysis,3/25/2026
-snow:cmdb_rel_ci,2462288,unmapped,operational,,low,Compute_Inventory.All_Inventory,ServiceNow,ServiceNow CMDB records,N,,AI Analysis,3/25/2026
-dnf,2452551,unmapped,operational,N/A,low,Updates.All_Updates,Linux,DNF package manager logs,N,,AI Analysis,3/25/2026
-kubes:host,1693155,unmapped,operational,,low,,Kubernetes,Kubernetes/container logs,N,,AI Analysis,3/25/2026
-kubes:dataplane,1644207,unmapped,operational,,low,Performance.All_Performance,Kubernetes,Kubernetes metrics,N,,AI Analysis,3/25/2026
-Unix:ListeningPorts,1386952,unmapped,operational,,low,,Unix/Linux,Unix system data (Unix:ListeningPorts),N,,AI Analysis,3/25/2026
-aws:ssm:inventory,1372800,unmapped,operational,N/A,low,Inventory.Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,03/25/2026
-aws:ssm:patchsummary,1372800,unmapped,operational,N/A,low,Updates.All_Updates,Amazon Web Services,AWS SSM patch summary data,N,,AI Analysis,03/25/2026
-aws:ssm:instanceinformation,1372800,unmapped,operational,N/A,low,Inventory.Inventory,Amazon Web Services,AWS SSM instance information,N,,AI Analysis,03/25/2026
-aws:ssm:instancedetailedinformation,1372800,unmapped,operational,N/A,low,Inventory.Inventory,Amazon Web Services,AWS SSM detailed instance info,N,,AI Analysis,03/25/2026
-aws:rds:error,1372800,unmapped,operational,N/A,low,Databases.Database_Errors,Amazon Web Services,AWS RDS database error logs,N,,AI Analysis,03/25/2026
-aws:cloudwatch:ec2:metrics,1372800,unmapped,operational,N/A,none,Performance.Performance,Amazon Web Services,AWS EC2 CloudWatch metrics,N,,AI Analysis,03/25/2026
-aws:cloudwatch:rds:metrics,1372800,unmapped,operational,N/A,none,Performance.Performance,Amazon Web Services,AWS RDS CloudWatch metrics,N,,AI Analysis,03/25/2026
-aws:cloudwatch:elb:metrics,1372800,unmapped,operational,N/A,none,Performance.Performance,Amazon Web Services,AWS ELB CloudWatch metrics,N,,AI Analysis,03/25/2026
-aws:cloudwatch:ebs:metrics,1372800,unmapped,operational,N/A,none,Performance.Performance,Amazon Web Services,AWS EBS CloudWatch metrics,N,,AI Analysis,03/25/2026
-aws:cloudwatch:lambda:metrics,1372800,unmapped,operational,N/A,none,Performance.Performance,Amazon Web Services,AWS Lambda CloudWatch metrics,N,,AI Analysis,03/25/2026
-aws:cloudwatch:s3:metrics,1372800,unmapped,operational,N/A,none,Performance.Performance,Amazon Web Services,AWS S3 CloudWatch metrics,N,,AI Analysis,03/25/2026
-aws:cloudwatch:dynamodb:metrics,1372800,unmapped,operational,N/A,none,Performance.Performance,Amazon Web Services,AWS DynamoDB CloudWatch metrics,N,,AI Analysis,03/25/2026
-aws:cloudwatch:sns:metrics,1372800,unmapped,operational,N/A,none,Performance.Performance,Amazon Web Services,AWS SNS CloudWatch metrics,N,,AI Analysis,03/25/2026
-aws:cloudwatch:sqs:metrics,1372800,unmapped,operational,N/A,none,Performance.Performance,Amazon Web Services,AWS SQS CloudWatch metrics,N,,AI Analysis,03/25/2026
-aws:cloudwatch:kinesis:metrics,1372800,unmapped,operational,N/A,none,Performance.Performance,Amazon Web Services,AWS Kinesis CloudWatch metrics,N,,AI Analysis,03/25/2026
-aws:cloudwatch:elasticache:metrics,1372800,unmapped,operational,N/A,none,Performance.Performance,Amazon Web Services,AWS ElastiCache CloudWatch metrics,N,,AI Analysis,03/25/2026
-Script:GetLocalUsers,1372800,unmapped,operational,N/A,low,Inventory.Inventory,Splunk,Scripted input for local user accounts,N,,AI Analysis,03/25/2026
-Script:GetLocalGroups,1372800,unmapped,operational,N/A,low,Inventory.Inventory,Splunk,Scripted input for local groups,N,,AI Analysis,03/25/2026
-Script:GetServices,1372800,unmapped,operational,N/A,low,Inventory.Inventory,Splunk,Scripted input for system services,N,,AI Analysis,03/25/2026
-Script:GetProcesses,1372800,unmapped,operational,N/A,low,Endpoint.Processes,Splunk,Scripted input for running processes,N,,AI Analysis,03/25/2026
-Script:GetInstalledSoftware,1372800,unmapped,operational,N/A,low,Inventory.Inventory,Splunk,Scripted input for installed software,N,,AI Analysis,03/25/2026
-Script:GetNetworkAdapters,1372800,unmapped,operational,N/A,low,Inventory.Inventory,Splunk,Scripted input for network adapters,N,,AI Analysis,03/25/2026
-Script:GetDiskInfo,1372800,unmapped,operational,N/A,none,Performance.Performance,Splunk,Scripted input for disk information,N,,AI Analysis,03/25/2026
-Script:GetSystemInfo,1372800,unmapped,operational,N/A,low,Inventory.Inventory,Splunk,Scripted input for system information,N,,AI Analysis,03/25/2026
-nfsiostat,1156384,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
-df,1038109,unmapped,operational,N/A,none,Performance.Storage,Linux/Unix,Disk filesystem usage,N,,AI Analysis,3/25/2026
-lastlog,1009807,unmapped,operational,N/A,low,Authentication.Authentication,Linux/Unix,Last login information,N,,AI Analysis,3/25/2026
-MSAD:NT6:Replication,955236,unmapped,operational,,low,,Microsoft,AD replication logs,N,,AI Analysis,3/25/2026
-aws:s3:ssm:network,887919,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
-aws:s3:ssm:awscomponent,841031,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
-tsc:api:metrics:scanresult,796114,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
-apache_error,790421,unmapped,operational,,low,Web.Web,Apache,Apache web server error logs,N,,AI Analysis,3/25/2026
-insights-client,673901,unmapped,operational,,low,,Red Hat,Red Hat subscription/insights logs,N,,AI Analysis,3/25/2026
-snow:cmdb_ci_vm_instance,622435,unmapped,operational,N/A,low,Inventory.Inventory,ServiceNow,ServiceNow CMDB VM instance records,N,,AI Analysis,3/25/2026
-tsc:api:metrics:plugins,423142,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
-cloud-init,408555,unmapped,operational,,low,,,Infrastructure logs (cloud-init),N,,AI Analysis,3/25/2026
-who,369664,unmapped,operational,N/A,low,Authentication.Authentication,Linux/Unix,Logged in users,N,,AI Analysis,3/25/2026
-aws:s3:ssm:tag,337785,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
-tsc:api:metrics:api_client,322949,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
-tsc:api:metrics:user,306372,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
-aws:s3:ssm:instancedetailedinformation,301382,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
-ecs:containerinsights:performance,242959,unmapped,operational,,low,Performance.All_Performance,Kubernetes,Kubernetes metrics,N,,AI Analysis,3/25/2026
-linux_bootlog,231406,unmapped,operational,,low,,Linux,Linux kernel/boot messages,N,,AI Analysis,3/25/2026
-snow:cmdb_ci_server,176288,unmapped,operational,N/A,low,Inventory.Inventory,ServiceNow,ServiceNow CMDB server records,N,,AI Analysis,3/25/2026
-tsc:api:metrics:repository,174069,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
-tsc:api:metrics:scanner_manager,173240,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
-rsyslog-impstats,166607,unmapped,operational,,low,,Linux,Linux system utility output,N,,AI Analysis,3/25/2026
-docker,147773,unmapped,operational,N/A,med,"Change.All_Changes, Endpoint.Processes",Docker,Docker container logs,N,,AI Analysis,3/25/2026
-Unix:SSHDConfig,86750,unmapped,operational,,low,,Unix/Linux,Unix system data (Unix:SSHDConfig),N,,AI Analysis,3/25/2026
-package,86750,unmapped,operational,N/A,low,Updates.All_Updates,Linux,Linux package management logs,N,,AI Analysis,3/25/2026
-rhsm,85606,unmapped,operational,,low,,Red Hat,Red Hat subscription/insights logs,N,,AI Analysis,3/25/2026
-aws:s3:ssm:inspectorcve,67546,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
-aws:s3:ssm:inspectorthirdpartypackage,61259,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
-snow:incident,54550,unmapped,operational,N/A,med,Alerts.Alerts,ServiceNow,ServiceNow incident records,N,,AI Analysis,3/25/2026
-tenable:sc:plugin,52829,unmapped,operational,N/A,low,Inventory.Inventory,Tenable,Tenable Security Center plugin data,N,,AI Analysis,3/25/2026
-aws:s3:ssm:billinginfo,47590,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
-snow:em_event,40100,unmapped,operational,,med,Alerts.Alerts,ServiceNow,ServiceNow event management,N,,AI Analysis,3/25/2026
-dpkg,38982,unmapped,operational,N/A,low,Updates.All_Updates,Linux,DPKG package manager logs,N,,AI Analysis,3/25/2026
-gitlab:unknown,35161,unmapped,operational,,low,,GitLab,GitLab application logs,N,,AI Analysis,3/25/2026
-dmesg,34951,unmapped,operational,N/A,low,Alerts.Alerts,Linux/Unix,Kernel ring buffer messages,N,,AI Analysis,3/25/2026
-tsc:api:metrics:scans,33076,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
-snow:cmdb_ci_db_instance,30430,unmapped,operational,,low,Compute_Inventory.All_Inventory,ServiceNow,ServiceNow CMDB records,N,,AI Analysis,3/25/2026
-tsc:api:metrics:scanner,24807,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
-tsc:api:metrics:server,24801,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
-cta_linux_handler-2,22302,unmapped,operational,,low,,Linux,Linux cta_linux_handler-2,N,,AI Analysis,3/25/2026
-snow:cmdb_ci_database,21450,unmapped,operational,N/A,low,Inventory.Inventory,ServiceNow,ServiceNow CMDB database records,N,,AI Analysis,03/25/2026
-snow:cmdb_ci_web_server,21450,unmapped,operational,N/A,low,Inventory.Inventory,ServiceNow,ServiceNow CMDB web server records,N,,AI Analysis,03/25/2026
-snow:cmdb_ci_network_adapter,21450,unmapped,operational,N/A,low,Inventory.Inventory,ServiceNow,ServiceNow CMDB network adapter records,N,,AI Analysis,03/25/2026
-cups_access,20858,unmapped,operational,,none,,CUPS,Print server logs,N,,AI Analysis,3/25/2026
-snow:cmdb_ci_infra_service,20332,unmapped,operational,,low,Compute_Inventory.All_Inventory,ServiceNow,ServiceNow CMDB records,N,,AI Analysis,3/25/2026
-MdeInstallerLog,17821,unmapped,operational,,low,,Microsoft,Microsoft Defender install logs,N,,AI Analysis,3/25/2026
-zypper,14456,unmapped,operational,N/A,low,Updates.All_Updates,Linux,Zypper package manager logs,N,,AI Analysis,3/25/2026
-MdeInstallerWrapperLog,11466,unmapped,operational,,low,,Microsoft,Microsoft Defender install logs,N,,AI Analysis,3/25/2026
-tenable:io:assets,10725,unmapped,operational,N/A,low,Inventory.Inventory,Tenable,Tenable.io asset inventory,N,,AI Analysis,03/25/2026
-tenable:io:plugin,10725,unmapped,operational,N/A,low,Inventory.Inventory,Tenable,Tenable.io plugin information,N,,AI Analysis,03/25/2026
-tenable:sc:asset,10725,unmapped,operational,N/A,low,Inventory.Inventory,Tenable,Tenable Security Center asset data,N,,AI Analysis,03/25/2026
-tenable:sc:repository,10725,unmapped,operational,N/A,low,Inventory.Inventory,Tenable,Tenable Security Center repository data,N,,AI Analysis,03/25/2026
-tenable:sc:user,10725,unmapped,operational,N/A,low,Inventory.Inventory,Tenable,Tenable Security Center user data,N,,AI Analysis,03/25/2026
-tenable:sc:policy,10725,unmapped,operational,N/A,low,Inventory.Inventory,Tenable,Tenable Security Center policy data,N,,AI Analysis,03/25/2026
-nessus:plugin,10725,unmapped,operational,N/A,low,Inventory.Inventory,Tenable,Nessus plugin information,N,,AI Analysis,03/25/2026
-snow:cmdb_ci_computer,10361,unmapped,operational,,low,Compute_Inventory.All_Inventory,ServiceNow,ServiceNow CMDB records,N,,AI Analysis,3/25/2026
-rhsmcertd,9832,unmapped,operational,,low,,Red Hat,Red Hat subscription/insights logs,N,,AI Analysis,3/25/2026
-opensearch-too_small,8711,unmapped,operational,,low,,OpenSearch,OpenSearch logs,N,,AI Analysis,3/25/2026
-tsc:api:metrics:ldapcheck,8687,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
-tsc:api:metrics:softwareupdate,8687,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
-ICAClient,8475,unmapped,operational,,low,,Citrix,Citrix client/session logs,N,,AI Analysis,3/25/2026
-tsc:api:metrics:organization,8272,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
-tsc:api:metrics:agents,8268,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
-tsc:api:metrics:status,8265,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
-aws:s3:ssm:instanceinformation,7887,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
-MdeExtensionHandlerLog,7791,unmapped,operational,,low,,Microsoft,Microsoft Defender install logs,N,,AI Analysis,3/25/2026
-aws:s3:ssm:patchsummary,6496,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
-opensearch-2,6472,unmapped,operational,,low,,OpenSearch,OpenSearch logs,N,,AI Analysis,3/25/2026
-aws:s3-objects:unknown:no_processor,5854,unmapped,operational,,low,,Amazon Web Services,AWS S3 object data,N,,AI Analysis,3/25/2026
-Microsoft.Azure.RecoveryServices.VMSnapshotLinux-shell.log,5054,unmapped,operational,,low,Compute_Inventory.All_Inventory,Microsoft,Azure compute data (Microsoft.Azure.RecoveryServic,N,,AI Analysis,3/25/2026
-Unix:Uptime,3867,unmapped,operational,,low,,Linux,Linux Unix:Uptime,N,,AI Analysis,3/25/2026
-Unix:Version,3867,unmapped,operational,,low,,Unix/Linux,Unix system data (Unix:Version),N,,AI Analysis,3/25/2026
-snow:sys_user,3251,unmapped,operational,,low,,ServiceNow,ServiceNow user records,N,,AI Analysis,3/25/2026
-cta_linux_agent-2024-04-25T,3192,unmapped,operational,,low,,Linux,Linux cta_linux_agent-2024-04-25T,N,,AI Analysis,3/25/2026
-cta_linux_agent-2024-05-03T,3192,unmapped,operational,,low,,Linux,Linux cta_linux_agent-2024-05-03T,N,,AI Analysis,3/25/2026
-cta_linux_agent-2024-05-11T,3192,unmapped,operational,,low,,Linux,Linux cta_linux_agent-2024-05-11T,N,,AI Analysis,3/25/2026
-yum,2682,unmapped,operational,N/A,low,Updates.All_Updates,Linux,YUM package manager logs,N,,AI Analysis,03/25/2026
-apt,2682,unmapped,operational,N/A,low,Updates.All_Updates,Linux,APT package manager logs,N,,AI Analysis,03/25/2026
-rpm,2682,unmapped,operational,N/A,low,Updates.All_Updates,Linux,RPM package manager logs,N,,AI Analysis,03/25/2026
-cobblestone,2520,unmapped,operational,,low,,,Infrastructure logs (cobblestone),N,,AI Analysis,3/25/2026
-snow:alm_asset,2313,unmapped,operational,,low,Compute_Inventory.All_Inventory,ServiceNow,ServiceNow asset records,N,,AI Analysis,3/25/2026
-opensearch-6,2096,unmapped,operational,,low,,OpenSearch,OpenSearch logs,N,,AI Analysis,3/25/2026
-rsa:securid:system:syslog,2044,unmapped,operational,,low,,Linux,Linux rsa:securid:system:syslog,N,,AI Analysis,3/25/2026
-azure:compute:vm,2032,unmapped,operational,,low,Compute_Inventory.All_Inventory,Microsoft,Azure compute data (azure:compute:vm),N,,AI Analysis,3/25/2026
-cups_error,1675,unmapped,operational,,none,,CUPS,Print server logs,N,,AI Analysis,3/25/2026
-cta_linux_agent-2,1596,unmapped,operational,,low,,Linux,Linux cta_linux_agent-2,N,,AI Analysis,3/25/2026
-insights-client-6,1572,unmapped,operational,,low,,Red Hat,Red Hat subscription/insights logs,N,,AI Analysis,3/25/2026
-cta_linux_agent-2024-05-04T,1554,unmapped,operational,,low,,Linux,Linux cta_linux_agent-2024-05-04T,N,,AI Analysis,3/25/2026
-azure:compute:snapshot,1374,unmapped,operational,,low,Compute_Inventory.All_Inventory,Microsoft,Azure compute data (azure:compute:snapshot),N,,AI Analysis,3/25/2026
-uptime,1341,unmapped,operational,N/A,none,Performance.Performance,Linux/Unix,System uptime information,N,,AI Analysis,03/25/2026
-last,1341,unmapped,operational,N/A,low,Authentication.Authentication,Linux/Unix,Login history,N,,AI Analysis,03/25/2026
-w,1341,unmapped,operational,N/A,low,Authentication.Authentication,Linux/Unix,Who is logged in and what they're doing,N,,AI Analysis,03/25/2026
-journalctl,1341,unmapped,operational,N/A,med,"Alerts.Alerts, Change.All_Changes",Linux,Systemd journal logs,N,,AI Analysis,03/25/2026
-systemd,1341,unmapped,operational,N/A,med,Change.All_Changes,Linux,Systemd service manager logs,N,,AI Analysis,03/25/2026
-opensearch-8,1225,unmapped,operational,,low,,OpenSearch,OpenSearch logs,N,,AI Analysis,3/25/2026
-insights-client-3,1079,unmapped,operational,,low,,Red Hat,Red Hat subscription/insights logs,N,,AI Analysis,3/25/2026
-snow:problem,870,unmapped,operational,N/A,med,Alerts.Alerts,ServiceNow,ServiceNow problem records,N,,AI Analysis,3/25/2026
-snow:cmdb_ci_app_server,850,unmapped,operational,N/A,low,Inventory.Inventory,ServiceNow,ServiceNow CMDB app server records,N,,AI Analysis,3/25/2026
-azure:compute:disk,797,unmapped,operational,,low,Compute_Inventory.All_Inventory,Microsoft,Azure compute data (azure:compute:disk),N,,AI Analysis,3/25/2026
-snow:sys_choice,739,unmapped,operational,,low,,ServiceNow,ServiceNow snow:sys_choice,N,,AI Analysis,3/25/2026
-glusterfs_cli,703,unmapped,operational,,low,,GlusterFS,GlusterFS storage logs,N,,AI Analysis,3/25/2026
-rhsm-2,334,unmapped,operational,,low,,Red Hat,Red Hat subscription/insights logs,N,,AI Analysis,3/25/2026
-collectd,298,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
-rhsmcertd-too_small,206,unmapped,operational,,low,,Red Hat,Red Hat subscription/insights logs,N,,AI Analysis,3/25/2026
-kubernetes,168,unmapped,operational,N/A,med,"Change.All_Changes, Alerts.Alerts",Kubernetes,Kubernetes orchestration logs,N,,AI Analysis,03/25/2026
-k8s:container,168,unmapped,operational,N/A,med,Endpoint.Processes,Kubernetes,Kubernetes container logs,N,,AI Analysis,03/25/2026
-k8s:pod,168,unmapped,operational,N/A,med,Change.All_Changes,Kubernetes,Kubernetes pod logs,N,,AI Analysis,03/25/2026
-k8s:node,168,unmapped,operational,N/A,med,Inventory.Inventory,Kubernetes,Kubernetes node logs,N,,AI Analysis,03/25/2026
-k8s:events,168,unmapped,operational,N/A,med,Alerts.Alerts,Kubernetes,Kubernetes event logs,N,,AI Analysis,03/25/2026
-Unix:VSFTPDConfig,100,unmapped,operational,,low,,Unix/Linux,Unix system data (Unix:VSFTPDConfig),N,,AI Analysis,3/25/2026
-ansible,84,unmapped,operational,N/A,med,Change.All_Changes,Ansible,Ansible automation logs,N,,AI Analysis,03/25/2026
-puppet,84,unmapped,operational,N/A,med,Change.All_Changes,Puppet,Puppet configuration management logs,N,,AI Analysis,03/25/2026
-chef,84,unmapped,operational,N/A,med,Change.All_Changes,Chef,Chef configuration management logs,N,,AI Analysis,03/25/2026
-salt,84,unmapped,operational,N/A,med,Change.All_Changes,SaltStack,SaltStack configuration management logs,N,,AI Analysis,03/25/2026
-terraform,84,unmapped,operational,N/A,med,Change.All_Changes,HashiCorp,Terraform infrastructure as code logs,N,,AI Analysis,03/25/2026
-consul,84,unmapped,operational,N/A,med,Change.All_Changes,HashiCorp,HashiCorp Consul service mesh logs,N,,AI Analysis,03/25/2026
-nomad,84,unmapped,operational,N/A,med,Change.All_Changes,HashiCorp,HashiCorp Nomad orchestration logs,N,,AI Analysis,03/25/2026
-snow:cmdb_ci_service,71,unmapped,operational,,low,Compute_Inventory.All_Inventory,ServiceNow,ServiceNow CMDB records,N,,AI Analysis,3/25/2026
-snow:sys_user_group,59,unmapped,operational,,low,,ServiceNow,ServiceNow user records,N,,AI Analysis,3/25/2026
-jenkins,42,unmapped,operational,N/A,med,Change.All_Changes,Jenkins,Jenkins CI/CD pipeline logs,N,,AI Analysis,03/25/2026
-gitlab,42,unmapped,operational,N/A,med,Change.All_Changes,GitLab,GitLab DevOps platform logs,N,,AI Analysis,03/25/2026
-github,42,unmapped,operational,N/A,med,Change.All_Changes,GitHub,GitHub version control logs,N,,AI Analysis,03/25/2026
-bitbucket,42,unmapped,operational,N/A,med,Change.All_Changes,Atlassian,Bitbucket version control logs,N,,AI Analysis,03/25/2026
-jira,42,unmapped,operational,N/A,low,Change.All_Changes,Atlassian,Jira issue tracking logs,N,,AI Analysis,03/25/2026
-confluence,42,unmapped,operational,N/A,low,Change.All_Changes,Atlassian,Confluence wiki logs,N,,AI Analysis,03/25/2026
-postgresql,40,unmapped,operational,N/A,low,Databases.Database_Logs,PostgreSQL,PostgreSQL database logs,N,,AI Analysis,3/25/2026
-snow:cmn_location,29,unmapped,operational,,low,,ServiceNow,ServiceNow snow:cmn_location,N,,AI Analysis,3/25/2026
-splunk,21,unmapped,operational,SIEM,med,Alerts.Alerts,Splunk,Splunk platform logs,N,,AI Analysis,03/25/2026
-splunkd,21,unmapped,operational,SIEM,med,Alerts.Alerts,Splunk,Splunk daemon logs,Y,Splunk internal — daemon logs,AI Analysis,03/25/2026
-splunkd_access,21,unmapped,operational,SIEM,med,Web.Web,Splunk,Splunk daemon access logs,Y,Splunk internal — REST API access logs,AI Analysis,03/25/2026
-splunk_search,21,unmapped,operational,SIEM,low,Change.All_Changes,Splunk,Splunk search logs,N,,AI Analysis,03/25/2026
-splunk_web_access,21,unmapped,operational,SIEM,med,Web.Web,Splunk,Splunk web interface access logs,Y,Splunk internal — web UI access logs,AI Analysis,03/25/2026
-splunk_web_service,21,unmapped,operational,SIEM,low,Alerts.Alerts,Splunk,Splunk web service logs,Y,Splunk internal — web service logs,AI Analysis,03/25/2026
-modular_alerts,21,unmapped,operational,SIEM,med,Alerts.Alerts,Splunk,Splunk modular alert logs,N,,AI Analysis,03/25/2026
-scheduler,21,unmapped,operational,SIEM,low,Change.All_Changes,Splunk,Splunk scheduler logs,Y,Splunk internal — search scheduler logs,AI Analysis,03/25/2026
-opensearch_deprecation-too_small,15,unmapped,operational,,low,,OpenSearch,OpenSearch logs,N,,AI Analysis,3/25/2026
-rhsm-too_small,14,unmapped,operational,,low,,Red Hat,Red Hat subscription/insights logs,N,,AI Analysis,3/25/2026
-mongod,11,unmapped,operational,N/A,low,Databases.Database_Logs,MongoDB,MongoDB database logs,Y,Splunk internal — MongoDB/KV store logs,AI Analysis,03/25/2026
-mysql,11,unmapped,operational,N/A,low,Databases.Database_Logs,Oracle,MySQL database logs,N,,AI Analysis,03/25/2026
-oracle,11,unmapped,operational,N/A,low,Databases.Database_Logs,Oracle,Oracle database logs,N,,AI Analysis,03/25/2026
-mssql,11,unmapped,operational,N/A,low,Databases.Database_Logs,Microsoft,Microsoft SQL Server logs,N,,AI Analysis,03/25/2026
-redis,11,unmapped,operational,N/A,low,Databases.Database_Logs,Redis,Redis in-memory database logs,N,,AI Analysis,03/25/2026
-elasticsearch,11,unmapped,operational,N/A,med,Alerts.Alerts,Elastic,Elasticsearch search engine logs,N,,AI Analysis,03/25/2026
-logstash,11,unmapped,operational,N/A,low,Change.All_Changes,Elastic,Logstash data processing logs,N,,AI Analysis,03/25/2026
-kibana,11,unmapped,operational,N/A,low,Web.Web,Elastic,Kibana visualization logs,N,,AI Analysis,03/25/2026
-zookeeper,6,unmapped,operational,N/A,low,Change.All_Changes,Apache,Apache ZooKeeper coordination logs,N,,AI Analysis,03/25/2026
-kafka,6,unmapped,operational,N/A,low,Change.All_Changes,Apache,Apache Kafka streaming logs,N,,AI Analysis,03/25/2026
-rabbitmq,6,unmapped,operational,N/A,low,Change.All_Changes,RabbitMQ,RabbitMQ message broker logs,N,,AI Analysis,03/25/2026
-activemq,6,unmapped,operational,N/A,low,Change.All_Changes,Apache,Apache ActiveMQ message broker logs,N,,AI Analysis,03/25/2026
-haproxy,6,unmapped,operational,N/A,med,"Web.Proxy, Network_Traffic.All_Traffic",HAProxy,HAProxy load balancer logs,N,,AI Analysis,03/25/2026
-snmp,3,unmapped,operational,N/A,low,Performance.Performance,,SNMP network monitoring data,N,,AI Analysis,03/25/2026
-snmptrap,3,unmapped,operational,N/A,med,Alerts.Alerts,,SNMP trap notifications,N,,AI Analysis,03/25/2026
-Microsoft.Azure.NetworkWatcher.NetworkWatcherAgentLinux-monitor.log,2,unmapped,operational,,low,,Microsoft,Azure Microsoft.Azure.NetworkWatcher.NetworkWatche,N,,AI Analysis,3/25/2026
-dhcp,2,unmapped,operational,N/A,low,Network_Traffic.All_Traffic,,DHCP server logs,N,,AI Analysis,03/25/2026
-ntp,2,unmapped,operational,N/A,low,Change.All_Changes,,NTP time synchronization logs,N,,AI Analysis,03/25/2026
-slack,1,unmapped,operational,N/A,low,"Change.All_Changes, Authentication.Authentication",Slack,Slack collaboration platform logs,N,,AI Analysis,03/25/2026
-teams,1,unmapped,operational,N/A,low,"Change.All_Changes, Authentication.Authentication",Microsoft,Microsoft Teams collaboration logs,N,,AI Analysis,03/25/2026
-zoom,1,unmapped,operational,N/A,low,Authentication.Authentication,Zoom,Zoom video conferencing logs,N,,AI Analysis,03/25/2026
-webex,1,unmapped,operational,N/A,low,Authentication.Authentication,Cisco,Webex video conferencing logs,N,,AI Analysis,03/25/2026
-landesk,1,unmapped,operational,N/A,low,"Inventory.Inventory, Updates.All_Updates",Ivanti,Ivanti (LANDesk) endpoint management logs,N,,AI Analysis,03/25/2026
-sccm,1,unmapped,operational,N/A,low,"Inventory.Inventory, Updates.All_Updates",Microsoft,Microsoft SCCM logs,N,,AI Analysis,03/25/2026
-wsus,1,unmapped,operational,N/A,low,Updates.All_Updates,Microsoft,Windows Server Update Services logs,N,,AI Analysis,03/25/2026
-jamf,1,unmapped,operational,N/A,low,"Inventory.Inventory, Updates.All_Updates",Jamf,Jamf macOS/iOS management logs,N,,AI Analysis,03/25/2026
-intune,1,unmapped,operational,N/A,med,"Inventory.Inventory, Updates.All_Updates",Microsoft,Microsoft Intune MDM logs,N,,AI Analysis,03/25/2026
-mobileiron,1,unmapped,operational,N/A,med,"Inventory.Inventory, Authentication.Authentication",Ivanti,MobileIron MDM logs,N,,AI Analysis,03/25/2026
-airwatch,1,unmapped,operational,N/A,med,"Inventory.Inventory, Authentication.Authentication",VMware,VMware Workspace ONE (AirWatch) logs,N,,AI Analysis,03/25/2026
-lsof,6433366426,unmapped,operational,,low,,Linux,List open files command output,N,,AI Analysis,3/25/2026
-WinHostMon,1719196562,unmapped,operational,,low,Compute_Inventory.All_Inventory,Microsoft,Windows host monitoring data,N,,AI Analysis,3/25/2026
-PerfmonMk:ProcessorInformation,153725387,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows performance metrics,N,,AI Analysis,3/25/2026
-PerfmonMk:Memory,152644175,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows performance metrics,N,,AI Analysis,3/25/2026
-PerfmonMk:LogicalDisk,152644036,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows performance metrics,N,,AI Analysis,3/25/2026
-PerfmonMk:PhysicalDisk,152643298,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows performance metrics,N,,AI Analysis,3/25/2026
-PerfmonMk:System,152642191,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows performance metrics,N,,AI Analysis,3/25/2026
-PerfmonMk:Network,152637372,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows performance metrics,N,,AI Analysis,3/25/2026
-PerfmonMk:Process,152050541,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows performance metrics,N,,AI Analysis,3/25/2026
-secure,95167954,unmapped,security,EDR,high,Authentication.Authentication,Linux,Linux secure authentication logs,N,,AI Analysis,3/25/2026
-powershell:appx2,19735251,unmapped,operational,,low,,Microsoft,PowerShell AppX package inventory,N,,AI Analysis,3/25/2026
-server,13217937,unmapped,operational,,low,,,Generic server logs,N,,AI Analysis,3/25/2026
-osconfig_asb_perf-too_small,8060047,unmapped,operational,,low,,Google Cloud,GCP OS Config performance data,N,,AI Analysis,3/25/2026
-ldap_child,7033476,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
-falcon-libbpf,5950932,unmapped,security,EDR,med,Endpoint.Processes,CrowdStrike,CrowdStrike Falcon falcon-libbpf,N,,AI Analysis,3/25/2026
-interfaces,5189520,unmapped,operational,,low,Performance.All_Performance.Network,,Network interface statistics,N,,AI Analysis,3/25/2026
-protocol,5145774,unmapped,operational,,low,Performance.All_Performance.Network,,Network protocol statistics,N,,AI Analysis,3/25/2026
-agent.console,4724881,unmapped,operational,,low,,Microsoft,Azure VM agent/handler logs,N,,AI Analysis,3/25/2026
-am:cw:agent,4005230,unmapped,operational,,low,,Amazon Web Services,AWS CloudWatch agent logs,N,,AI Analysis,3/25/2026
-extension,3529890,unmapped,operational,,low,,Microsoft,Azure VM agent/handler logs,N,,AI Analysis,3/25/2026
-kern,2542954,unmapped,operational,,low,,Linux,Linux kernel/boot messages,N,,AI Analysis,3/25/2026
-falcon,1859880,unmapped,security,EDR,med,Endpoint.Processes,CrowdStrike,CrowdStrike Falcon falcon,N,,AI Analysis,3/25/2026
-measurements,1841785,unmapped,operational,,none,Performance.All_Performance,,Generic measurement data,N,,AI Analysis,3/25/2026
-statistics,1785385,unmapped,operational,,none,Performance.All_Performance,,Generic statistics data,N,,AI Analysis,3/25/2026
-tracking,1767167,unmapped,operational,,low,,,Generic tracking data,N,,AI Analysis,3/25/2026
-modular_alerts:risk,1183060,unmapped,security,SIEM,high,Alerts.Alerts,Splunk,Splunk ES risk modular alert,N,,AI Analysis,3/25/2026
-app:rds:postgresql,907409,unmapped,operational,,low,Databases.All_Databases,Amazon Web Services,AWS RDS postgresql logs,N,,AI Analysis,3/25/2026
-access-too_small,869779,unmapped,security,,med,Web.Web,Apache,Web access logs,N,,AI Analysis,3/25/2026
-Script:InstalledApps,618512,unmapped,operational,,low,Compute_Inventory.All_Inventory,Splunk,Splunk scripted input: installed apps,N,,AI Analysis,3/25/2026
-waagent,586651,unmapped,operational,,low,,Microsoft,Azure Linux agent logs,N,,AI Analysis,3/25/2026
-access_combined,582544,unmapped,security,,med,Web.Web,Apache,Web access logs,N,,AI Analysis,3/25/2026
-osconfig_asb_perf-3,501074,unmapped,operational,,low,,Google Cloud,GCP OS Config performance data,N,,AI Analysis,3/25/2026
-exec,347195,unmapped,security,,med,Endpoint.Processes,,Command execution logs,N,,AI Analysis,3/25/2026
-eucanalytics,290389,unmapped,operational,,low,,,Eucalyptus analytics data,N,,AI Analysis,3/25/2026
-dnf.librepo,219603,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
-krb_child,206005,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
-svagent,194469,unmapped,operational,,low,,,SV agent logs,N,,AI Analysis,3/25/2026
-gc.log-2,161447,unmapped,operational,,none,,,Garbage collection logs,N,,AI Analysis,3/25/2026
-messages-4,161338,unmapped,operational,,low,,Linux,Linux system messages,N,,AI Analysis,3/25/2026
-jobserver-2,134905,unmapped,operational,,low,,,Job server logs,N,,AI Analysis,3/25/2026
-falcon-libbpf-3,109954,unmapped,security,EDR,med,Endpoint.Processes,CrowdStrike,CrowdStrike Falcon falcon-libbpf-3,N,,AI Analysis,3/25/2026
-CommandExecution,103786,unmapped,security,,med,Endpoint.Processes,,Command execution audit logs,N,,AI Analysis,3/25/2026
-Script:TimesyncConfiguration,98343,unmapped,operational,,low,Performance.OS.Timesync,Splunk,Splunk scripted input: time sync config,N,,AI Analysis,3/25/2026
-Script:TimesyncStatus,98342,unmapped,operational,,low,Performance.OS.Timesync,Splunk,Splunk scripted input: time sync status,N,,AI Analysis,3/25/2026
-gc.log-4,74328,unmapped,operational,,none,,,Garbage collection logs,N,,AI Analysis,3/25/2026
-osconfig_asb_perf-4,58258,unmapped,operational,,low,,Google Cloud,GCP OS Config performance data,N,,AI Analysis,3/25/2026
-dnf.rpm,53150,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
-hawkey,51387,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
-access_combined_wcookie,50175,unmapped,security,,med,Web.Web,Apache,Web access logs,N,,AI Analysis,3/25/2026
-modular_alerts:notable,44725,unmapped,security,SIEM,high,Alerts.Alerts,Splunk,Splunk ES notable event output,N,,AI Analysis,3/25/2026
-dnf.librepo-5,33478,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
-boot,33350,unmapped,operational,,low,,Linux,Linux kernel/boot messages,N,,AI Analysis,3/25/2026
-dnf.librepo-4,32437,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
-asterisk_messages,32132,unmapped,operational,,low,,Asterisk,Asterisk VoIP system messages,N,,AI Analysis,3/25/2026
-gc.log-3,27039,unmapped,operational,,none,,,Garbage collection logs,N,,AI Analysis,3/25/2026
-krb5_child,23384,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
-handler,22343,unmapped,operational,,low,,Microsoft,Azure VM agent/handler logs,N,,AI Analysis,3/25/2026
-unknown-too_small,21661,unmapped,unknown,,low,,,Unknown truncated events,N,,AI Analysis,3/25/2026
-unknown,20041,unmapped,unknown,,low,,,Unknown sourcetype,N,,AI Analysis,3/25/2026
-osconfig_asb_perf-2,15825,unmapped,operational,,low,,Google Cloud,GCP OS Config performance data,N,,AI Analysis,3/25/2026
-time,14686,unmapped,operational,,low,Performance.OS.Timesync,,Time sync data,N,,AI Analysis,3/25/2026
-uarespawnd,14642,unmapped,operational,,low,,,UA respawn daemon logs,N,,AI Analysis,3/25/2026
-sessionlauncher,13733,unmapped,operational,,low,,Microsoft,Azure VM agent/handler logs,N,,AI Analysis,3/25/2026
-error-too_small,13229,unmapped,operational,,low,,,Error logs,N,,AI Analysis,3/25/2026
-unattended-upgrades,11112,unmapped,operational,,low,Updates.Updates,Linux,Unattended upgrade logs,N,,AI Analysis,3/25/2026
-Script:NetworkConfiguration,9453,unmapped,operational,,low,Compute_Inventory.All_Inventory.Network,Splunk,Splunk scripted input: network config,N,,AI Analysis,3/25/2026
-hardware,8842,unmapped,operational,,low,Compute_Inventory.All_Inventory,,Hardware inventory data,N,,AI Analysis,3/25/2026
-osconfig_telemetry-2,8468,unmapped,operational,,low,,Google Cloud,GCP OS Config performance data,N,,AI Analysis,3/25/2026
-osconfig_asb_perf,7676,unmapped,operational,,low,,Google Cloud,GCP OS Config performance data,N,,AI Analysis,3/25/2026
-apiserver-2,7180,unmapped,operational,,low,,Kubernetes,Kubernetes API server logs,N,,AI Analysis,3/25/2026
-tuned,6786,unmapped,operational,,low,,Linux,Tuned system tuning daemon logs,N,,AI Analysis,3/25/2026
-app:rds:error,6632,unmapped,operational,,low,Databases.All_Databases,Amazon Web Services,AWS RDS error logs,N,,AI Analysis,3/25/2026
-maillog,6530,unmapped,operational,,low,Email.All_Email,Linux,Linux mail server logs,N,,AI Analysis,3/25/2026
-error_log,6412,unmapped,operational,,low,,Apache,Apache error logs,N,,AI Analysis,3/25/2026
-agentlauncher,4698,unmapped,operational,,low,,Microsoft,Azure VM agent/handler logs,N,,AI Analysis,3/25/2026
-term,4593,unmapped,operational,,low,,,Terminal session logs,N,,AI Analysis,3/25/2026
-osconfig_telemetry,3678,unmapped,operational,,low,,Google Cloud,GCP OS Config performance data,N,,AI Analysis,3/25/2026
-config_file,3614,unmapped,operational,,low,,,Configuration file changes,N,,AI Analysis,3/25/2026
-clamscan,3080,unmapped,security,EPP,med,Malware.Malware_Attacks,ClamAV,ClamAV scan results,N,,AI Analysis,3/25/2026
-p11_child,3033,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
-dnf-11,3007,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
-krb5_child-2,2514,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
-userdata,1691,unmapped,operational,,low,,,User data logs,N,,AI Analysis,3/25/2026
-Xorg,1410,unmapped,operational,,none,,Linux,X.org display server logs,N,,AI Analysis,3/25/2026
-extension-5,1400,unmapped,operational,,low,,Microsoft,Azure VM agent/handler logs,N,,AI Analysis,3/25/2026
-handler-3,1251,unmapped,operational,,low,,Microsoft,Azure VM agent/handler logs,N,,AI Analysis,3/25/2026
-handler-4,1142,unmapped,operational,,low,,Microsoft,Azure VM agent/handler logs,N,,AI Analysis,3/25/2026
-install-3,1135,unmapped,operational,,low,,,Installation/uninstall logs,N,,AI Analysis,3/25/2026
-alternatives,861,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
-handler-2,746,unmapped,operational,,low,,Microsoft,Azure VM agent/handler logs,N,,AI Analysis,3/25/2026
-dnf-7,737,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
-json,726,unmapped,unknown,,low,,,Generic JSON logs,N,,AI Analysis,3/25/2026
-app:rds:rds-events,723,unmapped,operational,,low,Databases.All_Databases,Amazon Web Services,AWS RDS rds-events logs,N,,AI Analysis,3/25/2026
-ldaptestconnection,638,unmapped,security,IAM,low,,,LDAP connection test logs,N,,AI Analysis,3/25/2026
-dnf.librepo-too_small,624,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
-modular_alerts:get_io_vulnerability_summary,510,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Splunk,Splunk vulnerability summary alert,N,,AI Analysis,3/25/2026
-install-2,457,unmapped,operational,,low,,,Installation/uninstall logs,N,,AI Analysis,3/25/2026
-main,418,unmapped,operational,,low,,,Main application logs,N,,AI Analysis,3/25/2026
-cdpcli,414,unmapped,operational,,low,,,CDP CLI logs,N,,AI Analysis,3/25/2026
-ufw-too_small,412,unmapped,security,FW,med,Network_Traffic.All_Traffic,Linux,Ubuntu firewall logs,N,,AI Analysis,3/25/2026
-hawkey-too_small,390,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
-uninstall-3,355,unmapped,operational,,low,,,Installation/uninstall logs,N,,AI Analysis,3/25/2026
-threatconnect:event,331,unmapped,security,TIP,high,Intrusion_Detection.IDS_Attacks,ThreatConnect,ThreatConnect threat intelligence,N,,AI Analysis,3/25/2026
-gc.log-too_small,325,unmapped,operational,,none,,,Garbage collection logs,N,,AI Analysis,3/25/2026
-kdump,275,unmapped,operational,,low,,Linux,Linux kernel/boot messages,N,,AI Analysis,3/25/2026
-harden,191,unmapped,security,,med,,,Security hardening audit data,N,,AI Analysis,3/25/2026
-uninstall-2,188,unmapped,operational,,low,,,Installation/uninstall logs,N,,AI Analysis,3/25/2026
-db_software_repo_sync,186,unmapped,operational,,low,,,DB software repo sync logs,N,,AI Analysis,3/25/2026
-unattended-upgrades-dpkg-13,185,unmapped,operational,,low,Updates.Updates,Linux,Unattended upgrade logs,N,,AI Analysis,3/25/2026
-apt_term,173,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
-install,172,unmapped,operational,,low,,,Installation/uninstall logs,N,,AI Analysis,3/25/2026
-app:rds:agent,130,unmapped,operational,,low,Databases.All_Databases,Amazon Web Services,AWS RDS agent logs,N,,AI Analysis,3/25/2026
-dependency-agent-install-too_small,127,unmapped,operational,,low,,Microsoft,Azure dependency agent logs,N,,AI Analysis,3/25/2026
-apport,116,unmapped,operational,,low,,Linux,Ubuntu crash report logs,N,,AI Analysis,3/25/2026
-tuned-32,116,unmapped,operational,,low,,Linux,Tuned system tuning daemon logs,N,,AI Analysis,3/25/2026
-config-too_small,106,unmapped,unknown,,low,,,config-too_small,N,,AI Analysis,3/25/2026
-falconctl,105,unmapped,security,EDR,med,Endpoint.Processes,CrowdStrike,CrowdStrike Falcon falconctl,N,,AI Analysis,3/25/2026
-kdump-too_small,80,unmapped,operational,,low,,Linux,Linux kernel/boot messages,N,,AI Analysis,3/25/2026
-cfn-init,69,unmapped,operational,,low,,Amazon Web Services,AWS CloudFormation init logs,N,,AI Analysis,3/25/2026
-dnf.librepo.log,63,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
-slwsconfigservice.log,56,unmapped,operational,,low,,,Config service logs,N,,AI Analysis,3/25/2026
-kdump-2,55,unmapped,operational,,low,,Linux,Linux kernel/boot messages,N,,AI Analysis,3/25/2026
-tuned-31,54,unmapped,operational,,low,,Linux,Tuned system tuning daemon logs,N,,AI Analysis,3/25/2026
-InMage_drivers,48,unmapped,operational,,low,,Microsoft,Azure Site Recovery drivers,N,,AI Analysis,3/25/2026
-telegraf-too_small,45,unmapped,operational,,none,Performance.All_Performance,,Telegraf metrics agent,N,,AI Analysis,3/25/2026
-rules-too_small,44,unmapped,operational,,low,,,Rules configuration data,N,,AI Analysis,3/25/2026
-tuned-30,33,unmapped,operational,,low,,Linux,Tuned system tuning daemon logs,N,,AI Analysis,3/25/2026
-cfn-wire,30,unmapped,operational,,low,,Amazon Web Services,AWS CloudFormation wire logs,N,,AI Analysis,3/25/2026
-krb5_child-too_small,27,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
-uninstall-too_small,27,unmapped,operational,,low,,,Installation/uninstall logs,N,,AI Analysis,3/25/2026
-alternatives-too_small,18,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
-modular_alerts:victorops,17,unmapped,operational,,low,,Splunk,Splunk VictorOps alert action,N,,AI Analysis,3/25/2026
-unattended-upgrades-dpkg-14,17,unmapped,operational,,low,Updates.Updates,Linux,Unattended upgrade logs,N,,AI Analysis,3/25/2026
-page_log,13,unmapped,operational,,none,,CUPS,CUPS print page log,N,,AI Analysis,3/25/2026
-powershell,13,unmapped,security,EDR,high,Endpoint.Processes,Microsoft,PowerShell execution logs,N,,AI Analysis,3/25/2026
-cnf-too_small,12,unmapped,operational,,none,,,Configuration data,N,,AI Analysis,3/25/2026
-apport-too_small,9,unmapped,operational,,low,,Linux,Ubuntu crash report logs,N,,AI Analysis,3/25/2026
-choose_repo,9,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
-dnf.log-3,8,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
-vmware-vmtoolsd-root,8,unmapped,operational,,low,,VMware,VMware Tools daemon logs,N,,AI Analysis,3/25/2026
-install_demo_configuration-too_small,7,unmapped,operational,,low,,,Installation/uninstall logs,N,,AI Analysis,3/25/2026
-dnf.librepo.log-2,2,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
-maillog-too_small,2,unmapped,operational,,low,Email.All_Email,Linux,Linux mail server logs,N,,AI Analysis,3/25/2026
-page_log-too_small,2,unmapped,operational,,none,,CUPS,CUPS print page log,N,,AI Analysis,3/25/2026
-eucanalytics-too_small,1,unmapped,operational,,low,,,Eucalyptus analytics data,N,,AI Analysis,3/25/2026
-fontconfig,1,unmapped,operational,,none,,Linux,Font configuration data,N,,AI Analysis,3/25/2026
-fstab-too_small,1,unmapped,operational,,none,,Linux,Filesystem table config,N,,AI Analysis,3/25/2026
-swp-too_small,1,unmapped,operational,,none,,,Swap file data,N,,AI Analysis,3/25/2026
-stash,31333728,excluded,operational,,none,,Splunk,summary index stash,Y,Splunk internal — summary index stash,MDI Default,3/25/2026
+XmlWinEventLog,0,mapped,security,EDR,high,"Authentication.Authentication, Change.All_Changes, Endpoint.Processes",Microsoft,Windows XML Event Logs,N,,AI Analysis,3/25/2026
+aws:cloudwatchlogs:vpcflow,0,mapped,security,CTD,high,Network_Traffic.All_Traffic,Amazon Web Services,AWS VPC Flow Logs,N,,AI Analysis,3/25/2026
+linux_audit,0,mapped,security,EDR,high,"Authentication.Authentication, Change.All_Changes, Intrusion_Detection.IDS_Attacks",Linux,Linux audit daemon logs,N,,AI Analysis,3/25/2026
+WinEventLog:Microsoft-Windows-CodeIntegrity/Operational,0,mapped,security,EPP,high,Malware.Malware_Operations,Microsoft,Windows Code Integrity events,N,,AI Analysis,3/25/2026
+auditd,0,mapped,security,EDR,high,"Authentication.Authentication, Change.All_Changes, Intrusion_Detection.IDS_Attacks",Linux,Linux auditd logs,N,,AI Analysis,3/25/2026
+syslog,0,mapped,security,,med,"Alerts.Alerts, Change.All_Changes, Intrusion_Detection.IDS_Attacks",Unix/Linux,Generic syslog messages,N,,AI Analysis,3/25/2026
+pan:traffic,0,mapped,security,NGFW,high,Network_Traffic.All_Traffic,Palo Alto Networks,Palo Alto firewall traffic logs,N,,AI Analysis,3/25/2026
+pan:threat,0,mapped,security,NGFW,high,"Intrusion_Detection.IDS_Attacks, Web.Web",Palo Alto Networks,Palo Alto threat logs,N,,AI Analysis,3/25/2026
+aws:route53:queries,0,mapped,security,CTD,high,Network_Resolution.DNS,Amazon Web Services,AWS Route53 DNS query logs,N,,AI Analysis,3/25/2026
+linux_secure,0,mapped,security,IAM,high,Authentication.Authentication,Linux,Linux /var/log/secure authentication logs,N,,AI Analysis,3/25/2026
+pan:userid,0,mapped,security,NGFW,high,Authentication.Authentication,Palo Alto Networks,Palo Alto user identification logs,N,,AI Analysis,3/25/2026
+aws:cloudtrail,0,mapped,security,CSPM,high,"Authentication.Authentication, Change.All_Changes",Amazon Web Services,AWS CloudTrail API activity logs,N,,AI Analysis,3/25/2026
+linux_messages_syslog,0,mapped,security,,med,"Alerts.Alerts, Change.All_Changes",Linux,Linux /var/log/messages syslog,N,,AI Analysis,3/25/2026
+TrendMicro,0,mapped,security,EPP,high,Malware.Malware_Operations,Trend Micro,Trend Micro antivirus logs,N,,AI Analysis,3/25/2026
+o365:management:activity,0,mapped,security,CASB,high,"Authentication.Authentication, Change.All_Changes, Email.All_Email",Microsoft,Office 365 management activity logs,N,,AI Analysis,3/25/2026
+crowdstrike:device:json,0,mapped,security,EDR,high,Endpoint.Processes,CrowdStrike,CrowdStrike device telemetry (JSON),N,,AI Analysis,3/25/2026
+pan:system,0,mapped,security,NGFW,med,Authentication.Authentication,Palo Alto Networks,Palo Alto system logs,N,,AI Analysis,3/25/2026
+MSAD:NT6:DNS-Zone-Information,0,mapped,security,IAM,med,Network_Resolution.DNS,Microsoft,Active Directory DNS zone information,N,,AI Analysis,3/25/2026
+rsa:securid:runtime:syslog,0,mapped,security,MFA,high,"Authentication.Authentication, Change.All_Changes",RSA Security,RSA SecurID runtime logs,N,,AI Analysis,3/25/2026
+CrowdStrike:Event:Streams:JSON,0,mapped,security,EDR,high,Authentication.Authentication,CrowdStrike,CrowdStrike event streams (JSON),N,,AI Analysis,3/25/2026
+OktaIM2:log,0,mapped,security,IAM,high,"Authentication.Authentication, Change.All_Changes",Okta,Okta identity management logs,N,,AI Analysis,3/25/2026
+WinEventLog,0,mapped,security,EDR,high,"Authentication.Authentication, Malware.Malware_Operations",Microsoft,Windows Event Log,N,,AI Analysis,3/25/2026
+auth,0,mapped,security,IAM,high,"Authentication.Authentication, Change.All_Changes",Unix/Linux,Generic authentication logs,N,,AI Analysis,3/25/2026
+rsa:securid:admin:syslog,0,mapped,security,MFA,med,Change.All_Changes,RSA Security,RSA SecurID admin logs,N,,AI Analysis,3/25/2026
+docker:keycloak,0,mapped,security,IAM,high,Authentication.Authentication,Keycloak,Keycloak authentication logs (Docker),N,,AI Analysis,3/25/2026
+crowdstrike:unified:alert:json,0,mapped,security,EDR,high,Alerts.Alerts,CrowdStrike,CrowdStrike unified alert data (JSON),N,,AI Analysis,3/25/2026
+beyondtrust:rs:session:cef,0,mapped,security,PAM,high,"Authentication.Authentication, Change.All_Changes, Network_Sessions.All_Sessions",BeyondTrust,BeyondTrust remote support session logs,N,,AI Analysis,3/25/2026
+snow:sys_audit,0,mapped,operational,,med,Change.Audit_Logs,ServiceNow,ServiceNow system audit logs,N,,AI Analysis,3/25/2026
+netstat,0,mapped,operational,,low,Endpoint.Ports,Linux/Unix,Network statistics output,N,,AI Analysis,3/25/2026
+Script:ListeningPorts,0,mapped,operational,,low,Endpoint.Ports,Splunk,Splunk scripted input: listening ports,N,,AI Analysis,3/25/2026
+cron,0,mapped,operational,,low,Change.All_Changes,Linux/Unix,Cron job execution logs,N,,AI Analysis,3/25/2026
+snow:sys_audit_delete,0,mapped,operational,,med,Change.Audit_Logs,ServiceNow,ServiceNow system audit delete records,N,,AI Analysis,3/25/2026
+openPorts,0,mapped,operational,,low,Endpoint.Ports,,Open ports inventory,N,,AI Analysis,3/25/2026
+Unix:Update,0,mapped,operational,,low,Updates.All_Updates,Unix/Linux,Unix system update logs,N,,AI Analysis,3/25/2026
+appservice,0,mapped,operational,,med,Alerts.Alerts,,Application service alerts,N,,AI Analysis,3/25/2026
+snow:change_request,0,mapped,operational,,med,Change.All_Changes,ServiceNow,ServiceNow change request records,N,,AI Analysis,3/25/2026
+snow:change_task,0,mapped,operational,,med,Change.All_Changes,ServiceNow,ServiceNow change task records,N,,AI Analysis,3/25/2026
+pan:netflow,0,unmapped,security,NGFW,med,Network_Traffic.All_Traffic,Palo Alto Networks,Palo Alto NetFlow data,N,,AI Analysis,3/25/2026
+MSAD:NT6:DNS,0,unmapped,security,IAM,med,Network_Resolution.DNS,Microsoft,Active Directory DNS logs,N,,AI Analysis,3/25/2026
+linux_auditd,0,unmapped,security,EDR,high,"Authentication.Authentication, Change.All_Changes, Intrusion_Detection.IDS_Attacks",Linux,Linux audit daemon logs,N,,AI Analysis,3/25/2026
+pan:traffic:json,0,unmapped,security,NGFW,high,Network_Traffic.All_Traffic,Palo Alto Networks,Palo Alto firewall traffic logs,N,,AI Analysis,3/25/2026
+pan:threat:json,0,unmapped,security,"NGFW, IPS",high,"Intrusion_Detection.IDS_Attacks, Network_Traffic.All_Traffic",Palo Alto Networks,Palo Alto threat logs,N,,AI Analysis,3/25/2026
+cisco:ios,0,unmapped,security,FW,med,"Network_Traffic.All_Traffic, Change.All_Changes",Cisco,Cisco IOS device logs,N,,AI Analysis,3/25/2026
+aws:s3:ssm:complianceitem,0,unmapped,security,VMS,med,Vulnerabilities.Vulnerabilities,Amazon Web Services,AWS SSM compliance data,N,,AI Analysis,3/25/2026
+cisco:netflow,0,unmapped,security,FW,med,Network_Traffic.All_Traffic,Cisco,Cisco NetFlow data,N,,AI Analysis,3/25/2026
+crowdstrike:indicators:json,0,unmapped,security,"EDR, TIP",high,Intrusion_Detection.IDS_Attacks,CrowdStrike,CrowdStrike threat intelligence,N,,AI Analysis,3/25/2026
+azure:aad:user,0,unmapped,security,IAM,med,Compute_Inventory.All_Inventory,Microsoft,Azure AD identity data,N,,AI Analysis,3/25/2026
+ms:defender:ent,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+azure:aad:device,0,unmapped,security,IAM,med,Compute_Inventory.All_Inventory,Microsoft,Azure AD identity data,N,,AI Analysis,3/25/2026
+azure:aad:group,0,unmapped,security,IAM,med,Compute_Inventory.All_Inventory,Microsoft,Azure AD identity data,N,,AI Analysis,3/25/2026
+aws:s3:ssm:windowsrole,0,unmapped,security,EDR,med,,Microsoft,Microsoft aws:s3:ssm:windowsrole,N,,AI Analysis,3/25/2026
+gitlab:nginx:access,0,unmapped,security,,med,Web.Web,GitLab,GitLab access logs,N,,AI Analysis,3/25/2026
+nessus_messages,0,unmapped,security,VMS,low,,Tenable,Tenable Nessus scan messages,N,,AI Analysis,3/25/2026
+vault,0,unmapped,security,PAM,high,"Authentication.Authentication, Change.Audit_Logs",HashiCorp,HashiCorp Vault secrets management logs,N,,AI Analysis,3/25/2026
+tenable:sc:vuln,0,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Tenable,Tenable Security Center vulnerability data,N,,AI Analysis,3/25/2026
+microsoft:defender:core,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+ms:defender:core,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender_core_err-too_small,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+aws:s3:ssm:windowsupdate,0,unmapped,security,EDR,med,,Microsoft,Microsoft aws:s3:ssm:windowsupdate,N,,AI Analysis,3/25/2026
+pan:system:json,0,unmapped,security,NGFW,med,Change.All_Changes,Palo Alto Networks,Palo Alto system logs,N,,AI Analysis,3/25/2026
+bash_history,0,unmapped,security,,med,Endpoint.Processes,,Command history logs,N,,AI Analysis,3/25/2026
+access_log-too_small,0,unmapped,security,,med,Web.Web,,Web/SSL access logs,N,,AI Analysis,3/25/2026
+OktaIM2:appUser,0,unmapped,security,IAM,med,,Okta,Okta application data,N,,AI Analysis,3/25/2026
+aws:ssm:compliance:summary,0,unmapped,security,CSPM,med,"Change.All_Changes, Vulnerabilities.Vulnerabilities",Amazon Web Services,AWS SSM compliance summary data,N,,AI Analysis,03/25/2026
+aws:ssm:complianceitem,0,unmapped,security,CSPM,med,"Change.All_Changes, Vulnerabilities.Vulnerabilities",Amazon Web Services,AWS SSM compliance item details,N,,AI Analysis,03/25/2026
+aws:cloudwatchlogs:guardduty,0,unmapped,security,CTD,high,"Alerts.Alerts, Intrusion_Detection.IDS_Attacks",Amazon Web Services,AWS GuardDuty logs via CloudWatch,N,,AI Analysis,03/25/2026
+aws:rds:audit,0,unmapped,security,,med,"Change.Audit_Logs, Databases.Database_Audit",Amazon Web Services,AWS RDS database audit logs,N,,AI Analysis,03/25/2026
+aws:inspector:finding,0,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Amazon Web Services,AWS Inspector vulnerability findings,N,,AI Analysis,03/25/2026
+nessus:scan,0,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Tenable,Tenable Nessus vulnerability scan results,N,,AI Analysis,03/25/2026
+MSAD:NT6:Netlogon,0,unmapped,security,IAM,high,Authentication.Authentication,Microsoft,AD Netlogon events,N,,AI Analysis,3/25/2026
+squid:access,0,unmapped,security,SWG,med,Web.Web,Squid,Squid proxy access logs,N,,AI Analysis,3/25/2026
+sssd_SAPGSS,0,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
+sssd,0,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
+aws:s3:ssm:compliancesummary,0,unmapped,security,VMS,med,Vulnerabilities.Vulnerabilities,Amazon Web Services,AWS SSM compliance data,N,,AI Analysis,3/25/2026
+ms:defender:alerts,0,unmapped,security,EDR,high,"Alerts.Alerts, Intrusion_Detection.IDS_Attacks",Microsoft,Microsoft Defender alert data,N,,AI Analysis,03/25/2026
+ms:defender:events,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Operations",Microsoft,Microsoft Defender event data,N,,AI Analysis,03/25/2026
+ms:aad:signin,0,unmapped,security,IAM,high,Authentication.Authentication,Microsoft,Azure Active Directory sign-in logs,N,,AI Analysis,03/25/2026
+ms:aad:audit,0,unmapped,security,IAM,med,Change.Audit_Logs,Microsoft,Azure Active Directory audit logs,N,,AI Analysis,03/25/2026
+ms:azure:activity,0,unmapped,security,CSPM,med,Change.All_Changes,Microsoft,Azure Activity Log,N,,AI Analysis,03/25/2026
+ms:azure:securitycenter,0,unmapped,security,CSPM,high,"Alerts.Alerts, Vulnerabilities.Vulnerabilities",Microsoft,Azure Security Center alerts,N,,AI Analysis,03/25/2026
+azure:aad:signin,0,unmapped,security,IAM,high,Authentication.Authentication,Microsoft,Azure AD sign-in logs,N,,AI Analysis,3/25/2026
+o365:graph:api,0,unmapped,security,IAM,med,,Microsoft,Office 365 Graph API data,N,,AI Analysis,3/25/2026
+pan:globalprotect:json,0,unmapped,security,VPN,high,"Authentication.Authentication, Network_Sessions.All_Sessions",Palo Alto Networks,Palo Alto GlobalProtect VPN logs,N,,AI Analysis,3/25/2026
+azure:aad:audit,0,unmapped,security,IAM,high,Change.All_Changes,Microsoft,Azure AD audit logs,N,,AI Analysis,3/25/2026
+crowdstrike:events:sensor,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Operations",CrowdStrike,CrowdStrike Falcon sensor events,N,,AI Analysis,03/25/2026
+crowdstrike:events:detections,0,unmapped,security,EDR,high,"Alerts.Alerts, Intrusion_Detection.IDS_Attacks",CrowdStrike,CrowdStrike Falcon detection events,N,,AI Analysis,03/25/2026
+crowdstrike:events:incidents,0,unmapped,security,EDR,high,Alerts.Alerts,CrowdStrike,CrowdStrike Falcon incident data,N,,AI Analysis,03/25/2026
+crowdstrike:events:indicators,0,unmapped,security,TIP,high,Threat_Intelligence.Threat_Intel,CrowdStrike,CrowdStrike threat indicators,N,,AI Analysis,03/25/2026
+ssl_access_log,0,unmapped,security,,med,Web.Web,,Web/SSL access logs,N,,AI Analysis,3/25/2026
+ssl_request_log,0,unmapped,security,,med,Web.Web,,Web/SSL access logs,N,,AI Analysis,3/25/2026
+OktaIM2:groupUser,0,unmapped,security,IAM,med,Compute_Inventory.All_Inventory.User,Okta,Okta user data,N,,AI Analysis,3/25/2026
+tenable:sc:plugins,0,unmapped,security,VMS,med,,Tenable,Tenable plugin data,N,,AI Analysis,3/25/2026
+microsoft_defender_core-7,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+pan:globalprotect,0,unmapped,security,VPN,high,"Authentication.Authentication, Network_Sessions.All_Sessions",Palo Alto Networks,Palo Alto GlobalProtect VPN logs,N,,AI Analysis,03/25/2026
+microsoft_defender_core-10,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender_core-15,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+usersWithLoginPrivs,0,unmapped,security,IAM,high,Authentication.Authentication,,Authentication logs (usersWithLoginPrivs),N,,AI Analysis,3/25/2026
+cisco:asa,0,unmapped,security,FW,high,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",Cisco,Cisco ASA firewall logs,N,,AI Analysis,03/25/2026
+citrix:netscaler,0,unmapped,security,FW,med,"Network_Traffic.All_Traffic, Web.Proxy",Citrix,Citrix NetScaler logs,N,,AI Analysis,03/25/2026
+sssd_nss,0,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
+Linux:SELinuxConfig,0,unmapped,security,EDR,med,,Linux,Linux SELinux config/policy data,N,,AI Analysis,3/25/2026
+nessus_agent,0,unmapped,security,VMS,med,,Tenable,Tenable Nessus agent logs,N,,AI Analysis,3/25/2026
+gitlab:api:json,0,unmapped,security,,med,Web.Web,GitLab,GitLab access logs,N,,AI Analysis,3/25/2026
+linux:sssd,0,unmapped,security,IAM,high,Authentication.Authentication,Linux,Linux SSSD authentication logs,N,,AI Analysis,03/25/2026
+linux:radius,0,unmapped,security,IAM,high,Authentication.Authentication,Linux,Linux RADIUS authentication logs,N,,AI Analysis,03/25/2026
+linux:ldap,0,unmapped,security,IAM,med,Authentication.Authentication,Linux,Linux LDAP logs,N,,AI Analysis,03/25/2026
+linux:kerberos,0,unmapped,security,IAM,high,Authentication.Authentication,Linux,Linux Kerberos authentication logs,N,,AI Analysis,03/25/2026
+tenable:sc:assets,0,unmapped,security,VMS,med,Compute_Inventory.All_Inventory,Tenable,Tenable asset data,N,,AI Analysis,3/25/2026
+fapolicyd-access,0,unmapped,security,EDR,med,Endpoint.Processes,Linux,File Access Policy Daemon logs,N,,AI Analysis,3/25/2026
+azure:securityCenter:task,0,unmapped,security,CSPM,high,Alerts.Alerts,Microsoft,Azure Security Center data,N,,AI Analysis,3/25/2026
+radius,0,unmapped,security,NAC,high,Authentication.Authentication,RADIUS,RADIUS authentication logs,N,,AI Analysis,3/25/2026
+microsoft_defender_core-12,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+aws:s3:ssm:scans,0,unmapped,security,VMS,med,Vulnerabilities.Vulnerabilities,Amazon Web Services,AWS SSM compliance data,N,,AI Analysis,3/25/2026
+microsoft_defender_core_err-2,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+sssd_pam,0,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
+microsoft_defender_core-8,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+azure:securityCenter:alert,0,unmapped,security,CSPM,high,Alerts.Alerts,Microsoft,Azure Security Center data,N,,AI Analysis,3/25/2026
+microsoft_defender_core_err,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+tenable:io:vuln,0,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Tenable,Tenable.io vulnerability data,N,,AI Analysis,03/25/2026
+tenable:sc:scanresult,0,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Tenable,Tenable Security Center scan results,N,,AI Analysis,03/25/2026
+nessus:scan:results,0,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Tenable,Nessus scan result details,N,,AI Analysis,03/25/2026
+OktaIM2:app,0,unmapped,security,IAM,med,,Okta,Okta application data,N,,AI Analysis,3/25/2026
+keeper_security,0,unmapped,security,PAM,high,Authentication.Authentication,Keeper Security,Keeper password manager logs,N,,AI Analysis,3/25/2026
+aide,0,unmapped,security,EPP,med,Change.All_Changes,AIDE,AIDE file integrity monitoring logs,N,,AI Analysis,3/25/2026
+microsoft_defender_core-6,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender_core-3,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+sssd_kcm,0,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
+privacyidea,0,unmapped,security,MFA,high,Authentication.Authentication,privacyIDEA,privacyIDEA MFA logs,N,,AI Analysis,3/25/2026
+gitlab:audit,0,unmapped,security,IAM,high,"Authentication.Authentication, Change.All_Changes",GitLab,GitLab audit logs,N,,AI Analysis,3/25/2026
+linux:audit:execve,0,unmapped,security,EDR,high,"Endpoint.Processes, Change.All_Changes",Linux,Linux audit execve system calls,N,,AI Analysis,03/25/2026
+linux:audit:syscall,0,unmapped,security,EDR,high,"Endpoint.Processes, Intrusion_Detection.IDS_Attacks",Linux,Linux audit system calls,N,,AI Analysis,03/25/2026
+linux:audit:path,0,unmapped,security,EDR,med,"Endpoint.Filesystem, Change.All_Changes",Linux,Linux audit file path events,N,,AI Analysis,03/25/2026
+linux:audit:sockaddr,0,unmapped,security,EDR,med,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",Linux,Linux audit socket address events,N,,AI Analysis,03/25/2026
+linux:audit:proctitle,0,unmapped,security,EDR,med,Endpoint.Processes,Linux,Linux audit process title events,N,,AI Analysis,03/25/2026
+linux:audit:cwd,0,unmapped,security,EDR,low,Endpoint.Processes,Linux,Linux audit current working directory,N,,AI Analysis,03/25/2026
+linux:audit:user,0,unmapped,security,IAM,high,Authentication.Authentication,Linux,Linux audit user events,N,,AI Analysis,03/25/2026
+linux:audit:avc,0,unmapped,security,EDR,med,Intrusion_Detection.IDS_Attacks,Linux,Linux audit SELinux AVC denials,N,,AI Analysis,03/25/2026
+linux:audit:selinux,0,unmapped,security,EDR,med,Intrusion_Detection.IDS_Attacks,Linux,Linux audit SELinux events,N,,AI Analysis,03/25/2026
+linux:audit:apparmor,0,unmapped,security,EDR,med,Intrusion_Detection.IDS_Attacks,Linux,Linux audit AppArmor events,N,,AI Analysis,03/25/2026
+microsoft_defender_core-29,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender_mplog-2,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender_core-18,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+ms:o365:security:events,0,unmapped,security,CASB,high,Alerts.Alerts,Microsoft,Office 365 security events,N,,AI Analysis,3/25/2026
+ms:o365:audit:general,0,unmapped,security,CASB,high,"Authentication.Authentication, Change.All_Changes",Microsoft,Office 365 audit logs,N,,AI Analysis,3/25/2026
+ms:o365:audit:all,0,unmapped,security,CASB,high,"Authentication.Authentication, Change.All_Changes",Microsoft,Office 365 audit logs,N,,AI Analysis,3/25/2026
+ms:security:alerts,0,unmapped,security,EDR,med,,Microsoft,Microsoft ms:security:alerts,N,,AI Analysis,3/25/2026
+history,0,unmapped,security,,med,Endpoint.Processes,,Command history logs,N,,AI Analysis,3/25/2026
+aws:s3:ssm:inspectormetricdatapackagescanner,0,unmapped,security,VMS,med,Vulnerabilities.Vulnerabilities,Amazon Web Services,AWS SSM compliance data,N,,AI Analysis,3/25/2026
+sap:hana:audit,0,unmapped,security,,med,Change.All_Changes,,Audit logs (sap:hana:audit),N,,AI Analysis,3/25/2026
+sssd_tmatenant.com-2,0,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
+microsoft_defender_core-5,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender_core_err-3,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+clamav_scan,0,unmapped,security,EPP,med,Malware.Malware_Attacks,ClamAV,ClamAV antivirus logs,N,,AI Analysis,3/25/2026
+microsoft_defender_enterprise_err-2,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender-3,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+mail,0,unmapped,security,ESG,med,Email.All_Email,Linux/Unix,Mail server logs,N,,AI Analysis,03/25/2026
+postfix,0,unmapped,security,ESG,med,Email.All_Email,Postfix,Postfix mail server logs,N,,AI Analysis,03/25/2026
+sendmail,0,unmapped,security,ESG,med,Email.All_Email,Sendmail,Sendmail mail server logs,N,,AI Analysis,03/25/2026
+exim,0,unmapped,security,ESG,med,Email.All_Email,Exim,Exim mail server logs,N,,AI Analysis,03/25/2026
+dovecot,0,unmapped,security,ESG,med,Email.All_Email,Dovecot,Dovecot IMAP/POP3 server logs,N,,AI Analysis,03/25/2026
+squid,0,unmapped,security,SWG,med,"Web.Proxy, Network_Traffic.All_Traffic",Squid,Squid proxy server logs,N,,AI Analysis,03/25/2026
+microsoft_defender_mplog-too_small,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender_diagnostic-3,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender_core-11,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender_core-2,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender_enterprise_err,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+apache,0,unmapped,security,,med,Web.Web,Apache,Apache web server logs,N,,AI Analysis,03/25/2026
+apache:access,0,unmapped,security,,med,Web.Web,Apache,Apache access logs,N,,AI Analysis,03/25/2026
+apache:error,0,unmapped,security,,med,Web.Web,Apache,Apache error logs,N,,AI Analysis,03/25/2026
+nginx,0,unmapped,security,,med,Web.Web,NGINX,NGINX web server logs,N,,AI Analysis,03/25/2026
+nginx:access,0,unmapped,security,,med,Web.Web,NGINX,NGINX access logs,N,,AI Analysis,03/25/2026
+nginx:error,0,unmapped,security,,med,Web.Web,NGINX,NGINX error logs,N,,AI Analysis,03/25/2026
+iis,0,unmapped,security,,med,Web.Web,Microsoft,Microsoft IIS web server logs,N,,AI Analysis,03/25/2026
+tomcat,0,unmapped,security,,med,Web.Web,Apache,Apache Tomcat application server logs,N,,AI Analysis,03/25/2026
+jboss,0,unmapped,security,,med,Web.Web,Red Hat,JBoss application server logs,N,,AI Analysis,03/25/2026
+weblogic,0,unmapped,security,,med,Web.Web,Oracle,Oracle WebLogic server logs,N,,AI Analysis,03/25/2026
+websphere,0,unmapped,security,,med,Web.Web,IBM,IBM WebSphere server logs,N,,AI Analysis,03/25/2026
+sssd_pac-too_small,0,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
+cron-too_small,0,unmapped,security,,med,Endpoint.Processes,Linux,Linux cron job execution logs,N,,AI Analysis,3/25/2026
+microsoft_defender_core-21,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+OktaIM2:user,0,unmapped,security,IAM,med,Compute_Inventory.All_Inventory.User,Okta,Okta user data,N,,AI Analysis,3/25/2026
+microsoft_defender_core-39,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender_core-14,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender_core-35,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender_enterprise-12,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender-75,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender-69,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender-51,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender_core-4,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender-70,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender-76,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender-52,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+pan:config,0,unmapped,security,NGFW,med,Change.All_Changes,Palo Alto Networks,Palo Alto configuration change logs,N,,AI Analysis,3/25/2026
+vmware-vgauthsvc.log,0,unmapped,security,IAM,high,Authentication.Authentication,,Authentication logs (vmware-vgauthsvc.log),N,,AI Analysis,3/25/2026
+microsoft_defender_diagnostic-too_small,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender_core-19,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender-8,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+tenable:io:vuln_summary:ar,0,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Tenable,Tenable vulnerability data,N,,AI Analysis,3/25/2026
+microsoft_defender_enterprise_err-3,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender-72,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender-71,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+apt_history,0,unmapped,security,,med,Endpoint.Processes,,Command history logs,N,,AI Analysis,3/25/2026
+microsoft_defender_diagnostic_err-too_small,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+sssd_nss-too_small,0,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
+microsoft_defender_core-25,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender_err-too_small,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+OktaIM2:group,0,unmapped,security,IAM,med,,Okta,Okta group data,N,,AI Analysis,3/25/2026
+sssd-too_small,0,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
+microsoft_defender_core-9,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender_core-24,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+sssd_kcm-too_small,0,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
+sssd_pam-too_small,0,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
+f5,0,unmapped,security,FW,med,"Web.Proxy, Network_Traffic.All_Traffic",F5,F5 BIG-IP load balancer logs,N,,AI Analysis,03/25/2026
+WinEventLog:Microsoft-Windows-Sysmon/Operational,0,unmapped,security,EDR,high,"Endpoint.Processes, Endpoint.Registry, Network_Traffic.All_Traffic",Microsoft,Windows Sysmon event logs,N,,AI Analysis,3/25/2026
+microsoft_defender_core-13,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+microsoft_defender_core-33,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Attacks",Microsoft,Microsoft Defender endpoint data,N,,AI Analysis,3/25/2026
+netflow,0,unmapped,security,,med,Network_Traffic.All_Traffic,,NetFlow network traffic data,N,,AI Analysis,03/25/2026
+sflow,0,unmapped,security,,med,Network_Traffic.All_Traffic,,sFlow network traffic data,N,,AI Analysis,03/25/2026
+ipfix,0,unmapped,security,,med,Network_Traffic.All_Traffic,,IPFIX network flow data,N,,AI Analysis,03/25/2026
+aws:guardduty,0,unmapped,security,CTD,high,Intrusion_Detection.IDS_Attacks,Amazon Web Services,AWS GuardDuty threat findings,N,,AI Analysis,3/25/2026
+sssd_pac-2,0,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
+dns,0,unmapped,security,,med,Network_Resolution.DNS,,DNS server logs,N,,AI Analysis,03/25/2026
+bind,0,unmapped,security,,med,Network_Resolution.DNS,ISC,BIND DNS server logs,N,,AI Analysis,03/25/2026
+named,0,unmapped,security,,med,Network_Resolution.DNS,ISC,Named DNS server logs,N,,AI Analysis,03/25/2026
+aws:cloudwatch:guardduty,0,unmapped,security,CTD,high,"Alerts.Alerts, Intrusion_Detection.IDS_Attacks",Amazon Web Services,AWS GuardDuty threat detection findings,N,,AI Analysis,3/25/2026
+ftp,0,unmapped,security,,med,"Network_Traffic.All_Traffic, Web.Web",,FTP server logs,N,,AI Analysis,03/25/2026
+sftp,0,unmapped,security,,med,"Network_Traffic.All_Traffic, Web.Web",,SFTP server logs,N,,AI Analysis,03/25/2026
+ssh,0,unmapped,security,IAM,high,Authentication.Authentication,,SSH server logs,N,,AI Analysis,03/25/2026
+telnet,0,unmapped,security,IAM,med,Authentication.Authentication,,Telnet server logs,N,,AI Analysis,03/25/2026
+snort,0,unmapped,security,IDS,high,Intrusion_Detection.IDS_Attacks,Snort,Snort IDS/IPS logs,N,,AI Analysis,03/25/2026
+suricata,0,unmapped,security,IDS,high,Intrusion_Detection.IDS_Attacks,Suricata,Suricata IDS/IPS logs,N,,AI Analysis,03/25/2026
+zeek,0,unmapped,security,IDS,high,"Intrusion_Detection.IDS_Attacks, Network_Traffic.All_Traffic",Zeek,Zeek network security monitor logs,N,,AI Analysis,03/25/2026
+bro,0,unmapped,security,IDS,high,"Intrusion_Detection.IDS_Attacks, Network_Traffic.All_Traffic",Zeek,Bro (Zeek) network security monitor logs,N,,AI Analysis,03/25/2026
+ossec,0,unmapped,security,EDR,high,"Intrusion_Detection.IDS_Attacks, Alerts.Alerts",OSSEC,OSSEC host-based IDS logs,N,,AI Analysis,03/25/2026
+wazuh,0,unmapped,security,EDR,high,"Intrusion_Detection.IDS_Attacks, Alerts.Alerts",Wazuh,Wazuh security monitoring logs,N,,AI Analysis,03/25/2026
+clamav,0,unmapped,security,EPP,high,Malware.Malware_Operations,ClamAV,ClamAV antivirus logs,N,,AI Analysis,03/25/2026
+tripwire,0,unmapped,security,EPP,med,Change.All_Changes,Tripwire,Tripwire file integrity monitoring logs,N,,AI Analysis,03/25/2026
+samhain,0,unmapped,security,EPP,med,Change.All_Changes,Samhain,Samhain file integrity monitoring logs,N,,AI Analysis,03/25/2026
+fapolicyd,0,unmapped,security,EPP,med,"Change.All_Changes, Endpoint.Processes",Linux,File Access Policy Daemon logs,N,,AI Analysis,03/25/2026
+selinux,0,unmapped,security,EDR,med,Intrusion_Detection.IDS_Attacks,Linux,SELinux security policy logs,N,,AI Analysis,03/25/2026
+apparmor,0,unmapped,security,EDR,med,Intrusion_Detection.IDS_Attacks,Linux,AppArmor security policy logs,N,,AI Analysis,03/25/2026
+fail2ban,0,unmapped,security,IDS,high,"Intrusion_Detection.IDS_Attacks, Authentication.Authentication",Fail2ban,Fail2ban intrusion prevention logs,N,,AI Analysis,03/25/2026
+iptables,0,unmapped,security,FW,med,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",Linux,Linux iptables firewall logs,N,,AI Analysis,03/25/2026
+firewalld,0,unmapped,security,FW,med,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",Linux,Linux firewalld logs,N,,AI Analysis,03/25/2026
+ufw,0,unmapped,security,FW,med,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",Linux,Ubuntu UFW firewall logs,N,,AI Analysis,03/25/2026
+pf,0,unmapped,security,FW,med,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",BSD,BSD Packet Filter firewall logs,N,,AI Analysis,03/25/2026
+ipfw,0,unmapped,security,FW,med,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",BSD,BSD IPFW firewall logs,N,,AI Analysis,03/25/2026
+tcpdump,0,unmapped,security,,med,Network_Traffic.All_Traffic,,tcpdump packet capture data,N,,AI Analysis,03/25/2026
+wireshark,0,unmapped,security,,med,Network_Traffic.All_Traffic,Wireshark,Wireshark packet capture data,N,,AI Analysis,03/25/2026
+tshark,0,unmapped,security,,med,Network_Traffic.All_Traffic,Wireshark,TShark packet capture data,N,,AI Analysis,03/25/2026
+nmap,0,unmapped,security,VMS,med,Vulnerabilities.Vulnerabilities,Nmap,Nmap network scan results,N,,AI Analysis,03/25/2026
+openvas,0,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Greenbone,OpenVAS vulnerability scan results,N,,AI Analysis,03/25/2026
+qualys,0,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Qualys,Qualys vulnerability scan results,N,,AI Analysis,03/25/2026
+rapid7,0,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Rapid7,Rapid7 vulnerability scan results,N,,AI Analysis,03/25/2026
+metasploit,0,unmapped,security,PTS,med,Vulnerabilities.Vulnerabilities,Rapid7,Metasploit penetration testing logs,N,,AI Analysis,03/25/2026
+burpsuite,0,unmapped,security,PTS,med,Vulnerabilities.Vulnerabilities,PortSwigger,Burp Suite web app testing logs,N,,AI Analysis,03/25/2026
+keeper,0,unmapped,security,PAM,high,"Authentication.Authentication, Change.Audit_Logs",Keeper Security,Keeper password manager logs,N,,AI Analysis,03/25/2026
+lastpass,0,unmapped,security,PAM,high,"Authentication.Authentication, Change.Audit_Logs",LastPass,LastPass password manager logs,N,,AI Analysis,03/25/2026
+onelogin,0,unmapped,security,IAM,high,Authentication.Authentication,OneLogin,OneLogin SSO logs,N,,AI Analysis,03/25/2026
+duo,0,unmapped,security,MFA,high,Authentication.Authentication,Duo Security,Duo MFA logs,N,,AI Analysis,03/25/2026
+yubikey,0,unmapped,security,MFA,high,Authentication.Authentication,Yubico,YubiKey authentication logs,N,,AI Analysis,03/25/2026
+freeradius,0,unmapped,security,IAM,high,Authentication.Authentication,FreeRADIUS,FreeRADIUS authentication logs,N,,AI Analysis,03/25/2026
+openldap,0,unmapped,security,IAM,med,Authentication.Authentication,OpenLDAP,OpenLDAP directory service logs,N,,AI Analysis,03/25/2026
+389ds,0,unmapped,security,IAM,med,Authentication.Authentication,389 Directory Server,389 Directory Server logs,N,,AI Analysis,03/25/2026
+activedirectory,0,unmapped,security,IAM,high,"Authentication.Authentication, Change.All_Changes",Microsoft,Active Directory logs,N,,AI Analysis,03/25/2026
+msexchange,0,unmapped,security,ESG,med,Email.All_Email,Microsoft,Microsoft Exchange server logs,N,,AI Analysis,03/25/2026
+o365,0,unmapped,security,CASB,high,"Email.All_Email, Authentication.Authentication",Microsoft,Office 365 logs,N,,AI Analysis,03/25/2026
+gsuite,0,unmapped,security,CASB,high,"Email.All_Email, Authentication.Authentication",Google,Google Workspace logs,N,,AI Analysis,03/25/2026
+box,0,unmapped,security,CASB,med,"Change.All_Changes, Authentication.Authentication",Box,Box cloud storage logs,N,,AI Analysis,03/25/2026
+dropbox,0,unmapped,security,CASB,med,"Change.All_Changes, Authentication.Authentication",Dropbox,Dropbox cloud storage logs,N,,AI Analysis,03/25/2026
+onedrive,0,unmapped,security,CASB,med,"Change.All_Changes, Authentication.Authentication",Microsoft,OneDrive cloud storage logs,N,,AI Analysis,03/25/2026
+sharepoint,0,unmapped,security,CASB,med,"Change.All_Changes, Authentication.Authentication",Microsoft,SharePoint collaboration logs,N,,AI Analysis,03/25/2026
+carbonblack,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Operations",VMware,Carbon Black EDR logs,N,,AI Analysis,03/25/2026
+sentinelone,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Operations",SentinelOne,SentinelOne EDR logs,N,,AI Analysis,03/25/2026
+cylance,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Operations",Cylance,Cylance EDR logs,N,,AI Analysis,03/25/2026
+sophos,0,unmapped,security,EDR,high,"Endpoint.Processes, Malware.Malware_Operations",Sophos,Sophos endpoint protection logs,N,,AI Analysis,03/25/2026
+mcafee,0,unmapped,security,EPP,high,Malware.Malware_Operations,McAfee,McAfee antivirus logs,N,,AI Analysis,03/25/2026
+symantec,0,unmapped,security,EPP,high,Malware.Malware_Operations,Symantec,Symantec antivirus logs,N,,AI Analysis,03/25/2026
+kaspersky,0,unmapped,security,EPP,high,Malware.Malware_Operations,Kaspersky,Kaspersky antivirus logs,N,,AI Analysis,03/25/2026
+avast,0,unmapped,security,EPP,high,Malware.Malware_Operations,Avast,Avast antivirus logs,N,,AI Analysis,03/25/2026
+avg,0,unmapped,security,EPP,high,Malware.Malware_Operations,AVG,AVG antivirus logs,N,,AI Analysis,03/25/2026
+eset,0,unmapped,security,EPP,high,Malware.Malware_Operations,ESET,ESET antivirus logs,N,,AI Analysis,03/25/2026
+bitdefender,0,unmapped,security,EPP,high,Malware.Malware_Operations,Bitdefender,Bitdefender antivirus logs,N,,AI Analysis,03/25/2026
+fortinet,0,unmapped,security,NGFW,high,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",Fortinet,Fortinet FortiGate firewall logs,N,,AI Analysis,03/25/2026
+checkpoint,0,unmapped,security,NGFW,high,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",Check Point,Check Point firewall logs,N,,AI Analysis,03/25/2026
+juniper,0,unmapped,security,NGFW,high,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",Juniper,Juniper firewall logs,N,,AI Analysis,03/25/2026
+sonicwall,0,unmapped,security,NGFW,high,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",SonicWall,SonicWall firewall logs,N,,AI Analysis,03/25/2026
+watchguard,0,unmapped,security,NGFW,high,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",WatchGuard,WatchGuard firewall logs,N,,AI Analysis,03/25/2026
+barracuda,0,unmapped,security,NGFW,high,"Network_Traffic.All_Traffic, Intrusion_Detection.IDS_Attacks",Barracuda,Barracuda firewall logs,N,,AI Analysis,03/25/2026
+zscaler,0,unmapped,security,SWG,high,"Web.Proxy, Network_Traffic.All_Traffic",Zscaler,Zscaler secure web gateway logs,N,,AI Analysis,03/25/2026
+bluecoat,0,unmapped,security,SWG,high,"Web.Proxy, Network_Traffic.All_Traffic",Symantec,Blue Coat proxy logs,N,,AI Analysis,03/25/2026
+websense,0,unmapped,security,SWG,high,"Web.Proxy, Network_Traffic.All_Traffic",Forcepoint,Websense web security logs,N,,AI Analysis,03/25/2026
+forcepoint,0,unmapped,security,SWG,high,"Web.Proxy, Network_Traffic.All_Traffic",Forcepoint,Forcepoint web security logs,N,,AI Analysis,03/25/2026
+proofpoint,0,unmapped,security,ESG,high,"Email.All_Email, Malware.Malware_Operations",Proofpoint,Proofpoint email security logs,N,,AI Analysis,03/25/2026
+mimecast,0,unmapped,security,ESG,high,"Email.All_Email, Malware.Malware_Operations",Mimecast,Mimecast email security logs,N,,AI Analysis,03/25/2026
+ironport,0,unmapped,security,ESG,high,"Email.All_Email, Malware.Malware_Operations",Cisco,Cisco IronPort email security logs,N,,AI Analysis,03/25/2026
+fireeye,0,unmapped,security,XDR,high,"Malware.Malware_Operations, Intrusion_Detection.IDS_Attacks",FireEye,FireEye threat detection logs,N,,AI Analysis,03/25/2026
+paloaltonetworks:cortex,0,unmapped,security,XDR,high,"Alerts.Alerts, Intrusion_Detection.IDS_Attacks",Palo Alto Networks,Palo Alto Cortex XDR logs,N,,AI Analysis,03/25/2026
+microsoft:defender:atp,0,unmapped,security,XDR,high,"Endpoint.Processes, Malware.Malware_Operations",Microsoft,Microsoft Defender ATP logs,N,,AI Analysis,03/25/2026
+crowdstrike:spotlight,0,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,CrowdStrike,CrowdStrike Spotlight vulnerability data,N,,AI Analysis,03/25/2026
+tanium,0,unmapped,security,EDR,high,"Endpoint.Processes, Vulnerabilities.Vulnerabilities",Tanium,Tanium endpoint management logs,N,,AI Analysis,03/25/2026
+bigfix,0,unmapped,security,EDR,med,"Endpoint.Processes, Updates.All_Updates",HCL,HCL BigFix endpoint management logs,N,,AI Analysis,03/25/2026
+aws:firehose:cloudwatchevents:unknown:no_processor,0,unmapped,"security,operational",,med,,Amazon Web Services,AWS CloudWatch Events,N,,AI Analysis,3/25/2026
+mscs:azure:eventhub,0,unmapped,"security,operational",,med,,Microsoft,Azure Event Hub data,N,,AI Analysis,3/25/2026
+azure:metrics,0,unmapped,operational,,low,Performance.All_Performance,Microsoft,Azure resource metrics,N,,AI Analysis,3/25/2026
+aws:s3:ssm:application,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
+PerfmonMk:CPU,0,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows Perfmon metrics,N,,AI Analysis,3/25/2026
+kubes:application,0,unmapped,operational,,low,,Kubernetes,Kubernetes/container logs,N,,AI Analysis,3/25/2026
+collectd.conf,0,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
+snow:cmdb,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,ServiceNow,ServiceNow CMDB records,N,,AI Analysis,3/25/2026
+snow:cmdb_ci,0,unmapped,operational,,low,Inventory.Inventory,ServiceNow,ServiceNow CMDB configuration items,N,,AI Analysis,3/25/2026
+citrix:netscaler:syslog,0,unmapped,operational,,low,,Linux,Linux citrix:netscaler:syslog,N,,AI Analysis,3/25/2026
+kubes:performance,0,unmapped,operational,,low,Performance.All_Performance,Kubernetes,Kubernetes metrics,N,,AI Analysis,3/25/2026
+snow:syslog_transaction,0,unmapped,operational,,low,,Linux,Linux snow:syslog_transaction,N,,AI Analysis,3/25/2026
+gitlab:workhorse,0,unmapped,operational,,low,,GitLab,GitLab application logs,N,,AI Analysis,3/25/2026
+gitlab:application,0,unmapped,operational,,low,,GitLab,GitLab application logs,N,,AI Analysis,3/25/2026
+aws:s3:ssm:service,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
+Unix:Service,0,unmapped,operational,,low,,Unix/Linux,Unix system data (Unix:Service),N,,AI Analysis,3/25/2026
+Perfmon:NTDS,0,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows Perfmon metrics,N,,AI Analysis,3/25/2026
+cpu,0,unmapped,operational,,none,Performance.CPU,Linux/Unix,CPU utilization metrics,N,,AI Analysis,3/25/2026
+ps,0,unmapped,operational,,low,Endpoint.Processes,Linux/Unix,Process status output,N,,AI Analysis,3/25/2026
+cribl:internal,0,unmapped,operational,,none,,Cribl,Cribl internal logs,Y,Data pipeline internal,AI Analysis,3/25/2026
+gitlab:shell,0,unmapped,operational,,low,,GitLab,GitLab application logs,N,,AI Analysis,3/25/2026
+snow:sysevent,0,unmapped,operational,,med,Alerts.Alerts,ServiceNow,ServiceNow event management,N,,AI Analysis,3/25/2026
+top,0,unmapped,operational,,none,Performance.CPU,Linux/Unix,Top process statistics,N,,AI Analysis,3/25/2026
+aws:description,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS resource descriptions,N,,AI Analysis,3/25/2026
+Perfmon:Network_Interface,0,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows Perfmon metrics,N,,AI Analysis,3/25/2026
+Unix:UserAccounts,0,unmapped,operational,,low,,Linux,Linux Unix:UserAccounts,N,,AI Analysis,3/25/2026
+Perfmon:DFS_Replicated_Folders,0,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows Perfmon metrics,N,,AI Analysis,3/25/2026
+bandwidth,0,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
+vmstat,0,unmapped,operational,,none,Performance.Performance,Linux/Unix,Virtual memory statistics,N,,AI Analysis,3/25/2026
+iostat,0,unmapped,operational,,none,Performance.Storage,Linux/Unix,I/O statistics,N,,AI Analysis,3/25/2026
+gitlab:production,0,unmapped,operational,,low,,GitLab,GitLab application logs,N,,AI Analysis,3/25/2026
+snow:cmdb_rel_ci,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,ServiceNow,ServiceNow CMDB records,N,,AI Analysis,3/25/2026
+dnf,0,unmapped,operational,,low,Updates.All_Updates,Linux,DNF package manager logs,N,,AI Analysis,3/25/2026
+kubes:host,0,unmapped,operational,,low,,Kubernetes,Kubernetes/container logs,N,,AI Analysis,3/25/2026
+kubes:dataplane,0,unmapped,operational,,low,Performance.All_Performance,Kubernetes,Kubernetes metrics,N,,AI Analysis,3/25/2026
+Unix:ListeningPorts,0,unmapped,operational,,low,,Unix/Linux,Unix system data (Unix:ListeningPorts),N,,AI Analysis,3/25/2026
+aws:ssm:inventory,0,unmapped,operational,,low,Inventory.Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,03/25/2026
+aws:ssm:patchsummary,0,unmapped,operational,,low,Updates.All_Updates,Amazon Web Services,AWS SSM patch summary data,N,,AI Analysis,03/25/2026
+aws:ssm:instanceinformation,0,unmapped,operational,,low,Inventory.Inventory,Amazon Web Services,AWS SSM instance information,N,,AI Analysis,03/25/2026
+aws:ssm:instancedetailedinformation,0,unmapped,operational,,low,Inventory.Inventory,Amazon Web Services,AWS SSM detailed instance info,N,,AI Analysis,03/25/2026
+aws:rds:error,0,unmapped,operational,,low,Databases.Database_Errors,Amazon Web Services,AWS RDS database error logs,N,,AI Analysis,03/25/2026
+aws:cloudwatch:ec2:metrics,0,unmapped,operational,,none,Performance.Performance,Amazon Web Services,AWS EC2 CloudWatch metrics,N,,AI Analysis,03/25/2026
+aws:cloudwatch:rds:metrics,0,unmapped,operational,,none,Performance.Performance,Amazon Web Services,AWS RDS CloudWatch metrics,N,,AI Analysis,03/25/2026
+aws:cloudwatch:elb:metrics,0,unmapped,operational,,none,Performance.Performance,Amazon Web Services,AWS ELB CloudWatch metrics,N,,AI Analysis,03/25/2026
+aws:cloudwatch:ebs:metrics,0,unmapped,operational,,none,Performance.Performance,Amazon Web Services,AWS EBS CloudWatch metrics,N,,AI Analysis,03/25/2026
+aws:cloudwatch:lambda:metrics,0,unmapped,operational,,none,Performance.Performance,Amazon Web Services,AWS Lambda CloudWatch metrics,N,,AI Analysis,03/25/2026
+aws:cloudwatch:s3:metrics,0,unmapped,operational,,none,Performance.Performance,Amazon Web Services,AWS S3 CloudWatch metrics,N,,AI Analysis,03/25/2026
+aws:cloudwatch:dynamodb:metrics,0,unmapped,operational,,none,Performance.Performance,Amazon Web Services,AWS DynamoDB CloudWatch metrics,N,,AI Analysis,03/25/2026
+aws:cloudwatch:sns:metrics,0,unmapped,operational,,none,Performance.Performance,Amazon Web Services,AWS SNS CloudWatch metrics,N,,AI Analysis,03/25/2026
+aws:cloudwatch:sqs:metrics,0,unmapped,operational,,none,Performance.Performance,Amazon Web Services,AWS SQS CloudWatch metrics,N,,AI Analysis,03/25/2026
+aws:cloudwatch:kinesis:metrics,0,unmapped,operational,,none,Performance.Performance,Amazon Web Services,AWS Kinesis CloudWatch metrics,N,,AI Analysis,03/25/2026
+aws:cloudwatch:elasticache:metrics,0,unmapped,operational,,none,Performance.Performance,Amazon Web Services,AWS ElastiCache CloudWatch metrics,N,,AI Analysis,03/25/2026
+Script:GetLocalUsers,0,unmapped,operational,,low,Inventory.Inventory,Splunk,Scripted input for local user accounts,N,,AI Analysis,03/25/2026
+Script:GetLocalGroups,0,unmapped,operational,,low,Inventory.Inventory,Splunk,Scripted input for local groups,N,,AI Analysis,03/25/2026
+Script:GetServices,0,unmapped,operational,,low,Inventory.Inventory,Splunk,Scripted input for system services,N,,AI Analysis,03/25/2026
+Script:GetProcesses,0,unmapped,operational,,low,Endpoint.Processes,Splunk,Scripted input for running processes,N,,AI Analysis,03/25/2026
+Script:GetInstalledSoftware,0,unmapped,operational,,low,Inventory.Inventory,Splunk,Scripted input for installed software,N,,AI Analysis,03/25/2026
+Script:GetNetworkAdapters,0,unmapped,operational,,low,Inventory.Inventory,Splunk,Scripted input for network adapters,N,,AI Analysis,03/25/2026
+Script:GetDiskInfo,0,unmapped,operational,,none,Performance.Performance,Splunk,Scripted input for disk information,N,,AI Analysis,03/25/2026
+Script:GetSystemInfo,0,unmapped,operational,,low,Inventory.Inventory,Splunk,Scripted input for system information,N,,AI Analysis,03/25/2026
+nfsiostat,0,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
+df,0,unmapped,operational,,none,Performance.Storage,Linux/Unix,Disk filesystem usage,N,,AI Analysis,3/25/2026
+lastlog,0,unmapped,operational,,low,Authentication.Authentication,Linux/Unix,Last login information,N,,AI Analysis,3/25/2026
+MSAD:NT6:Replication,0,unmapped,operational,,low,,Microsoft,AD replication logs,N,,AI Analysis,3/25/2026
+aws:s3:ssm:network,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
+aws:s3:ssm:awscomponent,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
+tsc:api:metrics:scanresult,0,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
+apache_error,0,unmapped,operational,,low,Web.Web,Apache,Apache web server error logs,N,,AI Analysis,3/25/2026
+insights-client,0,unmapped,operational,,low,,Red Hat,Red Hat subscription/insights logs,N,,AI Analysis,3/25/2026
+snow:cmdb_ci_vm_instance,0,unmapped,operational,,low,Inventory.Inventory,ServiceNow,ServiceNow CMDB VM instance records,N,,AI Analysis,3/25/2026
+tsc:api:metrics:plugins,0,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
+cloud-init,0,unmapped,operational,,low,,,Infrastructure logs (cloud-init),N,,AI Analysis,3/25/2026
+who,0,unmapped,operational,,low,Authentication.Authentication,Linux/Unix,Logged in users,N,,AI Analysis,3/25/2026
+aws:s3:ssm:tag,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
+tsc:api:metrics:api_client,0,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
+tsc:api:metrics:user,0,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
+aws:s3:ssm:instancedetailedinformation,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
+ecs:containerinsights:performance,0,unmapped,operational,,low,Performance.All_Performance,Kubernetes,Kubernetes metrics,N,,AI Analysis,3/25/2026
+linux_bootlog,0,unmapped,operational,,low,,Linux,Linux kernel/boot messages,N,,AI Analysis,3/25/2026
+snow:cmdb_ci_server,0,unmapped,operational,,low,Inventory.Inventory,ServiceNow,ServiceNow CMDB server records,N,,AI Analysis,3/25/2026
+tsc:api:metrics:repository,0,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
+tsc:api:metrics:scanner_manager,0,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
+rsyslog-impstats,0,unmapped,operational,,low,,Linux,Linux system utility output,N,,AI Analysis,3/25/2026
+docker,0,unmapped,operational,,med,"Change.All_Changes, Endpoint.Processes",Docker,Docker container logs,N,,AI Analysis,3/25/2026
+Unix:SSHDConfig,0,unmapped,operational,,low,,Unix/Linux,Unix system data (Unix:SSHDConfig),N,,AI Analysis,3/25/2026
+package,0,unmapped,operational,,low,Updates.All_Updates,Linux,Linux package management logs,N,,AI Analysis,3/25/2026
+rhsm,0,unmapped,operational,,low,,Red Hat,Red Hat subscription/insights logs,N,,AI Analysis,3/25/2026
+aws:s3:ssm:inspectorcve,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
+aws:s3:ssm:inspectorthirdpartypackage,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
+snow:incident,0,unmapped,operational,,med,Alerts.Alerts,ServiceNow,ServiceNow incident records,N,,AI Analysis,3/25/2026
+tenable:sc:plugin,0,unmapped,operational,,low,Inventory.Inventory,Tenable,Tenable Security Center plugin data,N,,AI Analysis,3/25/2026
+aws:s3:ssm:billinginfo,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
+snow:em_event,0,unmapped,operational,,med,Alerts.Alerts,ServiceNow,ServiceNow event management,N,,AI Analysis,3/25/2026
+dpkg,0,unmapped,operational,,low,Updates.All_Updates,Linux,DPKG package manager logs,N,,AI Analysis,3/25/2026
+gitlab:unknown,0,unmapped,operational,,low,,GitLab,GitLab application logs,N,,AI Analysis,3/25/2026
+dmesg,0,unmapped,operational,,low,Alerts.Alerts,Linux/Unix,Kernel ring buffer messages,N,,AI Analysis,3/25/2026
+tsc:api:metrics:scans,0,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
+snow:cmdb_ci_db_instance,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,ServiceNow,ServiceNow CMDB records,N,,AI Analysis,3/25/2026
+tsc:api:metrics:scanner,0,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
+tsc:api:metrics:server,0,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
+cta_linux_handler-2,0,unmapped,operational,,low,,Linux,Linux cta_linux_handler-2,N,,AI Analysis,3/25/2026
+snow:cmdb_ci_database,0,unmapped,operational,,low,Inventory.Inventory,ServiceNow,ServiceNow CMDB database records,N,,AI Analysis,03/25/2026
+snow:cmdb_ci_web_server,0,unmapped,operational,,low,Inventory.Inventory,ServiceNow,ServiceNow CMDB web server records,N,,AI Analysis,03/25/2026
+snow:cmdb_ci_network_adapter,0,unmapped,operational,,low,Inventory.Inventory,ServiceNow,ServiceNow CMDB network adapter records,N,,AI Analysis,03/25/2026
+cups_access,0,unmapped,operational,,none,,CUPS,Print server logs,N,,AI Analysis,3/25/2026
+snow:cmdb_ci_infra_service,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,ServiceNow,ServiceNow CMDB records,N,,AI Analysis,3/25/2026
+MdeInstallerLog,0,unmapped,operational,,low,,Microsoft,Microsoft Defender install logs,N,,AI Analysis,3/25/2026
+zypper,0,unmapped,operational,,low,Updates.All_Updates,Linux,Zypper package manager logs,N,,AI Analysis,3/25/2026
+MdeInstallerWrapperLog,0,unmapped,operational,,low,,Microsoft,Microsoft Defender install logs,N,,AI Analysis,3/25/2026
+tenable:io:assets,0,unmapped,operational,,low,Inventory.Inventory,Tenable,Tenable.io asset inventory,N,,AI Analysis,03/25/2026
+tenable:io:plugin,0,unmapped,operational,,low,Inventory.Inventory,Tenable,Tenable.io plugin information,N,,AI Analysis,03/25/2026
+tenable:sc:asset,0,unmapped,operational,,low,Inventory.Inventory,Tenable,Tenable Security Center asset data,N,,AI Analysis,03/25/2026
+tenable:sc:repository,0,unmapped,operational,,low,Inventory.Inventory,Tenable,Tenable Security Center repository data,N,,AI Analysis,03/25/2026
+tenable:sc:user,0,unmapped,operational,,low,Inventory.Inventory,Tenable,Tenable Security Center user data,N,,AI Analysis,03/25/2026
+tenable:sc:policy,0,unmapped,operational,,low,Inventory.Inventory,Tenable,Tenable Security Center policy data,N,,AI Analysis,03/25/2026
+nessus:plugin,0,unmapped,operational,,low,Inventory.Inventory,Tenable,Nessus plugin information,N,,AI Analysis,03/25/2026
+snow:cmdb_ci_computer,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,ServiceNow,ServiceNow CMDB records,N,,AI Analysis,3/25/2026
+rhsmcertd,0,unmapped,operational,,low,,Red Hat,Red Hat subscription/insights logs,N,,AI Analysis,3/25/2026
+opensearch-too_small,0,unmapped,operational,,low,,OpenSearch,OpenSearch logs,N,,AI Analysis,3/25/2026
+tsc:api:metrics:ldapcheck,0,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
+tsc:api:metrics:softwareupdate,0,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
+ICAClient,0,unmapped,operational,,low,,Citrix,Citrix client/session logs,N,,AI Analysis,3/25/2026
+tsc:api:metrics:organization,0,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
+tsc:api:metrics:agents,0,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
+tsc:api:metrics:status,0,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
+aws:s3:ssm:instanceinformation,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
+MdeExtensionHandlerLog,0,unmapped,operational,,low,,Microsoft,Microsoft Defender install logs,N,,AI Analysis,3/25/2026
+aws:s3:ssm:patchsummary,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,Amazon Web Services,AWS SSM inventory data,N,,AI Analysis,3/25/2026
+opensearch-2,0,unmapped,operational,,low,,OpenSearch,OpenSearch logs,N,,AI Analysis,3/25/2026
+aws:s3-objects:unknown:no_processor,0,unmapped,operational,,low,,Amazon Web Services,AWS S3 object data,N,,AI Analysis,3/25/2026
+Microsoft.Azure.RecoveryServices.VMSnapshotLinux-shell.log,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,Microsoft,Azure compute data (Microsoft.Azure.RecoveryServic,N,,AI Analysis,3/25/2026
+Unix:Uptime,0,unmapped,operational,,low,,Linux,Linux Unix:Uptime,N,,AI Analysis,3/25/2026
+Unix:Version,0,unmapped,operational,,low,,Unix/Linux,Unix system data (Unix:Version),N,,AI Analysis,3/25/2026
+snow:sys_user,0,unmapped,operational,,low,,ServiceNow,ServiceNow user records,N,,AI Analysis,3/25/2026
+cta_linux_agent-2024-04-25T,0,unmapped,operational,,low,,Linux,Linux cta_linux_agent-2024-04-25T,N,,AI Analysis,3/25/2026
+cta_linux_agent-2024-05-03T,0,unmapped,operational,,low,,Linux,Linux cta_linux_agent-2024-05-03T,N,,AI Analysis,3/25/2026
+cta_linux_agent-2024-05-11T,0,unmapped,operational,,low,,Linux,Linux cta_linux_agent-2024-05-11T,N,,AI Analysis,3/25/2026
+yum,0,unmapped,operational,,low,Updates.All_Updates,Linux,YUM package manager logs,N,,AI Analysis,03/25/2026
+apt,0,unmapped,operational,,low,Updates.All_Updates,Linux,APT package manager logs,N,,AI Analysis,03/25/2026
+rpm,0,unmapped,operational,,low,Updates.All_Updates,Linux,RPM package manager logs,N,,AI Analysis,03/25/2026
+snow:alm_asset,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,ServiceNow,ServiceNow asset records,N,,AI Analysis,3/25/2026
+opensearch-6,0,unmapped,operational,,low,,OpenSearch,OpenSearch logs,N,,AI Analysis,3/25/2026
+rsa:securid:system:syslog,0,unmapped,operational,,low,,Linux,Linux rsa:securid:system:syslog,N,,AI Analysis,3/25/2026
+azure:compute:vm,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,Microsoft,Azure compute data (azure:compute:vm),N,,AI Analysis,3/25/2026
+cups_error,0,unmapped,operational,,none,,CUPS,Print server logs,N,,AI Analysis,3/25/2026
+cta_linux_agent-2,0,unmapped,operational,,low,,Linux,Linux cta_linux_agent-2,N,,AI Analysis,3/25/2026
+insights-client-6,0,unmapped,operational,,low,,Red Hat,Red Hat subscription/insights logs,N,,AI Analysis,3/25/2026
+cta_linux_agent-2024-05-04T,0,unmapped,operational,,low,,Linux,Linux cta_linux_agent-2024-05-04T,N,,AI Analysis,3/25/2026
+azure:compute:snapshot,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,Microsoft,Azure compute data (azure:compute:snapshot),N,,AI Analysis,3/25/2026
+uptime,0,unmapped,operational,,none,Performance.Performance,Linux/Unix,System uptime information,N,,AI Analysis,03/25/2026
+last,0,unmapped,operational,,low,Authentication.Authentication,Linux/Unix,Login history,N,,AI Analysis,03/25/2026
+w,0,unmapped,operational,,low,Authentication.Authentication,Linux/Unix,Who is logged in and what they're doing,N,,AI Analysis,03/25/2026
+journalctl,0,unmapped,operational,,med,"Alerts.Alerts, Change.All_Changes",Linux,Systemd journal logs,N,,AI Analysis,03/25/2026
+systemd,0,unmapped,operational,,med,Change.All_Changes,Linux,Systemd service manager logs,N,,AI Analysis,03/25/2026
+opensearch-8,0,unmapped,operational,,low,,OpenSearch,OpenSearch logs,N,,AI Analysis,3/25/2026
+insights-client-3,0,unmapped,operational,,low,,Red Hat,Red Hat subscription/insights logs,N,,AI Analysis,3/25/2026
+snow:problem,0,unmapped,operational,,med,Alerts.Alerts,ServiceNow,ServiceNow problem records,N,,AI Analysis,3/25/2026
+snow:cmdb_ci_app_server,0,unmapped,operational,,low,Inventory.Inventory,ServiceNow,ServiceNow CMDB app server records,N,,AI Analysis,3/25/2026
+azure:compute:disk,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,Microsoft,Azure compute data (azure:compute:disk),N,,AI Analysis,3/25/2026
+snow:sys_choice,0,unmapped,operational,,low,,ServiceNow,ServiceNow snow:sys_choice,N,,AI Analysis,3/25/2026
+glusterfs_cli,0,unmapped,operational,,low,,GlusterFS,GlusterFS storage logs,N,,AI Analysis,3/25/2026
+rhsm-2,0,unmapped,operational,,low,,Red Hat,Red Hat subscription/insights logs,N,,AI Analysis,3/25/2026
+collectd,0,unmapped,operational,,none,Performance.All_Performance,,System performance metrics,N,,AI Analysis,3/25/2026
+rhsmcertd-too_small,0,unmapped,operational,,low,,Red Hat,Red Hat subscription/insights logs,N,,AI Analysis,3/25/2026
+kubernetes,0,unmapped,operational,,med,"Change.All_Changes, Alerts.Alerts",Kubernetes,Kubernetes orchestration logs,N,,AI Analysis,03/25/2026
+k8s:container,0,unmapped,operational,,med,Endpoint.Processes,Kubernetes,Kubernetes container logs,N,,AI Analysis,03/25/2026
+k8s:pod,0,unmapped,operational,,med,Change.All_Changes,Kubernetes,Kubernetes pod logs,N,,AI Analysis,03/25/2026
+k8s:node,0,unmapped,operational,,med,Inventory.Inventory,Kubernetes,Kubernetes node logs,N,,AI Analysis,03/25/2026
+k8s:events,0,unmapped,operational,,med,Alerts.Alerts,Kubernetes,Kubernetes event logs,N,,AI Analysis,03/25/2026
+Unix:VSFTPDConfig,0,unmapped,operational,,low,,Unix/Linux,Unix system data (Unix:VSFTPDConfig),N,,AI Analysis,3/25/2026
+ansible,0,unmapped,operational,,med,Change.All_Changes,Ansible,Ansible automation logs,N,,AI Analysis,03/25/2026
+puppet,0,unmapped,operational,,med,Change.All_Changes,Puppet,Puppet configuration management logs,N,,AI Analysis,03/25/2026
+chef,0,unmapped,operational,,med,Change.All_Changes,Chef,Chef configuration management logs,N,,AI Analysis,03/25/2026
+salt,0,unmapped,operational,,med,Change.All_Changes,SaltStack,SaltStack configuration management logs,N,,AI Analysis,03/25/2026
+terraform,0,unmapped,operational,,med,Change.All_Changes,HashiCorp,Terraform infrastructure as code logs,N,,AI Analysis,03/25/2026
+consul,0,unmapped,operational,,med,Change.All_Changes,HashiCorp,HashiCorp Consul service mesh logs,N,,AI Analysis,03/25/2026
+nomad,0,unmapped,operational,,med,Change.All_Changes,HashiCorp,HashiCorp Nomad orchestration logs,N,,AI Analysis,03/25/2026
+snow:cmdb_ci_service,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,ServiceNow,ServiceNow CMDB records,N,,AI Analysis,3/25/2026
+snow:sys_user_group,0,unmapped,operational,,low,,ServiceNow,ServiceNow user records,N,,AI Analysis,3/25/2026
+jenkins,0,unmapped,operational,,med,Change.All_Changes,Jenkins,Jenkins CI/CD pipeline logs,N,,AI Analysis,03/25/2026
+gitlab,0,unmapped,operational,,med,Change.All_Changes,GitLab,GitLab DevOps platform logs,N,,AI Analysis,03/25/2026
+github,0,unmapped,operational,,med,Change.All_Changes,GitHub,GitHub version control logs,N,,AI Analysis,03/25/2026
+bitbucket,0,unmapped,operational,,med,Change.All_Changes,Atlassian,Bitbucket version control logs,N,,AI Analysis,03/25/2026
+jira,0,unmapped,operational,,low,Change.All_Changes,Atlassian,Jira issue tracking logs,N,,AI Analysis,03/25/2026
+confluence,0,unmapped,operational,,low,Change.All_Changes,Atlassian,Confluence wiki logs,N,,AI Analysis,03/25/2026
+postgresql,0,unmapped,operational,,low,Databases.Database_Logs,PostgreSQL,PostgreSQL database logs,N,,AI Analysis,3/25/2026
+snow:cmn_location,0,unmapped,operational,,low,,ServiceNow,ServiceNow snow:cmn_location,N,,AI Analysis,3/25/2026
+splunk,0,unmapped,operational,SIEM,med,Alerts.Alerts,Splunk,Splunk platform logs,N,,AI Analysis,03/25/2026
+splunkd,0,unmapped,operational,SIEM,med,Alerts.Alerts,Splunk,Splunk daemon logs,Y,Splunk internal — daemon logs,AI Analysis,03/25/2026
+splunkd_access,0,unmapped,operational,SIEM,med,Web.Web,Splunk,Splunk daemon access logs,Y,Splunk internal — REST API access logs,AI Analysis,03/25/2026
+splunk_search,0,unmapped,operational,SIEM,low,Change.All_Changes,Splunk,Splunk search logs,N,,AI Analysis,03/25/2026
+splunk_web_access,0,unmapped,operational,SIEM,med,Web.Web,Splunk,Splunk web interface access logs,Y,Splunk internal — web UI access logs,AI Analysis,03/25/2026
+splunk_web_service,0,unmapped,operational,SIEM,low,Alerts.Alerts,Splunk,Splunk web service logs,Y,Splunk internal — web service logs,AI Analysis,03/25/2026
+modular_alerts,0,unmapped,operational,SIEM,med,Alerts.Alerts,Splunk,Splunk modular alert logs,N,,AI Analysis,03/25/2026
+scheduler,0,unmapped,operational,SIEM,low,Change.All_Changes,Splunk,Splunk scheduler logs,Y,Splunk internal — search scheduler logs,AI Analysis,03/25/2026
+opensearch_deprecation-too_small,0,unmapped,operational,,low,,OpenSearch,OpenSearch logs,N,,AI Analysis,3/25/2026
+rhsm-too_small,0,unmapped,operational,,low,,Red Hat,Red Hat subscription/insights logs,N,,AI Analysis,3/25/2026
+mongod,0,unmapped,operational,,low,Databases.Database_Logs,MongoDB,MongoDB database logs,Y,Splunk internal — MongoDB/KV store logs,AI Analysis,03/25/2026
+mysql,0,unmapped,operational,,low,Databases.Database_Logs,Oracle,MySQL database logs,N,,AI Analysis,03/25/2026
+oracle,0,unmapped,operational,,low,Databases.Database_Logs,Oracle,Oracle database logs,N,,AI Analysis,03/25/2026
+mssql,0,unmapped,operational,,low,Databases.Database_Logs,Microsoft,Microsoft SQL Server logs,N,,AI Analysis,03/25/2026
+redis,0,unmapped,operational,,low,Databases.Database_Logs,Redis,Redis in-memory database logs,N,,AI Analysis,03/25/2026
+elasticsearch,0,unmapped,operational,,med,Alerts.Alerts,Elastic,Elasticsearch search engine logs,N,,AI Analysis,03/25/2026
+logstash,0,unmapped,operational,,low,Change.All_Changes,Elastic,Logstash data processing logs,N,,AI Analysis,03/25/2026
+kibana,0,unmapped,operational,,low,Web.Web,Elastic,Kibana visualization logs,N,,AI Analysis,03/25/2026
+zookeeper,0,unmapped,operational,,low,Change.All_Changes,Apache,Apache ZooKeeper coordination logs,N,,AI Analysis,03/25/2026
+kafka,0,unmapped,operational,,low,Change.All_Changes,Apache,Apache Kafka streaming logs,N,,AI Analysis,03/25/2026
+rabbitmq,0,unmapped,operational,,low,Change.All_Changes,RabbitMQ,RabbitMQ message broker logs,N,,AI Analysis,03/25/2026
+activemq,0,unmapped,operational,,low,Change.All_Changes,Apache,Apache ActiveMQ message broker logs,N,,AI Analysis,03/25/2026
+haproxy,0,unmapped,operational,,med,"Web.Proxy, Network_Traffic.All_Traffic",HAProxy,HAProxy load balancer logs,N,,AI Analysis,03/25/2026
+snmp,0,unmapped,operational,,low,Performance.Performance,,SNMP network monitoring data,N,,AI Analysis,03/25/2026
+snmptrap,0,unmapped,operational,,med,Alerts.Alerts,,SNMP trap notifications,N,,AI Analysis,03/25/2026
+Microsoft.Azure.NetworkWatcher.NetworkWatcherAgentLinux-monitor.log,0,unmapped,operational,,low,,Microsoft,Azure Microsoft.Azure.NetworkWatcher.NetworkWatche,N,,AI Analysis,3/25/2026
+dhcp,0,unmapped,operational,,low,Network_Traffic.All_Traffic,,DHCP server logs,N,,AI Analysis,03/25/2026
+ntp,0,unmapped,operational,,low,Change.All_Changes,,NTP time synchronization logs,N,,AI Analysis,03/25/2026
+slack,0,unmapped,operational,,low,"Change.All_Changes, Authentication.Authentication",Slack,Slack collaboration platform logs,N,,AI Analysis,03/25/2026
+teams,0,unmapped,operational,,low,"Change.All_Changes, Authentication.Authentication",Microsoft,Microsoft Teams collaboration logs,N,,AI Analysis,03/25/2026
+zoom,0,unmapped,operational,,low,Authentication.Authentication,Zoom,Zoom video conferencing logs,N,,AI Analysis,03/25/2026
+webex,0,unmapped,operational,,low,Authentication.Authentication,Cisco,Webex video conferencing logs,N,,AI Analysis,03/25/2026
+landesk,0,unmapped,operational,,low,"Inventory.Inventory, Updates.All_Updates",Ivanti,Ivanti (LANDesk) endpoint management logs,N,,AI Analysis,03/25/2026
+sccm,0,unmapped,operational,,low,"Inventory.Inventory, Updates.All_Updates",Microsoft,Microsoft SCCM logs,N,,AI Analysis,03/25/2026
+wsus,0,unmapped,operational,,low,Updates.All_Updates,Microsoft,Windows Server Update Services logs,N,,AI Analysis,03/25/2026
+jamf,0,unmapped,operational,,low,"Inventory.Inventory, Updates.All_Updates",Jamf,Jamf macOS/iOS management logs,N,,AI Analysis,03/25/2026
+intune,0,unmapped,operational,,med,"Inventory.Inventory, Updates.All_Updates",Microsoft,Microsoft Intune MDM logs,N,,AI Analysis,03/25/2026
+mobileiron,0,unmapped,operational,,med,"Inventory.Inventory, Authentication.Authentication",Ivanti,MobileIron MDM logs,N,,AI Analysis,03/25/2026
+airwatch,0,unmapped,operational,,med,"Inventory.Inventory, Authentication.Authentication",VMware,VMware Workspace ONE (AirWatch) logs,N,,AI Analysis,03/25/2026
+lsof,0,unmapped,operational,,low,,Linux,List open files command output,N,,AI Analysis,3/25/2026
+WinHostMon,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,Microsoft,Windows host monitoring data,N,,AI Analysis,3/25/2026
+PerfmonMk:ProcessorInformation,0,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows performance metrics,N,,AI Analysis,3/25/2026
+PerfmonMk:Memory,0,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows performance metrics,N,,AI Analysis,3/25/2026
+PerfmonMk:LogicalDisk,0,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows performance metrics,N,,AI Analysis,3/25/2026
+PerfmonMk:PhysicalDisk,0,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows performance metrics,N,,AI Analysis,3/25/2026
+PerfmonMk:System,0,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows performance metrics,N,,AI Analysis,3/25/2026
+PerfmonMk:Network,0,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows performance metrics,N,,AI Analysis,3/25/2026
+PerfmonMk:Process,0,unmapped,operational,,none,Performance.All_Performance,Microsoft,Windows performance metrics,N,,AI Analysis,3/25/2026
+secure,0,unmapped,security,EDR,high,Authentication.Authentication,Linux,Linux secure authentication logs,N,,AI Analysis,3/25/2026
+powershell:appx2,0,unmapped,operational,,low,,Microsoft,PowerShell AppX package inventory,N,,AI Analysis,3/25/2026
+osconfig_asb_perf-too_small,0,unmapped,operational,,low,,Google Cloud,GCP OS Config performance data,N,,AI Analysis,3/25/2026
+ldap_child,0,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
+falcon-libbpf,0,unmapped,security,EDR,med,Endpoint.Processes,CrowdStrike,CrowdStrike Falcon falcon-libbpf,N,,AI Analysis,3/25/2026
+interfaces,0,unmapped,operational,,low,Performance.All_Performance.Network,,Network interface statistics,N,,AI Analysis,3/25/2026
+protocol,0,unmapped,operational,,low,Performance.All_Performance.Network,,Network protocol statistics,N,,AI Analysis,3/25/2026
+agent.console,0,unmapped,operational,,low,,Microsoft,Azure VM agent/handler logs,N,,AI Analysis,3/25/2026
+am:cw:agent,0,unmapped,operational,,low,,Amazon Web Services,AWS CloudWatch agent logs,N,,AI Analysis,3/25/2026
+extension,0,unmapped,operational,,low,,Microsoft,Azure VM agent/handler logs,N,,AI Analysis,3/25/2026
+kern,0,unmapped,operational,,low,,Linux,Linux kernel/boot messages,N,,AI Analysis,3/25/2026
+falcon,0,unmapped,security,EDR,med,Endpoint.Processes,CrowdStrike,CrowdStrike Falcon falcon,N,,AI Analysis,3/25/2026
+measurements,0,unmapped,operational,,none,Performance.All_Performance,,Generic measurement data,N,,AI Analysis,3/25/2026
+statistics,0,unmapped,operational,,none,Performance.All_Performance,,Generic statistics data,N,,AI Analysis,3/25/2026
+tracking,0,unmapped,operational,,low,,,Generic tracking data,N,,AI Analysis,3/25/2026
+modular_alerts:risk,0,unmapped,security,SIEM,high,Alerts.Alerts,Splunk,Splunk ES risk modular alert,N,,AI Analysis,3/25/2026
+app:rds:postgresql,0,unmapped,operational,,low,Databases.All_Databases,Amazon Web Services,AWS RDS postgresql logs,N,,AI Analysis,3/25/2026
+access-too_small,0,unmapped,security,,med,Web.Web,Apache,Web access logs,N,,AI Analysis,3/25/2026
+Script:InstalledApps,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,Splunk,Splunk scripted input: installed apps,N,,AI Analysis,3/25/2026
+waagent,0,unmapped,operational,,low,,Microsoft,Azure Linux agent logs,N,,AI Analysis,3/25/2026
+access_combined,0,unmapped,security,,med,Web.Web,Apache,Web access logs,N,,AI Analysis,3/25/2026
+osconfig_asb_perf-3,0,unmapped,operational,,low,,Google Cloud,GCP OS Config performance data,N,,AI Analysis,3/25/2026
+exec,0,unmapped,security,,med,Endpoint.Processes,,Command execution logs,N,,AI Analysis,3/25/2026
+dnf.librepo,0,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
+krb_child,0,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
+messages-4,0,unmapped,operational,,low,,Linux,Linux system messages,N,,AI Analysis,3/25/2026
+falcon-libbpf-3,0,unmapped,security,EDR,med,Endpoint.Processes,CrowdStrike,CrowdStrike Falcon falcon-libbpf-3,N,,AI Analysis,3/25/2026
+CommandExecution,0,unmapped,security,,med,Endpoint.Processes,,Command execution audit logs,N,,AI Analysis,3/25/2026
+Script:TimesyncConfiguration,0,unmapped,operational,,low,Performance.OS.Timesync,Splunk,Splunk scripted input: time sync config,N,,AI Analysis,3/25/2026
+Script:TimesyncStatus,0,unmapped,operational,,low,Performance.OS.Timesync,Splunk,Splunk scripted input: time sync status,N,,AI Analysis,3/25/2026
+osconfig_asb_perf-4,0,unmapped,operational,,low,,Google Cloud,GCP OS Config performance data,N,,AI Analysis,3/25/2026
+dnf.rpm,0,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
+hawkey,0,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
+access_combined_wcookie,0,unmapped,security,,med,Web.Web,Apache,Web access logs,N,,AI Analysis,3/25/2026
+modular_alerts:notable,0,unmapped,security,SIEM,high,Alerts.Alerts,Splunk,Splunk ES notable event output,N,,AI Analysis,3/25/2026
+dnf.librepo-5,0,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
+boot,0,unmapped,operational,,low,,Linux,Linux kernel/boot messages,N,,AI Analysis,3/25/2026
+dnf.librepo-4,0,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
+asterisk_messages,0,unmapped,operational,,low,,Asterisk,Asterisk VoIP system messages,N,,AI Analysis,3/25/2026
+krb5_child,0,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
+handler,0,unmapped,operational,,low,,Microsoft,Azure VM agent/handler logs,N,,AI Analysis,3/25/2026
+unknown-too_small,0,unmapped,unknown,,low,,,Unknown truncated events,N,,AI Analysis,3/25/2026
+unknown,0,unmapped,unknown,,low,,,Unknown sourcetype,N,,AI Analysis,3/25/2026
+osconfig_asb_perf-2,0,unmapped,operational,,low,,Google Cloud,GCP OS Config performance data,N,,AI Analysis,3/25/2026
+time,0,unmapped,operational,,low,Performance.OS.Timesync,,Time sync data,N,,AI Analysis,3/25/2026
+sessionlauncher,0,unmapped,operational,,low,,Microsoft,Azure VM agent/handler logs,N,,AI Analysis,3/25/2026
+error-too_small,0,unmapped,operational,,low,,,Error logs,N,,AI Analysis,3/25/2026
+unattended-upgrades,0,unmapped,operational,,low,Updates.Updates,Linux,Unattended upgrade logs,N,,AI Analysis,3/25/2026
+Script:NetworkConfiguration,0,unmapped,operational,,low,Compute_Inventory.All_Inventory.Network,Splunk,Splunk scripted input: network config,N,,AI Analysis,3/25/2026
+hardware,0,unmapped,operational,,low,Compute_Inventory.All_Inventory,,Hardware inventory data,N,,AI Analysis,3/25/2026
+osconfig_telemetry-2,0,unmapped,operational,,low,,Google Cloud,GCP OS Config performance data,N,,AI Analysis,3/25/2026
+osconfig_asb_perf,0,unmapped,operational,,low,,Google Cloud,GCP OS Config performance data,N,,AI Analysis,3/25/2026
+apiserver-2,0,unmapped,operational,,low,,Kubernetes,Kubernetes API server logs,N,,AI Analysis,3/25/2026
+tuned,0,unmapped,operational,,low,,Linux,Tuned system tuning daemon logs,N,,AI Analysis,3/25/2026
+app:rds:error,0,unmapped,operational,,low,Databases.All_Databases,Amazon Web Services,AWS RDS error logs,N,,AI Analysis,3/25/2026
+maillog,0,unmapped,operational,,low,Email.All_Email,Linux,Linux mail server logs,N,,AI Analysis,3/25/2026
+error_log,0,unmapped,operational,,low,,Apache,Apache error logs,N,,AI Analysis,3/25/2026
+agentlauncher,0,unmapped,operational,,low,,Microsoft,Azure VM agent/handler logs,N,,AI Analysis,3/25/2026
+osconfig_telemetry,0,unmapped,operational,,low,,Google Cloud,GCP OS Config performance data,N,,AI Analysis,3/25/2026
+clamscan,0,unmapped,security,EPP,med,Malware.Malware_Attacks,ClamAV,ClamAV scan results,N,,AI Analysis,3/25/2026
+p11_child,0,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
+dnf-11,0,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
+krb5_child-2,0,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
+Xorg,0,unmapped,operational,,none,,Linux,X.org display server logs,N,,AI Analysis,3/25/2026
+extension-5,0,unmapped,operational,,low,,Microsoft,Azure VM agent/handler logs,N,,AI Analysis,3/25/2026
+handler-3,0,unmapped,operational,,low,,Microsoft,Azure VM agent/handler logs,N,,AI Analysis,3/25/2026
+handler-4,0,unmapped,operational,,low,,Microsoft,Azure VM agent/handler logs,N,,AI Analysis,3/25/2026
+alternatives,0,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
+handler-2,0,unmapped,operational,,low,,Microsoft,Azure VM agent/handler logs,N,,AI Analysis,3/25/2026
+dnf-7,0,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
+app:rds:rds-events,0,unmapped,operational,,low,Databases.All_Databases,Amazon Web Services,AWS RDS rds-events logs,N,,AI Analysis,3/25/2026
+ldaptestconnection,0,unmapped,security,IAM,low,,,LDAP connection test logs,N,,AI Analysis,3/25/2026
+dnf.librepo-too_small,0,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
+modular_alerts:get_io_vulnerability_summary,0,unmapped,security,VMS,high,Vulnerabilities.Vulnerabilities,Splunk,Splunk vulnerability summary alert,N,,AI Analysis,3/25/2026
+cdpcli,0,unmapped,operational,,low,,,CDP CLI logs,N,,AI Analysis,3/25/2026
+ufw-too_small,0,unmapped,security,FW,med,Network_Traffic.All_Traffic,Linux,Ubuntu firewall logs,N,,AI Analysis,3/25/2026
+hawkey-too_small,0,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
+threatconnect:event,0,unmapped,security,TIP,high,Intrusion_Detection.IDS_Attacks,ThreatConnect,ThreatConnect threat intelligence,N,,AI Analysis,3/25/2026
+kdump,0,unmapped,operational,,low,,Linux,Linux kernel/boot messages,N,,AI Analysis,3/25/2026
+harden,0,unmapped,security,,med,,,Security hardening audit data,N,,AI Analysis,3/25/2026
+unattended-upgrades-dpkg-13,0,unmapped,operational,,low,Updates.Updates,Linux,Unattended upgrade logs,N,,AI Analysis,3/25/2026
+apt_term,0,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
+install,0,unmapped,operational,,low,,,Installation/uninstall logs,N,,AI Analysis,3/25/2026
+app:rds:agent,0,unmapped,operational,,low,Databases.All_Databases,Amazon Web Services,AWS RDS agent logs,N,,AI Analysis,3/25/2026
+dependency-agent-install-too_small,0,unmapped,operational,,low,,Microsoft,Azure dependency agent logs,N,,AI Analysis,3/25/2026
+apport,0,unmapped,operational,,low,,Linux,Ubuntu crash report logs,N,,AI Analysis,3/25/2026
+tuned-32,0,unmapped,operational,,low,,Linux,Tuned system tuning daemon logs,N,,AI Analysis,3/25/2026
+config-too_small,0,unmapped,unknown,,low,,,config-too_small,N,,AI Analysis,3/25/2026
+falconctl,0,unmapped,security,EDR,med,Endpoint.Processes,CrowdStrike,CrowdStrike Falcon falconctl,N,,AI Analysis,3/25/2026
+kdump-too_small,0,unmapped,operational,,low,,Linux,Linux kernel/boot messages,N,,AI Analysis,3/25/2026
+cfn-init,0,unmapped,operational,,low,,Amazon Web Services,AWS CloudFormation init logs,N,,AI Analysis,3/25/2026
+dnf.librepo.log,0,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
+kdump-2,0,unmapped,operational,,low,,Linux,Linux kernel/boot messages,N,,AI Analysis,3/25/2026
+tuned-31,0,unmapped,operational,,low,,Linux,Tuned system tuning daemon logs,N,,AI Analysis,3/25/2026
+InMage_drivers,0,unmapped,operational,,low,,Microsoft,Azure Site Recovery drivers,N,,AI Analysis,3/25/2026
+telegraf-too_small,0,unmapped,operational,,none,Performance.All_Performance,,Telegraf metrics agent,N,,AI Analysis,3/25/2026
+rules-too_small,0,unmapped,operational,,low,,,Rules configuration data,N,,AI Analysis,3/25/2026
+tuned-30,0,unmapped,operational,,low,,Linux,Tuned system tuning daemon logs,N,,AI Analysis,3/25/2026
+cfn-wire,0,unmapped,operational,,low,,Amazon Web Services,AWS CloudFormation wire logs,N,,AI Analysis,3/25/2026
+krb5_child-too_small,0,unmapped,security,IAM,med,Authentication.Authentication,SSSD,SSSD auth daemon logs,N,,AI Analysis,3/25/2026
+alternatives-too_small,0,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
+modular_alerts:victorops,0,unmapped,operational,,low,,Splunk,Splunk VictorOps alert action,N,,AI Analysis,3/25/2026
+unattended-upgrades-dpkg-14,0,unmapped,operational,,low,Updates.Updates,Linux,Unattended upgrade logs,N,,AI Analysis,3/25/2026
+page_log,0,unmapped,operational,,none,,CUPS,CUPS print page log,N,,AI Analysis,3/25/2026
+powershell,0,unmapped,security,EDR,high,Endpoint.Processes,Microsoft,PowerShell execution logs,N,,AI Analysis,3/25/2026
+cnf-too_small,0,unmapped,operational,,none,,,Configuration data,N,,AI Analysis,3/25/2026
+apport-too_small,0,unmapped,operational,,low,,Linux,Ubuntu crash report logs,N,,AI Analysis,3/25/2026
+choose_repo,0,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
+dnf.log-3,0,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
+vmware-vmtoolsd-root,0,unmapped,operational,,low,,VMware,VMware Tools daemon logs,N,,AI Analysis,3/25/2026
+dnf.librepo.log-2,0,unmapped,operational,,low,Updates.Updates,Linux,Package manager logs,N,,AI Analysis,3/25/2026
+maillog-too_small,0,unmapped,operational,,low,Email.All_Email,Linux,Linux mail server logs,N,,AI Analysis,3/25/2026
+page_log-too_small,0,unmapped,operational,,none,,CUPS,CUPS print page log,N,,AI Analysis,3/25/2026
+fontconfig,0,unmapped,operational,,none,,Linux,Font configuration data,N,,AI Analysis,3/25/2026
+fstab-too_small,0,unmapped,operational,,none,,Linux,Filesystem table config,N,,AI Analysis,3/25/2026
+swp-too_small,0,unmapped,operational,,none,,,Swap file data,N,,AI Analysis,3/25/2026
+stash,0,excluded,operational,,none,,Splunk,summary index stash,Y,Splunk internal — summary index stash,MDI Default,3/25/2026
 kvstore,0,excluded,operational,,none,,Splunk,KV store logs,Y,Splunk internal — KV store logs,MDI Default,03/25/2026
 splunk_disk_objects,0,excluded,operational,,none,,Splunk,disk monitoring,Y,Splunk internal — disk monitoring,MDI Default,03/25/2026
 splunk_python,0,excluded,operational,,none,,Splunk,Python logs,Y,Splunk internal — Python logs,MDI Default,03/25/2026
