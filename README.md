@@ -31,8 +31,8 @@ Reference materials for Splunk CIM (Common Information Model) normalization work
 
 | File | Description |
 |------|-------------|
-| `parse_cim_datamodels.py` | Python script for parsing Splunk's CIM JSON data model files into tabular CSV format. |
-| `parse_cim_datamodels.ipynb` | Jupyter notebook version of the same — useful for interactive exploration and spot-checking. |
+| `parse_cim_datamodels.py` | Python script (standard library only) for parsing Splunk's CIM JSON data model files into tabular CSV format. Accepts `--models-dir` and `--output` arguments. |
+| `Data_Model_JSON_Parser.ipynb` | Jupyter notebook version of the same — useful for interactive exploration and spot-checking. |
 
 > **Note:** The parsing tools require access to Splunk's CIM app JSON files, typically found at `$SPLUNK_HOME/etc/apps/Splunk_SA_CIM/default/data/models/`.
 
@@ -97,7 +97,6 @@ The `splunk_data_model_objects_fields_604.csv` was generated from Splunk CIM v6.
 
 - [CIM Assessment Toolkit (CAT)](https://splunkbase.splunk.com) — Splunk app that uses this reference data to measure CIM compliance across data models. Includes dashboard, automated report generation, and scheduled email delivery.
 - [Splunk CIM Add-on](https://splunkbase.splunk.com/app/1621) — Official Splunk CIM app containing the data model definitions this reference is derived from.
-- [Data Model Wrangler](https://splunkbase.splunk.com/app/6286) — Nick von Korff's app for CIM data model coverage assessment, which inspired CAT.
 
 ---
 
