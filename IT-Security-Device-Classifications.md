@@ -24,10 +24,10 @@ A comprehensive list of classifications, descriptions, and prominent vendors/dev
 
 ## 🔍 Common Sourcetypes by Security Device Classification
 
-| Classification                           | Common Splunk Sourcetypes |
-| ---------------------------------------- | ------------------------- |
+| Classification                            | Common Splunk Sourcetypes |
+| ----------------------------------------- | ------------------------- |
 | **Firewall**                              | pan:log, cisco:asa, fortigate, juniper, checkpoint            |
-| **Intrusion Detection System (IDS)**      | snort, sourcetype=ids, sourcefire, suricata                   |
+| **Intrusion Detection System (IDS)**      | ids, snort, sourcefire, sur                                   |
 | **Intrusion Prevention System (IPS)**     | cisco:sourcefire, paloalto:threat, fortinet:utm               |
 | **Web Proxy / Secure Web Gateway**        | bluecoat:proxysg, zscalerenrich, symantec:webgateway, squid   |
 | **Endpoint Detection & Response (EDR)**   | crowdstrike:event, carbonblack:json, sentinelone:events       |
@@ -39,7 +39,7 @@ A comprehensive list of classifications, descriptions, and prominent vendors/dev
 | **Vulnerability Management**              | nessus, qualys:hostDetection, rapid7:insightvm                |
 | **Cloud Security Posture Management (CSPM)** | aws:config, gcp:securitycenter, azure:securitycenter       |
 | **Identity and Access Management (IAM)**  | okta:auth, o365:management:activity, azure:activity           |
-| **Multi-Factor Authentication (MFA)**     | duo:authentication, okta:auth, azure:signinlogs              |
+| **Multi-Factor Authentication (MFA)**     | duo:authentication, okta:auth, azure:signinlogs               |
 | **Deception Technology**                  | attivo:log, trapx:alert, illusive:trap                        |
 
 EOF
