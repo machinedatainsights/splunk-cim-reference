@@ -24,8 +24,10 @@ Reference materials for Splunk CIM (Common Information Model) normalization work
 
 | File | Description |
 |------|-------------|
-| `security_classifications_reference.md` | Authoritative reference for IT security device classifications used in CIM normalization. Defines 40 acronyms (EDR, NGFW, IAM, SIEM, etc.) with descriptions, vendor examples, and classification guidelines. |
+| `security_classifications_reference.md` | Authoritative reference for IT security device classifications used in CIM normalization. Defines 40 acronyms (EDR, NGFW, IAM, SIEM, etc.) with descriptions, vendor examples, and classification guidelines. Use this as the source of truth for `security_classification` values in the sourcetype inventory. |
 | `security_classifications_reference.pdf` | PDF version of the same reference. |
+| `Security-Categories-and-Acronyms.md` | Quick-reference cheat sheet of security acronyms organized by category. A condensed companion to the full reference above — useful for fast lookups. Note that the full reference is authoritative; a handful of acronyms (FW, NGFW, UTM, SWG, EPP, CTD, ESG, DT, VPN) appear there but not here. |
+| `IT-Security-Device-Classifications.md` | Broader classification reference covering 15 security device categories with descriptions, vendor examples, applicable Splunk CIM data models, and common sourcetypes for each category. Useful for understanding which CIM data models a given security device type maps to. |
 
 ### CIM Data Model Parsing Tools
 
