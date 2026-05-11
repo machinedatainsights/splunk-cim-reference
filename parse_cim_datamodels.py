@@ -18,23 +18,76 @@ Parses Splunk CIM data model JSON files into a flat CSV reference file.
 
 Usage:
     python parse_cim_datamodels.py
-    python parse_cim_datamodels.py --models-dir ./models --output splunk_data_model_objects_fields_604.csv
+    python parse_cim_datamodels.py --models-dir ./models
+    python parse_cim_datamodels.py --cim-version 8.5.0
+    python parse_cim_datamodels.py --output ./splunk_data_model_objects_fields_850.csv --force
 
 Instructions:
     1. Download and unzip the latest Splunk Common Information Model app from Splunkbase:
        https://splunkbase.splunk.com/app/1621
     2. Copy the data model .json files (Alerts.json, Authentication.json, etc.) from:
        <unzipped>/Splunk_SA_CIM/default/data/models/
-       into a local folder (default: ./models)
-    3. Run this script. The output CSV will be written to the current directory.
-    4. Update --output to reflect the CIM version (e.g., splunk_data_model_objects_fields_605.csv)
-       when parsing a newer CIM release.
+       into a local folder (default: ./models). Optionally include the app's
+       default/app.conf alongside or above the models folder to enable
+       automatic CIM version detection.
+    3. Run this script. If a Splunk_SA_CIM app.conf is reachable from the
+       models directory (typically at ../../app.conf), the CIM version is
+       auto-detected and the default output filename becomes
+       splunk_data_model_objects_fields_<version_no_dots>.csv (e.g., _850.csv).
+       Otherwise the default falls back to the unversioned
+       splunk_data_model_objects_fields.csv.
+    4. Pass --cim-version X.Y.Z to override or supply the version label
+       manually, and --force to overwrite an existing output file.
 """
 
 import os
 import json
 import csv
 import argparse
+
+
+def detect_cim_version(models_dir):
+    """Return the Splunk_SA_CIM app version from a nearby app.conf, or None.
+
+    Looks for app.conf in the models directory itself and in the standard
+    Splunk app layout (default/data/models/ -> default/app.conf, two levels up).
+    """
+    candidates = [
+        os.path.join(models_dir, "app.conf"),
+        os.path.normpath(os.path.join(models_dir, "..", "..", "app.conf")),
+        os.path.normpath(os.path.join(models_dir, "..", "..", "..", "default", "app.conf")),
+    ]
+    for candidate in candidates:
+        if not os.path.isfile(candidate):
+            continue
+        try:
+            with open(candidate, "r", encoding="utf-8-sig", errors="replace") as f:
+                section = None
+                for raw in f:
+                    line = raw.strip()
+                    if not line or line.startswith("#"):
+                        continue
+                    if line.startswith("[") and line.endswith("]"):
+                        section = line[1:-1].strip().lower()
+                        continue
+                    if section in ("launcher", "install") and "=" in line:
+                        key, _, value = line.partition("=")
+                        if key.strip().lower() == "version":
+                            version = value.strip()
+                            if version:
+                                return version
+        except OSError:
+            continue
+    return None
+
+
+def default_output_path(version):
+    """Build the default output CSV path, embedding a compact version if available."""
+    if version:
+        compact = "".join(c for c in version if c.isdigit())
+        if compact:
+            return f"./splunk_data_model_objects_fields_{compact}.csv"
+    return "./splunk_data_model_objects_fields.csv"
 
 
 def parse_models(models_dir, output_path):
@@ -153,8 +206,23 @@ def main():
     )
     parser.add_argument(
         "--output",
-        default="./splunk_data_model_objects_fields_604.csv",
-        help="Output CSV filename (default: ./splunk_data_model_objects_fields_604.csv)",
+        default=None,
+        help=(
+            "Output CSV filename. If omitted, defaults to "
+            "./splunk_data_model_objects_fields_<version>.csv when a CIM version "
+            "is auto-detected (or supplied via --cim-version); otherwise "
+            "./splunk_data_model_objects_fields.csv."
+        ),
+    )
+    parser.add_argument(
+        "--cim-version",
+        default=None,
+        help="Override the CIM version label used in the default output filename (e.g., 8.5.0).",
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Overwrite the output CSV if it already exists.",
     )
     args = parser.parse_args()
 
@@ -162,7 +230,24 @@ def main():
         print(f"Error: models directory '{args.models_dir}' not found.")
         raise SystemExit(1)
 
-    parse_models(args.models_dir, args.output)
+    output_path = args.output
+    if not output_path:
+        version = args.cim_version or detect_cim_version(args.models_dir)
+        output_path = default_output_path(version)
+        if version:
+            print(f"Using CIM version '{version}' -> output: {output_path}")
+        else:
+            print(f"CIM version not detected; output: {output_path}")
+            print("  (pass --cim-version X.Y.Z to embed a version in the default filename)")
+
+    if os.path.exists(output_path) and not args.force:
+        print(
+            f"Error: output file '{output_path}' already exists. "
+            "Pass --force to overwrite, or choose a different --output path."
+        )
+        raise SystemExit(2)
+
+    parse_models(args.models_dir, output_path)
 
 
 if __name__ == "__main__":
