@@ -24,6 +24,7 @@ Both files share the same column schema, so any consumer (search, transform, AI 
 | File | Description |
 |------|-------------|
 | `cim_sourcetype_inventory.csv` | Master reference of common Splunk sourcetypes classified by vendor, security relevance, scope, applicable CIM data models, and exclusion status. Starting point for CIM normalization projects. |
+| `cim_sourcetype_inventory.csv.version.csv` | Sidecar version/provenance file for the inventory. Single-row CSV (`last_updated`, `updated_by`, `note`) that the CIM Assessment Toolkit reads to report which inventory is loaded and to distinguish the bundled reference inventory from a custom, environment-specific one. See [Sourcetype Inventory Version Sidecar](#sourcetype-inventory-version-sidecar). |
 | `sourcetype_analysis_prompt.md` | Prompt and instructions for using an AI assistant to classify a new list of sourcetypes into the inventory format. |
 | `sourcetypes_list.csv` | Example input file — a raw list of sourcetypes and event counts from a `tstats` search. Illustrates the expected input format for the analysis prompt. |
 
@@ -66,6 +67,29 @@ Both files share the same column schema, so any consumer (search, transform, AI 
 | `exclude_reason` | Reason for exclusion if `exclude=Y` |
 | `reviewed_by` | Who classified this entry |
 | `reviewed_date` | Date reviewed (M/D/YYYY) |
+
+---
+
+## Sourcetype Inventory Version Sidecar
+
+`cim_sourcetype_inventory.csv` ships with a sidecar file that records the inventory's provenance: `cim_sourcetype_inventory.csv.version.csv`. The CIM Assessment Toolkit (CAT) reads this sidecar to report which inventory is loaded and to distinguish the bundled reference inventory from a custom, environment-specific one.
+
+**Naming convention:** the sidecar is the inventory filename with `.version.csv` appended (`cim_sourcetype_inventory.csv` → `cim_sourcetype_inventory.csv.version.csv`). Keep the two files together.
+
+**Format:** a single data row under a header, with these columns:
+
+| Column | Description |
+|--------|-------------|
+| `last_updated` | Date the inventory was last updated (`YYYY-MM-DD`) |
+| `updated_by` | Email or identity of whoever produced this inventory |
+| `note` | Free-text note — e.g., that this is the bundled reference inventory, or a custom inventory for a specific environment |
+
+```csv
+last_updated,updated_by,note
+"2026-05-17","jim.baxter@machinedatainsights.com","Initial addition of the cim_sourcetype_inventory.csv.version.csv file"
+```
+
+When delivering a customized `cim_sourcetype_inventory.csv` to CAT — for example, one extended with custom sourcetypes discovered in a particular environment — supply a matching sidecar whose `note` flags it as a custom inventory and whose `last_updated` / `updated_by` reflect that change. CAT surfaces these values so operators can tell at a glance which inventory is in effect. The sidecar uses CSV (rather than JSON) so it can be loaded by CAT alongside the inventory CSV using the same tooling.
 
 ---
 
