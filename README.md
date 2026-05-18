@@ -24,7 +24,7 @@ Both files share the same column schema, so any consumer (search, transform, AI 
 | File | Description |
 |------|-------------|
 | `cim_sourcetype_inventory.csv` | Master reference of common Splunk sourcetypes classified by vendor, security relevance, scope, applicable CIM data models, and exclusion status. Starting point for CIM normalization projects. |
-| `cim_sourcetype_inventory.csv.version.csv` | Sidecar version/provenance file for the inventory. Single-row CSV (`last_updated`, `updated_by`, `note`) that the CIM Assessment Toolkit reads to report which inventory is loaded and to distinguish the bundled reference inventory from a custom, environment-specific one. See [Sourcetype Inventory Version Sidecar](#sourcetype-inventory-version-sidecar). |
+| `cim_sourcetype_inventory.csv.version.csv` | Sidecar version/provenance file for the inventory. Single-row CSV (`last_updated`, `updated_by`, `note`, `base_catalog_last_updated`) that the CIM Assessment Toolkit reads to report which inventory is loaded and to distinguish the bundled reference inventory from a custom, environment-specific one. See [Sourcetype Inventory Version Sidecar](#sourcetype-inventory-version-sidecar). |
 | `sourcetype_analysis_prompt.md` | Prompt and instructions for using an AI assistant to classify a new list of sourcetypes into the inventory format. |
 | `sourcetypes_list.csv` | Example input file — a raw list of sourcetypes and event counts from a `tstats` search. Illustrates the expected input format for the analysis prompt. |
 
@@ -80,16 +80,17 @@ Both files share the same column schema, so any consumer (search, transform, AI 
 
 | Column | Description |
 |--------|-------------|
-| `last_updated` | Date the inventory was last updated (`YYYY-MM-DD`) |
+| `last_updated` | Date this inventory (bundled or customized) was last updated (`YYYY-MM-DD`) |
 | `updated_by` | Email or identity of whoever produced this inventory |
 | `note` | Free-text note — e.g., that this is the bundled reference inventory, or a custom inventory for a specific environment |
+| `base_catalog_last_updated` | The `last_updated` date of the standard bundled catalog this inventory is built on (`YYYY-MM-DD`). For the bundled reference inventory this equals `last_updated`. For a customized inventory it stays pinned to the base catalog release the customizations were layered on top of, so operators can tell which upstream catalog version a custom inventory derives from — and detect when a newer base catalog is available to re-merge against. |
 
 ```csv
-last_updated,updated_by,note
-"2026-05-17","jim.baxter@machinedatainsights.com","Initial addition of the cim_sourcetype_inventory.csv.version.csv file"
+last_updated,updated_by,note,base_catalog_last_updated
+"2026-05-17","jim.baxter@machinedatainsights.com","Initial addition of the cim_sourcetype_inventory.csv.version.csv file","2026-05-17"
 ```
 
-When delivering a customized `cim_sourcetype_inventory.csv` to CAT — for example, one extended with custom sourcetypes discovered in a particular environment — supply a matching sidecar whose `note` flags it as a custom inventory and whose `last_updated` / `updated_by` reflect that change. CAT surfaces these values so operators can tell at a glance which inventory is in effect. The sidecar uses CSV (rather than JSON) so it can be loaded by CAT alongside the inventory CSV using the same tooling.
+When delivering a customized `cim_sourcetype_inventory.csv` to CAT — for example, one extended with sourcetypes that are unique to a particular environment (custom apps and the like) or not yet in the standard catalog — supply a matching sidecar whose `note` flags it as a custom inventory and whose `last_updated` / `updated_by` reflect that change. Leave `base_catalog_last_updated` set to the `last_updated` value of the standard catalog the customizations were built on; don't advance it when you edit the custom inventory. This decouples "when was this (custom) inventory last touched" from "which release of the standard catalog it descends from," so when the bundled catalog is updated an operator can compare the two dates and decide whether to re-merge their customizations onto the newer base. CAT surfaces these values so operators can tell at a glance which inventory is in effect and how current its base catalog is. The sidecar uses CSV (rather than JSON) so it can be loaded by CAT alongside the inventory CSV using the same tooling.
 
 ---
 
