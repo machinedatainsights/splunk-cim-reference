@@ -2,6 +2,8 @@
 
 A community-maintained reference for Splunk CIM (Common Information Model) work. The headline artifact is a flat CSV of every CIM data model, dataset, field, type, prescribed value, constraint, and description — generated directly from Splunk's CIM app JSON. The repo also includes sourcetype classification tooling, a security device taxonomy, and the parsing script used to (re)generate the CSV.
 
+> **📥 To download any file:** click the filename link below to open the GitHub file view, then click the **Download raw file** button (⬇ icon in the top-right of the file toolbar). Clicking the link alone opens an in-browser preview — the download button saves the file locally.
+
 ---
 
 ## CIM Data Model Field Reference — start here
