@@ -1,2 +1,2 @@
 last_updated,updated_by,note,base_catalog_last_updated
-"2026-05-17","jim.baxter@machinedatainsights.com","Initial addition of the cim_sourcetype_inventory.csv.version.csv file","2026-05-17"
+"2026-05-27","jim.baxter@machinedatainsights.com","Added expanded_desc column; added 97 new sourcetypes (80 from scrubbed examples, 17 from 2024 descriptions file); 846 total rows","2026-05-27"

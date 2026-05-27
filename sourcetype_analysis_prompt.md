@@ -6,7 +6,6 @@ I have a CSV file of Splunk sourcetypes with event counts that need to be analyz
 
 - sourcetype - The sourcetype name
 - events - Event count from the input file
-- mapped_status - Set to "unmapped" for all entries
 - scope - Categorize as: security, operational, security,operational, none, or unknown
 - security_classification - Use ONLY classifications from the attached 'security_classifications_reference.md' (e.g., EDR, NGFW, IAM, etc.). Use "N/A" for non-security sourcetypes, "Unknown" if insufficient information. List up to 3 classifications if applicable.
 - security_relevance - Assign: none, low, med, or high

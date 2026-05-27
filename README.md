@@ -65,17 +65,18 @@ For reading and field-by-field reconciliation (rather than machine consumption),
 |--------|-------------|
 | `sourcetype` | Splunk sourcetype name |
 | `events` | Event count (set to 0 in the starter inventory — populate from your environment) |
-| `mapped_status` | `mapped`, `unmapped`, or `excluded` |
 | `scope` | `security`, `operational`, `security,operational`, `none`, or `unknown` |
 | `security_classification` | Acronym(s) from `security_classifications_reference.md` (e.g., `EDR`, `NGFW`). `N/A` for non-security sourcetypes. |
 | `security_relevance` | `high`, `med`, `low`, or `none` |
 | `data_models` | Applicable CIM data models in `Model.Dataset` format (e.g., `Authentication.Authentication`). Up to 3, drawn from the CIM field reference CSV (preferably `splunk_data_model_objects_fields_850.csv`; `_640.csv` for CIM 6.x environments). |
 | `vendor` | Technology vendor |
 | `description` | Brief description (50 characters max) |
+| `expanded_desc` | Long-form description (1-3 sentences) covering vendor product context, payload, and CIM mapping where applicable |
 | `exclude` | `Y` or `N` — controls whether the sourcetype is filtered from unmapped counts in CIM compliance tools |
 | `exclude_reason` | Reason for exclusion if `exclude=Y` |
 | `reviewed_by` | Who classified this entry |
 | `reviewed_date` | Date reviewed (M/D/YYYY) |
+| `provenance` | Origin of the entry (e.g., `human_curated`, `AI Analysis`) |
 
 ---
 
