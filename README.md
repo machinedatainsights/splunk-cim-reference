@@ -36,8 +36,6 @@ For reading and field-by-field reconciliation (rather than machine consumption),
 |------|-------------|
 | [`cim_sourcetype_inventory.csv`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/cim_sourcetype_inventory.csv) | Master reference of common Splunk sourcetypes classified by vendor, security relevance, scope, applicable CIM data models, and exclusion status. Starting point for CIM normalization projects. |
 | [`cim_sourcetype_inventory.csv.version.csv`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/cim_sourcetype_inventory.csv.version.csv) | Sidecar version/provenance file for the inventory. Single-row CSV (`last_updated`, `updated_by`, `note`, `base_catalog_last_updated`) that the CIM Assessment Toolkit reads to report which inventory is loaded and to distinguish the bundled reference inventory from a custom, environment-specific one. See [Sourcetype Inventory Version Sidecar](#sourcetype-inventory-version-sidecar). |
-| [`sourcetype_analysis_prompt.md`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/sourcetype_analysis_prompt.md) | Prompt and instructions for using an AI assistant to classify a new list of sourcetypes into the inventory format. |
-| [`sourcetypes_list.csv`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/sourcetypes_list.csv) | Example input file — a raw list of sourcetypes and event counts from a `tstats` search. Illustrates the expected input format for the analysis prompt. |
 
 ### Security Classification Taxonomy
 
@@ -74,11 +72,6 @@ For reading and field-by-field reconciliation (rather than machine consumption),
 | `vendor` | Technology vendor |
 | `description` | Brief description (50 characters max) |
 | `expanded_desc` | Long-form description (1-3 sentences) covering vendor product context, payload, and CIM mapping where applicable |
-| `exclude` | `Y` or `N` — controls whether the sourcetype is filtered from unmapped counts in CIM compliance tools |
-| `exclude_reason` | Reason for exclusion if `exclude=Y` |
-| `reviewed_by` | Who classified this entry |
-| `reviewed_date` | Date reviewed (M/D/YYYY) |
-| `provenance` | Origin of the entry (e.g., `human_curated`, `AI Analysis`) |
 
 ---
 
@@ -103,26 +96,6 @@ last_updated,updated_by,note,base_catalog_last_updated
 ```
 
 When delivering a customized `cim_sourcetype_inventory.csv` to CAT — for example, one extended with sourcetypes that are unique to a particular environment (custom apps and the like) or not yet in the standard catalog — supply a matching sidecar whose `note` flags it as a custom inventory and whose `last_updated` / `updated_by` reflect that change. Leave `base_catalog_last_updated` set to the `last_updated` value of the standard catalog the customizations were built on; don't advance it when you edit the custom inventory. This decouples "when was this (custom) inventory last touched" from "which release of the standard catalog it descends from," so when the bundled catalog is updated an operator can compare the two dates and decide whether to re-merge their customizations onto the newer base. CAT surfaces these values so operators can tell at a glance which inventory is in effect and how current its base catalog is. The sidecar uses CSV (rather than JSON) so it can be loaded by CAT alongside the inventory CSV using the same tooling.
-
----
-
-## Using the Sourcetype Analysis Prompt
-
-To classify a new batch of sourcetypes:
-
-1. Run a `tstats` search in Splunk to get your sourcetype list with event counts:
-   ```spl
-   | tstats count WHERE index=* NOT index=_* BY sourcetype
-   | sort - count
-   | rename count as events
-   ```
-2. Export the results as `sourcetypes_list.csv`
-3. Open an AI assistant session and attach:
-   - `sourcetypes_list.csv` (your input)
-   - `security_classifications_reference.md` (or `.pdf`)
-   - `splunk_data_model_objects_fields_850.csv` (preferred; or `_640.csv` if your environment is on CIM 6.x)
-   - `sourcetype_analysis_prompt.md` (as the prompt)
-4. The output is a `cim_sourcetype_inventory_<timestamp>.csv` ready to merge into the master inventory
 
 ---
 
