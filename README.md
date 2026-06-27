@@ -66,7 +66,7 @@ For reading and field-by-field reconciliation (rather than machine consumption),
 | Column | Description |
 |--------|-------------|
 | `sourcetype` | Splunk sourcetype name |
-| `events` | Event count (set to 0 in the starter inventory — populate from your environment) |
+| `tech_category` | Canonical technology family the sourcetype's data belongs to — one of `app`, `aws`, `azure`, `gcp`, `linux`, `network`, `security`, `windows`. Single value per sourcetype. Identifies the index *technology type* a sourcetype lands in (e.g., index suffixes such as `*_linux` / `*_aws` / `*_security`), so organizations can administer CIM data-model macros by technology type rather than enumerating every index, and new workloads of a given type are picked up automatically. |
 | `scope` | `security`, `operational`, `security,operational`, `none`, or `unknown` |
 | `security_classification` | Acronym(s) from `security_classifications_reference.md` (e.g., `EDR`, `NGFW`). `N/A` for non-security sourcetypes. |
 | `security_relevance` | `high`, `med`, `low`, or `none` |
@@ -74,6 +74,8 @@ For reading and field-by-field reconciliation (rather than machine consumption),
 | `vendor` | Technology vendor |
 | `description` | Brief description (50 characters max) |
 | `expanded_desc` | Long-form description (1-3 sentences) covering vendor product context, payload, and CIM mapping where applicable |
+
+> **Note on the Windows `WinEventLog` / `XmlWinEventLog` sourcetypes.** These are the only entries where the text after the colon is **not part of the sourcetype**. In Splunk, `WinEventLog` (classic) and `XmlWinEventLog` (XML) are each a *single* sourcetype that multiplexes many distinct Windows event channels; the specific channel is carried in the **`source`** field, not the sourcetype. Inventory rows such as `WinEventLog:Security`, `XmlWinEventLog:Security`, or `XmlWinEventLog:Microsoft-Windows-Sysmon/Operational` therefore denote a **`sourcetype` + `source`** pair — e.g. `sourcetype=XmlWinEventLog source="XmlWinEventLog:Security"` — and are listed individually because each channel maps to different CIM data models. To target one in a search or CIM data-model macro, combine the sourcetype with the source; matching the sourcetype alone (`sourcetype=XmlWinEventLog`) returns *every* channel. The plain `WinEventLog` and `XmlWinEventLog` rows represent the sourcetype as a whole.
 
 ---
 
