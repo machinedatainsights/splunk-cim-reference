@@ -66,7 +66,7 @@ For reading and field-by-field reconciliation (rather than machine consumption),
 | Column | Description |
 |--------|-------------|
 | `sourcetype` | Splunk sourcetype name |
-| `tech_category` | Canonical technology family the sourcetype's data belongs to — one of `app`, `aws`, `azure`, `gcp`, `linux`, `network`, `security`, `windows`. Single value per sourcetype. Identifies the index *technology type* a sourcetype lands in (e.g., index suffixes such as `*_linux` / `*_aws` / `*_security`), so organizations can administer CIM data-model macros by technology type rather than enumerating every index, and new workloads of a given type are picked up automatically. |
+| `tech_category` | Canonical technology family the sourcetype's data belongs to — one of `app`, `aws`, `azure`, `gcp`, `linux`, `network`, `security`, `windows`. Single value per sourcetype. Identifies the index *technology type* a sourcetype lands in (e.g., index suffixes such as `*_linux` / `*_aws` / `*_security`), so organizations can administer CIM data-model macros by technology type rather than enumerating every index, and data landing in new indexes of that technology type is picked up automatically. |
 | `scope` | `security`, `operational`, `security,operational`, `none`, or `unknown` |
 | `security_classification` | Acronym(s) from `security_classifications_reference.md` (e.g., `EDR`, `NGFW`). `N/A` for non-security sourcetypes. |
 | `security_relevance` | `high`, `med`, `low`, or `none` |
