@@ -67,7 +67,7 @@ For reading and field-by-field reconciliation (rather than machine consumption),
 |--------|-------------|
 | `sourcetype` | Splunk sourcetype name |
 | `tech_category` | Canonical technology family the sourcetype's data belongs to — one of `app`, `aws`, `azure`, `gcp`, `linux`, `network`, `security`, `windows`. Single value per sourcetype. Identifies the index *technology type* a sourcetype lands in (e.g., index suffixes such as `*_linux` / `*_aws` / `*_security`), so organizations can administer CIM data-model macros by technology type rather than enumerating every index, and data landing in new indexes of that technology type is picked up automatically. |
-| `scope` | `security`, `operational`, `security,operational`, `none`, or `unknown` |
+| `scope` | `security`, `operational`, `security, operational`, `none`, or `unknown` |
 | `security_classification` | Acronym(s) from `security_classifications_reference.md` (e.g., `EDR`, `NGFW`). `N/A` for non-security sourcetypes. |
 | `security_relevance` | `high`, `med`, `low`, or `none` |
 | `data_models` | Applicable CIM data models in `Model.Dataset` format (e.g., `Authentication.Authentication`). Up to 3, drawn from the CIM field reference CSV (preferably `splunk_data_model_objects_fields_850.csv`; `_640.csv` for CIM 6.x environments). |
