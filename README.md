@@ -79,7 +79,7 @@ Notes on the data:
 
 For reading and field-by-field reconciliation (rather than machine consumption), a rendered catalog of the preferred 8.5.0 reference is also included:
 
-<img src="./images/cim_data_model_field_catalog_page_1.png" alt="Splunk CIM Data Model - Field Catalog - Pg 1" width="500" />     <img src="./images/cim_data_model_field_catalog_page_2.png" alt="Splunk CIM Data Model - Field Catalog - Pg 2" width="500" />
+<img src="./images/cim_data_model_field_catalog_page_1.png" alt="Splunk CIM Data Model - Field Catalog - Pg 1" width="400" />     <img src="./images/cim_data_model_field_catalog_page_2.png" alt="Splunk CIM Data Model - Field Catalog - Pg 2" width="400" />
 
 | File | Description |
 |------|-------------|
