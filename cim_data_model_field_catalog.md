@@ -15,11 +15,11 @@
 ## Models
 
 - [Alerts](#alerts) — 1 dataset(s), 30 fields
-- [Application_State](#application_state) — 4 dataset(s), 25 fields
+- [Application_State (deprecated)](#application_state) — 4 dataset(s), 25 fields
 - [Authentication](#authentication) — 1 dataset(s), 41 fields
 - [Certificates](#certificates) — 2 dataset(s), 47 fields
 - [Change](#change) — 4 dataset(s), 49 fields
-- [Change_Analysis](#change_analysis) — 3 dataset(s), 40 fields
+- [Change_Analysis (deprecated)](#change_analysis) — 3 dataset(s), 40 fields
 - [Compute_Inventory](#compute_inventory) — 9 dataset(s), 57 fields
 - [DLP](#dlp) — 1 dataset(s), 37 fields
 - [Data_Access](#data_access) — 1 dataset(s), 41 fields
