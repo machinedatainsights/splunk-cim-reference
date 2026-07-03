@@ -83,7 +83,7 @@ For reading and field-by-field reconciliation (rather than machine consumption),
 
 | File | Description |
 |------|-------------|
-| [`cim_data_model_field_catalog.md`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/cim_data_model_field_catalog.md) | Human-readable Markdown catalog of every CIM 8.5.0 field, organized by model → dataset, with status (`Req`/`Rec`/`Opt`), type, tags, constraints, prescribed values, and descriptions. Derived directly from `splunk_data_model_objects_fields_850.csv` (1,474 fields · 27 models · 139 datasets). Use this to reconcile a generated or third-party add-on field-for-field against what the model actually defines. Note that the `Splunk Audit Logs` section has been removed. |
+| [`cim_data_model_field_catalog.md`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/cim_data_model_field_catalog.md) | Human-readable Markdown catalog of every CIM 8.5.0 field, organized by model → dataset, with status (`Req`/`Rec`/`Opt`), type, tags, constraints, prescribed values, and descriptions. Derived directly from `splunk_data_model_objects_fields_850.csv` (1,474 fields · 27 models · 139 datasets). Use this to reconcile a generated or third-party add-on field-for-field against what the model actually defines.  
 | [`cim_data_model_field_catalog.pdf`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/cim_data_model_field_catalog.pdf) | PDF rendering of the same catalog. |
 
 [Top](#contents)  
