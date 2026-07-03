@@ -36,7 +36,7 @@ Both files are derived from the `<datamodel>.json` files included in the [Splunk
 
 These reference files can be regenerated for any future CIM version using the same script.
 
-# ## Column Reference: splunk_data_model_objects_fields_850.csv
+### Column Reference: splunk_data_model_objects_fields_850.csv
 
 One row per field per dataset, extracted from the Splunk CIM 8.5.0 data model
 JSON definitions. 1,474 rows covering 27 data models.
