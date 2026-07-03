@@ -96,7 +96,7 @@ A list of ~850 (and growing) common Splunk sourcetypes and metadata for each sou
 
 **If you wish to contribute to or correct/supplement entries in this inventory please see [Contributing](#contributing) below.**  
 
-<img src="./images/cim_sourcetype_inventory_1725x500.png" alt="Splunk CIM Sourcetype Inventory"/>
+<img src="./images/cim_sourcetype_inventory_1725x350.png" alt="Splunk CIM Sourcetype Inventory"/>
 
 | File | Description |
 |------|-------------|
