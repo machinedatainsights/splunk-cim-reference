@@ -23,7 +23,7 @@ A community-maintained reference for Splunk® CIM (Common Information Model) wor
 
 The core of this repo is a single flat CSV per CIM release that lists every field across every data model and dataset, with types, required/recommended flags, prescribed values, constraints, descriptions, base searches, and calculated-field expressions. Fields not marked as required or recommended are considered 'optional' fields. This data is the source of truth used by everything else in this repo (the `data_models` column of the [CIM Sourcetype Inventory](#cim-sourcetype-inventory), for example) as well as the [CIM Assessment Toolkit (CAT)](https://splunkbase.splunk.com/app/8962).  
 
-<img src="./images/splunk_data_model_objects_fields_850_2250x750.png" alt="Splunk CIM Data Model Objects & Fields CSV" width="700" />
+<img src="./images/splunk_data_model_objects_fields_850_2250x750.png" alt="Splunk CIM Data Model Objects & Fields CSV"/>
 
 | File | CIM version | Status |
 |------|-------------|--------|
@@ -36,7 +36,7 @@ Both files are derived from the `<datamodel>.json` files included in the [Splunk
 
 These reference files can be regenerated for any future CIM version using the same script.
 
-## Column Reference: splunk_data_model_objects_fields_850.csv
+# ## Column Reference: splunk_data_model_objects_fields_850.csv
 
 One row per field per dataset, extracted from the Splunk CIM 8.5.0 data model
 JSON definitions. 1,474 rows covering 27 data models.
@@ -79,12 +79,12 @@ Notes on the data:
 
 For reading and field-by-field reconciliation (rather than machine consumption), a rendered catalog of the preferred 8.5.0 reference is also included:
 
+<img src="./images/cim_data_model_field_catalog_page_1.png" alt="Splunk CIM Data Model - Field Catalog - Pg 1" width="500" />     <img src="./images/cim_data_model_field_catalog_page_2.png" alt="Splunk CIM Data Model - Field Catalog - Pg 2" width="500" />
+
 | File | Description |
 |------|-------------|
 | [`cim_data_model_field_catalog.md`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/cim_data_model_field_catalog.md) | Human-readable Markdown catalog of every CIM 8.5.0 field, organized by model → dataset, with status (`Req`/`Rec`/`Opt`), type, tags, constraints, prescribed values, and descriptions. Derived directly from `splunk_data_model_objects_fields_850.csv` (1,474 fields · 27 models · 139 datasets). Use this to reconcile a generated or third-party add-on field-for-field against what the model actually defines. Note that the `Splunk Audit Logs` section has been removed. |
 | [`cim_data_model_field_catalog.pdf`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/cim_data_model_field_catalog.pdf) | PDF rendering of the same catalog. |
-
-<img src="./images/cim_data_model_field_catalog_page_1.png" alt="Splunk CIM Data Model - Field Catalog - Pg 1" width="325" />     <img src="./images/cim_data_model_field_catalog_page_2.png" alt="Splunk CIM Data Model - Field Catalog - Pg 2" width="325" />
 
 [Top](#contents)  
 
@@ -156,12 +156,30 @@ When delivering a customized `cim_sourcetype_inventory.csv` to the CIM Assessmen
 
 ## Security Classification Taxonomy
 
+### Security Classifications Reference
+
+<img src="./images/security_classifications_reference_700x415.png" alt="Security Classification Reference" width="500" />
+
 | File | Description |
 |------|-------------|
 | [`security_classifications_reference.md`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/security_classifications_reference.md) | Authoritative reference for IT security device classifications used in CIM normalization. Defines 40 acronyms (EDR, NGFW, IAM, SIEM, etc.) with descriptions, vendor examples, and classification guidelines. Use this as the source of truth for `security_classification` values in the sourcetype inventory. |
 | [`security_classifications_reference.pdf`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/security_classifications_reference.pdf) | PDF version of the same reference. |
+
+### Security Categories and Acronyms
+
+<img src="./images/security_categories_and_acronyms_700x350.png" alt="Security Categories and Acronyms" width="500" />
+
+| File | Description |
+|------|-------------|
 | [`Security-Categories-and-Acronyms.md`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/Security-Categories-and-Acronyms.md) | Quick-reference cheat sheet of security acronyms organized by category. A condensed companion to the full reference above — useful for fast lookups. Note that the full reference is authoritative; a handful of acronyms (FW, NGFW, UTM, SWG, EPP, CTD, ESG, DT, VPN) appear there but not here. |
 | [`Security-Categories-and-Acronyms.pdf`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/Security-Categories-and-Acronyms.pdf) | PDF version of the same reference. |
+
+### IT Security Device Classifications
+
+<img src="./images/it_security_device_classifications_700x400.png" alt="IT Security Device Classifications" width="500" />
+
+| File | Description |
+|------|-------------|
 | [`IT-Security-Device-Classifications.md`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/IT-Security-Device-Classifications.md) | Broader classification reference covering 15 security device categories with descriptions, vendor examples, applicable Splunk CIM data models, and common sourcetypes for each category. Useful for understanding which CIM data models a given security device type maps to. |
 | [`IT-Security-Device-Classifications.pdf`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/IT-Security-Device-Classifications.pdf) | PDF version of the same reference |
 
@@ -226,7 +244,7 @@ To regenerate either for a newer CIM version:
 
 - [Splunk Common Information Model (CIM)](https://splunkbase.splunk.com/app/1621) — Official Splunk CIM app containing the data model definitions this reference is derived from.
 
-- The `splunk_data_model_objects_fields` file also serves as the source of truth of the CIM data models, datasets, and their fields and tags by AI agents that perform automated CIM normalization in the MDI proprietary [Data Refinery](https://machinedatainsights.com/data-refinery) - see it on the MDI website for more information.  
+- The `splunk_data_model_objects_fields` reference also serves as the source of truth of the data models, datasets, and their fields and tags used by the various AI agents that perform automated CIM normalization in the MDI proprietary [Data Refinery](https://machinedatainsights.com/data-refinery) - see the info page on the MDI website for more information.  
 
 [Top](#contents)  
 
