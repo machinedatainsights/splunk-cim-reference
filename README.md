@@ -102,7 +102,7 @@ A list of ~850 (and growing) common Splunk sourcetypes and metadata for each sou
 |------|-------------|
 | [`cim_sourcetype_inventory.csv`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/cim_sourcetype_inventory.csv) | Master reference of common Splunk sourcetypes classified by vendor, security relevance, scope, applicable CIM data models, and exclusion status. Starting point for CIM normalization projects. |
 | `cim_sourcetype_inventory.xlsx` | Excel version with ease of viewing / filtering options set |
-| [`cim_sourcetype_inventory.csv.version.csv`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/cim_sourcetype_inventory.csv.version.csv) | Sidecar version/provenance file for the inventory. Single-row CSV (`last_updated`, `updated_by`, `note`, `base_catalog_last_updated`) that the CIM Assessment Toolkit reads to report which inventory is loaded and to distinguish the bundled reference inventory from a custom, environment-specific one. See [Sourcetype Inventory Version Sidecar](#sourcetype-inventory-version-sidecar). |
+| [`cim_sourcetype_inventory.csv.version.csv`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/cim_sourcetype_inventory.csv.version.csv) | Sidecar version/provenance file for the inventory. CSV (`last_updated`, `updated_by`, `note`, `base_catalog_last_updated`) holding one row per revision, most recent first, so it serves as both the current-version record and a change history. The CIM Assessment Toolkit reads the top (most recent) row to report which inventory is loaded and to distinguish the bundled reference inventory from a custom, environment-specific one. See [Sourcetype Inventory Version Sidecar](#sourcetype-inventory-version-sidecar). |
 
 ### Sourcetype Inventory Format
 
@@ -115,10 +115,11 @@ A list of ~850 (and growing) common Splunk sourcetypes and metadata for each sou
 | `scope` | `security`, `operational`, `security, operational`, `none`, or `unknown` |
 | `security_classification` | Acronym(s) from `security_classifications_reference.md` (e.g., `EDR`, `NGFW`). `N/A` for non-security sourcetypes. |
 | `security_relevance` | `high`, `med`, `low`, or `none` |
-| `data_models` | Applicable CIM data models in `Model.Dataset` format (e.g., `Authentication.Authentication`). Up to 3, drawn from the CIM field reference CSV (preferably `splunk_data_model_objects_fields_850.csv`; `_640.csv` for CIM 6.x environments). |
+| `data_models` | Applicable CIM data models in `Model.Dataset` format (e.g., `Authentication.Authentication`). Typically up to 3 — though a few multi-function sourcetypes warrant more — drawn from the CIM field reference CSV (preferably `splunk_data_model_objects_fields_850.csv`; `_640.csv` for CIM 6.x environments). |
 | `vendor` | Technology vendor |
 | `description` | Brief description (50 characters max) |
 | `expanded_desc` | Long-form description (1-3 sentences) covering vendor product context, payload, and CIM mapping where applicable |
+| `provenance` | How the row's metadata was produced: `ai_curated` (the default) for AI-generated/classified entries, or `human_curated` for entries authored or reviewed by a person. |
 
 **Note regarding Windows `WinEventLog` / `XmlWinEventLog` sourcetypes:**  
 
@@ -134,7 +135,7 @@ These are the only entries where the text after the colon is **not part of the s
 
 **Naming convention:** the sidecar is the inventory filename with `.version.csv` appended (`cim_sourcetype_inventory.csv` → `cim_sourcetype_inventory.csv.version.csv`). Keep the two files together.
 
-**Format:** a single data row under a header, with these columns:
+**Format:** one row per revision under a header, ordered most recent first. The top data row is the current version (what CAT reads); earlier rows are retained beneath it as a change history. Each row has these columns:
 
 | Column | Description |
 |--------|-------------|
@@ -145,10 +146,11 @@ These are the only entries where the text after the colon is **not part of the s
 
 ```csv
 last_updated,updated_by,note,base_catalog_last_updated
+"2026-07-07","jim.baxter@machinedatainsights.com","Re-introduced the provenance column (ai_curated default); added the cobblestone sourcetype","2026-07-07"
 "2026-05-17","jim.baxter@machinedatainsights.com","Initial addition of the cim_sourcetype_inventory.csv.version.csv file","2026-05-17"
 ```
 
-When delivering a customized `cim_sourcetype_inventory.csv` to the CIM Assessment Toolkit (CAT) — for example, one extended with sourcetypes that are unique to a particular environment (custom apps and the like) or not yet in the standard catalog — supply a matching sidecar whose `note` flags it as a custom inventory and whose `last_updated` / `updated_by` reflect that change. Leave `base_catalog_last_updated` set to the `last_updated` value of the standard catalog the customizations were built on; don't advance it when you edit the custom inventory. This decouples "when was this (custom) inventory last touched" from "which release of the standard catalog it descends from," so when the bundled catalog is updated an operator can compare the two dates and decide whether to re-merge their customizations onto the newer base. CAT surfaces these values so operators can tell at a glance which inventory is in effect and how current its base catalog is. The sidecar uses CSV (rather than JSON) so it can be loaded by CAT alongside the inventory CSV using the same tooling.
+When delivering a customized `cim_sourcetype_inventory.csv` to the CIM Assessment Toolkit (CAT) — for example, one extended with sourcetypes that are unique to a particular environment (custom apps and the like) or not yet in the standard catalog — prepend a new top row to the sidecar whose `note` flags it as a custom inventory and whose `last_updated` / `updated_by` reflect that change. Leave `base_catalog_last_updated` set to the `last_updated` value of the standard catalog the customizations were built on; don't advance it when you edit the custom inventory. This decouples "when was this (custom) inventory last touched" from "which release of the standard catalog it descends from," so when the bundled catalog is updated an operator can compare the two dates and decide whether to re-merge their customizations onto the newer base. CAT surfaces these values so operators can tell at a glance which inventory is in effect and how current its base catalog is. The sidecar uses CSV (rather than JSON) so it can be loaded by CAT alongside the inventory CSV using the same tooling.
 
 [Top](#contents)  
 
