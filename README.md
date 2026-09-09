@@ -27,7 +27,7 @@ The core of this repo is a single flat CSV per CIM release that lists every fiel
 
 | File | CIM version | Status |
 |------|-------------|--------|
-| [`splunk_data_model_objects_fields_850.csv`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/splunk_data_model_objects_fields_870.csv) | 8.7.0 | **Preferred — use this for new work** |
+| [`splunk_data_model_objects_fields_870.csv`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/splunk_data_model_objects_fields_870.csv) | 8.7.0 | **Preferred — use this for new work** |
 | [`splunk_data_model_objects_fields_850.csv`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/splunk_data_model_objects_fields_850.csv) | 8.5.0 | |
 | [`splunk_data_model_objects_fields_640.csv`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/splunk_data_model_objects_fields_640.csv) | 6.4.0 | Retained for environments pinned to CIM 6.x |
 
