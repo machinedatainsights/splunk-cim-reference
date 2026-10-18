@@ -2,9 +2,9 @@
 
 **Purpose:** a catalog of every Splunk Common Information Model (CIM) field, by data model and dataset — to reconcile a generated or third-party add-on field-for-field against what the model actually defines.  
 
-**Source:** `splunk_data_model_objects_fields_850.csv` (Splunk CIM 8.5.0)  
-**Generated:** May 19, 2026  
-**Scope:** 1474 fields · 27 models · 139 datasets  
+**Source:** `splunk_data_model_objects_fields_870.csv` (Splunk CIM 8.7.0)  
+**Generated:** October 17, 2026  
+**Scope:** 1519 fields · 27 models · 139 datasets  
 
 **Status:** `Req` = required · `Rec` = recommended (the dataset should populate it) · `Opt` = optional.  
 **Tags** match events into a dataset (not sourcetype); a tag not listed here pulls events into *no* known dataset.  
@@ -24,22 +24,22 @@
 - [DLP](#dlp) — 1 dataset(s), 37 fields
 - [Data_Access](#data_access) — 1 dataset(s), 41 fields
 - [Databases](#databases) — 8 dataset(s), 76 fields
-- [Email](#email) — 2 dataset(s), 53 fields
-- [Endpoint](#endpoint) — 5 dataset(s), 177 fields
+- [Email](#email) — 2 dataset(s), 54 fields
+- [Endpoint](#endpoint) — 5 dataset(s), 198 fields
 - [Event_Signatures](#event_signatures) — 1 dataset(s), 9 fields
 - [Interprocess_Messaging](#interprocess_messaging) — 1 dataset(s), 35 fields
-- [Intrusion_Detection](#intrusion_detection) — 1 dataset(s), 35 fields
+- [Intrusion_Detection](#intrusion_detection) — 1 dataset(s), 36 fields
 - [JVM](#jvm) — 7 dataset(s), 46 fields
-- [Malware](#malware) — 2 dataset(s), 44 fields
+- [Malware](#malware) — 2 dataset(s), 45 fields
 - [Network_Resolution](#network_resolution) — 1 dataset(s), 32 fields
 - [Network_Sessions](#network_sessions) — 2 dataset(s), 29 fields
 - [Network_Traffic](#network_traffic) — 1 dataset(s), 66 fields
 - [Performance](#performance) — 9 dataset(s), 49 fields
 - [Splunk_Audit](#splunk_audit) — 6 dataset(s), 79 fields
 - [Ticket_Management](#ticket_management) — 4 dataset(s), 28 fields
-- [Updates](#updates) — 2 dataset(s), 21 fields
-- [Vulnerabilities](#vulnerabilities) — 1 dataset(s), 28 fields
-- [Web](#web) — 2 dataset(s), 44 fields
+- [Updates](#updates) — 2 dataset(s), 22 fields
+- [Vulnerabilities](#vulnerabilities) — 1 dataset(s), 46 fields
+- [Web](#web) — 2 dataset(s), 46 fields
 
 ---
 
@@ -841,7 +841,7 @@
 
 ### `All_Email`
 
-**Object** `All_Email` · **Parent** `BaseEvent` · **Fields** 48 · **Tags** `email`  
+**Object** `All_Email` · **Parent** `BaseEvent` · **Fields** 49 · **Tags** `email`  
 **Constraint** ``(`cim_Email_indexes`) tag=email``
 
 | Field | St | Type | Description |
@@ -860,7 +860,8 @@
 | `dest_category` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `dest_priority` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `duration` | Opt | number | The amount of time for the completion of the messaging event, in seconds. |
-| `file_hash` | Opt | string | The hashes for the files attached to the message, if any exist. |
+| `file_hash` | Opt | string | The hashes for the files attached to the message, if any exist. Deprecated in fav… |
+| `file_hashes` | Opt | string | The hashes for the files attached to the message, if any exist. |
 | `file_name` | Opt | string | The names of the files attached to the message, if any exist. |
 | `file_size` | Opt | number | The size of the files attached the message, in bytes. |
 | `internal_message_id` | Opt | string | Host-specific unique message identifier (such as aid in sendmail, IMI in Domino… |
@@ -918,7 +919,7 @@
 
 ### `Ports`
 
-**Object** `Ports` · **Parent** `BaseSearch` · **Fields** 29  
+**Object** `Ports` · **Parent** `BaseSearch` · **Fields** 33  
 **Constraint** _(none — derived dataset; inherits parent)_
 
 | Field | St | Type | Description |
@@ -930,6 +931,7 @@
 | `transport` | Rec | string | The network transport protocol associated with the listening port, such as tcp, u… |
 | `user` | Rec | string | The user account associated with the listening port. (Eval) |
 | `vendor_product` | Rec | string | The vendor and product name of the Endpoint solution that reported the event, suc… (Eval) |
+| `_time` | Opt | timestamp | The event timestamp expressed in Unix time. |
 | `cim_entity_zone` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `creation_time` | Opt | timestamp | The time at which the network port started listening on the endpoint. |
 | `dest_bunit` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
@@ -938,8 +940,11 @@
 | `dest_requires_av` | Opt | boolean | Auto-set by ES asset/identity correlation — do not extract. |
 | `dest_should_timesync` | Opt | boolean | Auto-set by ES asset/identity correlation — do not extract. |
 | `dest_should_update` | Opt | boolean | Auto-set by ES asset/identity correlation — do not extract. |
+| `host` | Opt | string | The host associated with the search. |
 | `process_guid` | Opt | string | The globally unique identifier of the process assigned by the vendor_product. |
 | `process_id` | Opt | string | The numeric identifier of the process assigned by the operating system. |
+| `source` | Opt | string | The source associated with the search. |
+| `sourcetype` | Opt | string | The source type associated with the search. |
 | `src_bunit` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `src_category` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `src_priority` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
@@ -955,7 +960,7 @@
 
 ### `Processes`
 
-**Object** `Processes` · **Parent** `BaseSearch` · **Fields** 39  
+**Object** `Processes` · **Parent** `BaseSearch` · **Fields** 43  
 **Constraint** _(none — derived dataset; inherits parent)_
 
 | Field | St | Type | Description |
@@ -969,6 +974,7 @@
 | `process_name` | Rec | string | The friendly name of the process, such as notepad.exe. (Eval) |
 | `user` | Rec | string | The current user linked to the running process. (Eval) |
 | `vendor_product` | Rec | string | The vendor and product name of the Endpoint solution that reported the event, suc… (Eval) |
+| `_time` | Opt | timestamp | The event timestamp expressed in Unix time. |
 | `action` | Opt | string | The action taken by the endpoint. |
 | `cim_entity_zone` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `cpu_load_percent` | Opt | number | CPU load consumed by the process (in percent). |
@@ -979,6 +985,7 @@
 | `dest_requires_av` | Opt | boolean | Auto-set by ES asset/identity correlation — do not extract. |
 | `dest_should_timesync` | Opt | boolean | Auto-set by ES asset/identity correlation — do not extract. |
 | `dest_should_update` | Opt | boolean | Auto-set by ES asset/identity correlation — do not extract. |
+| `host` | Opt | string | The host associated with the search. |
 | `mem_used` | Opt | number | Memory used by the process (in bytes). |
 | `os` | Opt | string | The operating system of the resource, such as Microsoft Windows Server 2008r2. |
 | `parent_process_exec` | Opt | string | The executable name of the parent process. |
@@ -994,6 +1001,8 @@
 | `process_id` | Opt | number | The numeric identifier of the process assigned by the operating system. |
 | `process_integrity_level` | Opt | string | The integrity level of the process. |
 | `process_path` | Opt | string | The file path of the process, such as C:\Windows\System32\notepad.exe. |
+| `source` | Opt | string | The source associated with the search. |
+| `sourcetype` | Opt | string | The source type associated with the search. |
 | `tag` | Opt | string | This automatically generated field is used to access tags from within data models… |
 | `user_bunit` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `user_category` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
@@ -1005,7 +1014,7 @@
 
 ### `Services`
 
-**Object** `Services` · **Parent** `BaseSearch` · **Fields** 33  
+**Object** `Services` · **Parent** `BaseSearch` · **Fields** 37  
 **Constraint** _(none — derived dataset; inherits parent)_
 
 | Field | St | Type | Description |
@@ -1018,6 +1027,7 @@
 | `status` | Rec | string | The status of the service. (Eval) |
 | `user` | Rec | string | The user account associated with the service. (Eval) |
 | `vendor_product` | Rec | string | The vendor and product name of the Endpoint solution that reported the event, suc… (Eval) |
+| `_time` | Opt | timestamp | The event timestamp expressed in Unix time. |
 | `cim_entity_zone` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `description` | Opt | string | The description of the service. |
 | `dest_bunit` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
@@ -1027,6 +1037,7 @@
 | `dest_requires_av` | Opt | boolean | Auto-set by ES asset/identity correlation — do not extract. |
 | `dest_should_timesync` | Opt | boolean | Auto-set by ES asset/identity correlation — do not extract. |
 | `dest_should_update` | Opt | boolean | Auto-set by ES asset/identity correlation — do not extract. |
+| `host` | Opt | string | The host associated with the search. |
 | `process_guid` | Opt | string | The globally unique identifier of the process assigned by the vendor_product. |
 | `process_id` | Opt | string | The numeric identifier of the process assigned by the operating system. |
 | `service_dll` | Opt | string | The dynamic link library associated with the service. |
@@ -1039,6 +1050,8 @@
 | `service_path` | Opt | string | The file path of the service, such as C:\WINDOWS\system32\svchost.exe. |
 | `service_signature_exists` | Opt | boolean | Whether or not the service has a digitally signed signature. |
 | `service_signature_verified` | Opt | boolean | Whether or not the service has had it's digitally signed signature verified. |
+| `source` | Opt | string | The source associated with the search. |
+| `sourcetype` | Opt | string | The source type associated with the search. |
 | `tag` | Opt | string | This automatically generated field is used to access tags from within data models… |
 | `user_bunit` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `user_category` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
@@ -1050,7 +1063,7 @@
 
 ### `Filesystem`
 
-**Object** `Filesystem` · **Parent** `BaseSearch` · **Fields** 38  
+**Object** `Filesystem` · **Parent** `BaseSearch` · **Fields** 43  
 **Constraint** _(none — derived dataset; inherits parent)_
 
 | Field | St | Type | Description |
@@ -1060,7 +1073,8 @@
 | `file_access_time` | Rec | timestamp | The time the file (the object of the event) was accessed. |
 | `file_acl` | Rec | string | Access controls associated with the file affected by the event. (Eval) |
 | `file_create_time` | Rec | timestamp | The time the file (the object of the event) was created. |
-| `file_hash` | Rec | string | A cryptographic identifier assigned to the file object affected by the event. (Eval) |
+| `file_hash` | Rec | string | A cryptographic identifier assigned to the file object affected by the event. Dep… (Eval) |
+| `file_hashes` | Rec | string | A cryptographic identifier assigned to the file object affected by the event. (Eval) |
 | `file_modify_time` | Rec | timestamp | The time the file (the object of the event) was altered. |
 | `file_name` | Rec | string | The name of the file, such as notepad.exe. (Eval) |
 | `file_path` | Rec | string | The path of the file, such as C:\Windows\System32\notepad.exe. (Eval) |
@@ -1069,6 +1083,7 @@
 | `process_name` | Rec | string | The friendly name of the process, such as notepad.exe. (Eval) |
 | `user` | Rec | string | The user account associated with the filesystem access. (Eval) |
 | `vendor_product` | Rec | string | The vendor and product name of the Endpoint solution that reported the event, suc… (Eval) |
+| `_time` | Opt | timestamp | The event timestamp expressed in Unix time. |
 | `cim_entity_zone` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `dest_bunit` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `dest_category` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
@@ -1076,6 +1091,7 @@
 | `dest_requires_av` | Opt | boolean | Auto-set by ES asset/identity correlation — do not extract. |
 | `dest_should_timesync` | Opt | boolean | Auto-set by ES asset/identity correlation — do not extract. |
 | `dest_should_update` | Opt | boolean | Auto-set by ES asset/identity correlation — do not extract. |
+| `host` | Opt | string | The host associated with the search. |
 | `image` | Opt | string | The binary file path or name that is tied to a process ID (PID) in events like pr… |
 | `parent_process` | Opt | string | The full command string of the parent process (Eval) |
 | `parent_process_exec` | Opt | string | The executable name of the parent process. |
@@ -1089,6 +1105,8 @@
 | `process_hash` | Opt | string | The digest(s) of the process, such as <md5>, <sha1>, etc. |
 | `process_id` | Opt | string | The numeric identifier of the process assigned by the operating system. |
 | `process_path` | Opt | string | The file path of the process, such as C:\Windows\System32\notepad.exe. |
+| `source` | Opt | string | The source associated with the search. |
+| `sourcetype` | Opt | string | The source type associated with the search. |
 | `tag` | Opt | string | This automatically generated field is used to access tags from within data models… |
 | `user_bunit` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `user_category` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
@@ -1099,7 +1117,7 @@
 
 ### `Registry`
 
-**Object** `Registry` · **Parent** `BaseSearch` · **Fields** 38  
+**Object** `Registry` · **Parent** `BaseSearch` · **Fields** 42  
 **Constraint** _(none — derived dataset; inherits parent)_
 
 | Field | St | Type | Description |
@@ -1115,6 +1133,7 @@
 | `registry_value_type` | Rec | string | The type of the registry value. (Eval) |
 | `user` | Rec | string | The user account associated with the registry access. (Eval) |
 | `vendor_product` | Rec | string | The vendor and product name of the Endpoint solution that reported the event, suc… (Eval) |
+| `_time` | Opt | timestamp | The event timestamp expressed in Unix time. |
 | `cim_entity_zone` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `dest_bunit` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `dest_category` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
@@ -1122,6 +1141,7 @@
 | `dest_requires_av` | Opt | boolean | Auto-set by ES asset/identity correlation — do not extract. |
 | `dest_should_timesync` | Opt | boolean | Auto-set by ES asset/identity correlation — do not extract. |
 | `dest_should_update` | Opt | boolean | Auto-set by ES asset/identity correlation — do not extract. |
+| `host` | Opt | string | The host associated with the search. |
 | `image` | Opt | string | The binary file path or name that is tied to a process ID (PID) in events like pr… |
 | `parent_process` | Opt | string | The full command string of the parent process (Eval) |
 | `parent_process_exec` | Opt | string | The executable name of the parent process. |
@@ -1137,6 +1157,8 @@
 | `process_path` | Opt | string | The file path of the process, such as C:\Windows\System32\notepad.exe. |
 | `registry_hive` | Opt | string | The logical grouping of registry keys, subkeys, and values. |
 | `registry_value_text` | Opt | string | The textual representation of registry_value_data (if applicable). |
+| `source` | Opt | string | The source associated with the search. |
+| `sourcetype` | Opt | string | The source type associated with the search. |
 | `status` | Opt | string | The outcome of the registry action. |
 | `tag` | Opt | string | This automatically generated field is used to access tags from within data models… |
 | `user_bunit` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
@@ -1227,7 +1249,7 @@
 
 ### `IDS_Attacks`
 
-**Object** `IDS_Attacks` · **Parent** `BaseEvent` · **Fields** 35 · **Tags** `ids`, `attack`  
+**Object** `IDS_Attacks` · **Parent** `BaseEvent` · **Fields** 36 · **Tags** `ids`, `attack`  
 **Constraint** ``(`cim_Intrusion_Detection_indexes`) tag=ids tag=attack``
 
 | Field | St | Type | Description |
@@ -1252,7 +1274,8 @@
 | `dvc_bunit` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `dvc_category` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `dvc_priority` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
-| `file_hash` | Opt | string | A cryptographic identifier assigned to the file object affected by the event. |
+| `file_hash` | Opt | string | A cryptographic identifier assigned to the file object affected by the event. Dep… |
+| `file_hashes` | Opt | string | A cryptographic identifier assigned to the file object affected by the event. |
 | `file_name` | Opt | string | The name of the file, such as notepad.exe. |
 | `file_path` | Opt | string | The path of the file, such as C:\Windows\System32\notepad.exe. |
 | `severity_id` | Opt | string | The numeric or vendor specific severity indicator corresponding to the event seve… |
@@ -1393,7 +1416,7 @@
 
 ### `Malware_Attacks`
 
-**Object** `Malware_Attacks` · **Parent** `BaseEvent` · **Fields** 31 · **Tags** `malware`, `attack`  
+**Object** `Malware_Attacks` · **Parent** `BaseEvent` · **Fields** 32 · **Tags** `malware`, `attack`  
 **Constraint** ``(`cim_Malware_indexes`) tag=malware tag=attack``
 
 | Field | St | Type | Description |
@@ -1413,7 +1436,8 @@
 | `dest_ip` | Opt | string | The IP address of the destination. |
 | `dest_priority` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `dest_requires_av` | Opt | boolean | Auto-set by ES asset/identity correlation — do not extract. |
-| `file_hash` | Opt | string | The hash of the file with suspected malware. |
+| `file_hash` | Opt | string | The hash of the file with suspected malware. Deprecated in favor of 'file_hashes'. |
+| `file_hashes` | Opt | string | The hash of the file with suspected malware. |
 | `file_name` | Opt | string | The name of the file with suspected malware. |
 | `file_path` | Opt | string | The full file path of the file with suspected malware. |
 | `severity_id` | Opt | string | The numeric or vendor specific severity indicator corresponding to the event seve… |
@@ -1577,7 +1601,7 @@
 | `dvc` | Rec | string | The device that reported the traffic event. You can alias this from more specific… (Eval) |
 | `rule` | Rec | string | The rule name that defines the action that was taken in the event. Note: Use rule… (Eval) |
 | `src` | Rec | string | The source of the network traffic (the client requesting the connection). You can… (Eval) |
-| `src_port` | Rec | string | The source port of the network traffic. Note: Do not translate the value of this… (Eval) |
+| `src_port` | Rec | number | The source port of the network traffic. Note: Do not translate the value of this… (Eval) |
 | `transport` | Rec | string | The OSI layer 4 (transport) protocol of the traffic observed, in lower case. (Eval) |
 | `user` | Rec | string | The user that requested the traffic flow. (Eval) |
 | `vendor_product` | Rec | string | The vendor and product of the device generating the network event. This field can… (Eval) |
@@ -1979,7 +2003,7 @@
 
 ### `Updates`
 
-**Object** `Updates` · **Parent** `BaseEvent` · **Fields** 16 · **Tags** `update`, `status`  
+**Object** `Updates` · **Parent** `BaseEvent` · **Fields** 17 · **Tags** `update`, `status`  
 **Constraint** ``(`cim_Updates_indexes`) tag=update tag=status``
 
 | Field | St | Type | Description |
@@ -1995,7 +2019,8 @@
 | `dest_priority` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `dest_should_update` | Opt | boolean | Auto-set by ES asset/identity correlation — do not extract. |
 | `dvc` | Opt | string | The device that detected the patch event, such as a patching or configuration man… |
-| `file_hash` | Opt | string | The checksum of the patch package that was installed or attempted. |
+| `file_hash` | Opt | string | The checksum of the patch package that was installed or attempted. Deprecated in… |
+| `file_hashes` | Opt | string | The checksum of the patch package that was installed or attempted. |
 | `file_name` | Opt | string | The name of the patch package that was installed or attempted. |
 | `severity` | Opt | string | The severity associated with the patch event. |
 | `severity_id` | Opt | string | The numeric or vendor specific severity indicator corresponding to the event seve… |
@@ -2024,7 +2049,7 @@
 
 ### `Vulnerabilities`
 
-**Object** `Vulnerabilities` · **Parent** `BaseEvent` · **Fields** 28 · **Tags** `vulnerability`, `report`  
+**Object** `Vulnerabilities` · **Parent** `BaseEvent` · **Fields** 46 · **Tags** `vulnerability`, `report`  
 **Constraint** ``(`cim_Vulnerabilities_indexes`) tag=vulnerability tag=report``
 
 | Field | St | Type | Description |
@@ -2036,16 +2061,32 @@
 | `severity` | Rec | string | The severity of the vulnerability detection event. Specific values are required… (Eval) |
 | `signature` | Rec | string | The name of the vulnerability detected on the host, such as HPSBMU02785 SSRT10052… (Eval) |
 | `vendor_product` | Rec | string | The vendor and product that detected the vulnerability. This field can be automat… (Eval) |
+| `affected_component_type` | Opt | string | The type of component affected by the vulnerability, based on the NIST CPE 2.3 ta… |
+| `affected_product` | Opt | string | The name of the product affected by the vulnerability. Distinct from vendor_produ… |
+| `affected_product_version` | Opt | string | The specific version of the affected product (e.g., 1.0.0, 2.3.1). Provides granu… |
 | `bugtraq` | Opt | string | The identifier in the vulnerability database provided by the Security Focus websi… (Eval) |
 | `cert` | Opt | string | The identifier in the vulnerability database provided by the US Computer Emergenc… (Eval) |
 | `cim_entity_zone` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `cvss` | Opt | number | Numeric indicator of the common vulnerability scoring system. |
+| `cvss_attack_complexity` | Opt | string | Describes conditions beyond the attacker's control that must exist to exploit the… |
+| `cvss_attack_vector` | Opt | string | Reflects the context by which vulnerability exploitation is possible. |
+| `cvss_availability_impact` | Opt | string | Measures the impact to availability of the impacted component. |
+| `cvss_base_score` | Opt | number | The CVSS base score. Distinct from the existing cvss field, which represents a co… |
+| `cvss_confidentiality_impact` | Opt | string | Measures the impact to confidentiality of information resources. |
+| `cvss_exploitability_score` | Opt | number | CVSS sub-score reflecting the exploitability characteristics of the vulnerability. |
+| `cvss_impact_score` | Opt | number | CVSS sub-score reflecting the potential impact of a successful exploit on the aff… |
+| `cvss_integrity_impact` | Opt | string | Measures the impact to integrity of a successfully exploited vulnerability. |
+| `cvss_privileges_required` | Opt | string | The level of privileges an attacker must possess before successfully exploiting t… |
+| `cvss_scope` | Opt | string | Captures whether a vulnerability impacts resources beyond its means. |
+| `cvss_user_interaction` | Opt | string | Captures the requirement for a human user other than the attacker to participate… |
+| `cvss_vector_string` | Opt | string | The full CVSS vector string representing all base metrics in compact machine-read… |
 | `dest_bunit` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `dest_category` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `dest_priority` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `dvc_bunit` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `dvc_category` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `dvc_priority` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
+| `is_known_exploited` | Opt | boolean | Indicates whether the vulnerability is listed in a known exploited vulnerabilitie… |
 | `msft` | Opt | string | The Microsoft Security Advisory number (http://technet.microsoft.com/en-us/securi… (Eval) |
 | `mskb` | Opt | string | The Microsoft Knowledge Base article number (http://support.microsoft.com/kb/). (Eval) |
 | `severity_id` | Opt | string | The numeric or vendor specific severity indicator corresponding to the event seve… |
@@ -2056,10 +2097,21 @@
 | `user_bunit` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `user_category` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `user_priority` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
+| `vuln_modified_time` | Opt | timestamp | The timestamp when the CVE record was last modified in the vulnerability database… |
+| `vuln_published_time` | Opt | timestamp | The timestamp when the CVE was first published in the vulnerability database (e.g… |
 | `xref` | Opt | string | A cross-reference identifier associated with the vulnerability. In most cases, th… (Eval) |
 
 **Prescribed values**  
 `severity` = critical, high, medium, low, informational  
+`affected_component_type` = application, hardware, operating system  
+`cvss_attack_complexity` = Low, High  
+`cvss_attack_vector` = Network, Adjacent, Local, Physical  
+`cvss_availability_impact` = None, Low, High  
+`cvss_confidentiality_impact` = None, Low, High  
+`cvss_integrity_impact` = None, Low, High  
+`cvss_privileges_required` = None, Low, High  
+`cvss_scope` = Unchanged, Changed  
+`cvss_user_interaction` = None, Required  
 
 ---
 
@@ -2067,7 +2119,7 @@
 
 ### `Web`
 
-**Object** `Web` · **Parent** `BaseEvent` · **Fields** 41 · **Tags** `web`  
+**Object** `Web` · **Parent** `BaseEvent` · **Fields** 43 · **Tags** `web`  
 **Constraint** ``(`cim_Web_indexes`) tag=web``
 
 | Field | St | Type | Description |
@@ -2101,6 +2153,8 @@
 | `duration` | Opt | number | The time taken by the proxy event, in milliseconds. |
 | `http_user_agent_length` | Opt | number | The length of the user agent used in the request. (Eval) |
 | `response_time` | Opt | number | The amount of time it took to receive a response, if applicable, in milliseconds. |
+| `signature` | Opt | string | A human-readable signature name, e.g. a threat category. |
+| `signature_id` | Opt | string | The unique identifier or event code of the event signature. |
 | `site` | Opt | string | The virtual site which services the request, if applicable. |
 | `src_bunit` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
 | `src_category` | Opt | string | Auto-set by ES asset/identity correlation — do not extract. |
@@ -2132,4 +2186,4 @@
 
 ---
 
-<p align="center"><sub>Splunk CIM 8.5.0 reference (`splunk_data_model_objects_fields_850.csv`) · May 19, 2026 · Machine Data Insights Inc. — Data Refinery</sub></p>
+<p align="center"><sub>Splunk CIM 8.7.0 reference (`splunk_data_model_objects_fields_870.csv`) · October 17, 2026 · Machine Data Insights Inc. — Data Refinery</sub></p>
