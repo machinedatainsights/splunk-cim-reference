@@ -24,7 +24,7 @@ A community-maintained reference for Splunk® CIM (Common Information Model) wor
 
 The core of this repo is a single flat CSV per CIM release that lists every field across every data model and dataset, with types, required/recommended flags, prescribed values, constraints, descriptions, base searches, and calculated-field expressions. Fields not marked as required or recommended are considered 'optional' fields. This data is the source of truth used by everything else in this repo (the `data_models` column of the [CIM Sourcetype Inventory](#cim-sourcetype-inventory), for example) as well as the [CIM Assessment Toolkit (CAT)](https://splunkbase.splunk.com/app/8962).  
 
-<img src="./images/splunk_data_model_objects_fields_850_2250x750.png" alt="Splunk CIM Data Model Objects & Fields CSV"/>
+<img src="./images/splunk_data_model_objects_fields_2250x750.png" alt="Splunk CIM Data Model Objects & Fields CSV"/>
 
 | File | CIM version | Status |
 |------|-------------|--------|
