@@ -165,7 +165,7 @@ A list of ~850 (and growing) common Splunk sourcetypes and metadata for each sou
 | `sourcetype` | Splunk sourcetype name |
 | `tech_category` | Canonical technology family the sourcetype's data belongs to — one of `app`, `aws`, `azure`, `gcp`, `linux`, `network`, `security`, `windows`. Single value per sourcetype. Identifies the index *technology type* a sourcetype lands in (e.g., index suffixes such as `*_linux` / `*_aws` / `*_security`), so organizations can administer CIM data-model macros by technology type rather than enumerating every index, and data landing in new indexes of that technology type is picked up automatically. |
 | `scope` | `security`, `operational`, `security, operational`, `none`, or `unknown` |
-| `security_classification` | Acronym(s) from `security_classifications_reference.md` (e.g., `EDR`, `NGFW`). `N/A` for non-security sourcetypes. |
+| `security_classification` | Acronym(s) from `Security-Categories-and-Acronyms.md` (e.g., `EDR`, `NGFW`). `N/A` for non-security sourcetypes. |
 | `security_relevance` | `high`, `med`, `low`, or `none` |
 | `data_models` | Applicable CIM data models in `Model.Dataset` format (e.g., `Authentication.Authentication`). Typically up to 3 — though a few multi-function sourcetypes warrant more — drawn from the CIM field reference CSV (preferably `splunk_data_model_objects_fields_870.csv`; `_640.csv` for CIM 6.x environments). |
 | `vendor` | Technology vendor |
@@ -210,32 +210,14 @@ When delivering a customized `cim_sourcetype_inventory.csv` to the CIM Assessmen
 
 ## Security Classification Taxonomy
 
-### Security Classifications Reference
-
 <img src="./images/security_classifications_reference_700x415.png" alt="Security Classification Reference" width="500" />
 
 | File | Description |
 |------|-------------|
-| [`security_classifications_reference.md`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/security_classifications_reference.md) | Authoritative reference for IT security device classifications used in CIM normalization. Defines 40 acronyms (EDR, NGFW, IAM, SIEM, etc.) with descriptions, vendor examples, and classification guidelines. Use this as the source of truth for `security_classification` values in the sourcetype inventory. |
-| [`security_classifications_reference.pdf`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/security_classifications_reference.pdf) | PDF version of the same reference. |
+| [`Security-Categories-and-Acronyms.md`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/Security-Categories-and-Acronyms.md) | Authoritative reference for the IT security device classifications used in CIM normalization. Defines 41 acronyms (EDR, NGFW, IAM, SIEM, etc.), grouped by category with each acronym's full name, description, and example vendors/products, plus classification guidelines. Use this as the single source of truth for `security_classification` values in the sourcetype inventory. |
+| [`Security-Categories-and-Acronyms.pdf`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/Security-Categories-and-Acronyms.pdf) | PDF rendering of the same reference. |
 
-### Security Categories and Acronyms
-
-<img src="./images/security_categories_and_acronyms_700x350.png" alt="Security Categories and Acronyms" width="500" />
-
-| File | Description |
-|------|-------------|
-| [`Security-Categories-and-Acronyms.md`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/Security-Categories-and-Acronyms.md) | Quick-reference cheat sheet of security acronyms organized by category. A condensed companion to the full reference above — useful for fast lookups. Note that the full reference is authoritative; a handful of acronyms (FW, NGFW, UTM, SWG, EPP, CTD, ESG, DT, VPN) appear there but not here. |
-| [`Security-Categories-and-Acronyms.pdf`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/Security-Categories-and-Acronyms.pdf) | PDF version of the same reference. |
-
-### IT Security Device Classifications
-
-<img src="./images/it_security_device_classifications_700x400.png" alt="IT Security Device Classifications" width="500" />
-
-| File | Description |
-|------|-------------|
-| [`IT-Security-Device-Classifications.md`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/IT-Security-Device-Classifications.md) | Broader classification reference covering 15 security device categories with descriptions, vendor examples, applicable Splunk CIM data models, and common sourcetypes for each category. Useful for understanding which CIM data models a given security device type maps to. |
-| [`IT-Security-Device-Classifications.pdf`](https://github.com/machinedatainsights/splunk-cim-reference/blob/main/IT-Security-Device-Classifications.pdf) | PDF version of the same reference |
+> **Keep in sync:** this repository is the master copy of this reference; the same file is also published in the `cim-normalization-manual-process` repo, whose AI normalization prompts upload it as the classification source of truth. Updates are made here first and then mirrored there — the two copies must stay byte-identical.
 
 [Top](#contents)  
 
