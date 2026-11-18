@@ -6,13 +6,13 @@ A community-maintained reference for Splunk® CIM (Common Information Model) wor
 
 ## Contents  
 
-[CIM Data Model Field Reference](#cim-data-model-field-reference--start-here)  
-[Data Model Field Reference](#data-model-field-reference)  
+[1. CIM Data Model Field Reference](#1-cim-data-model-field-reference--start-here)  
+[2. Data Model Field Reference](#2-data-model-field-reference)  
 [What Changed Between CIM 8.5 and 8.7](#what-changed-between-cim-85-and-87)  
-[CIM Sourcetype Inventory](#cim-sourcetype-inventory)  
+[3. CIM Sourcetype Inventory](#3-cim-sourcetype-inventory)  
 [Sourcetype Inventory Version Sidecar](#sourcetype-inventory-version-sidecar)  
-[Security Classification Taxonomy](#security-classification-taxonomy)  
-[CIM Data Model Parsing Tools](#cim-data-model-parsing-tools)  
+[4. Security Classification Taxonomy](#4-security-classification-taxonomy)  
+[5. CIM Data Model Parsing Tools](#5-cim-data-model-parsing-tools)  
 [Updating the CIM Field Reference](#updating-the-cim-field-reference)  
 [Related Projects](#related-projects)  
 [Contributing](#contributing)  
@@ -20,9 +20,9 @@ A community-maintained reference for Splunk® CIM (Common Information Model) wor
 
 ---
 
-## CIM Data Model Field Reference — start here
+## 1. CIM Data Model Field Reference — start here
 
-The core of this repo is a single flat CSV per CIM release that lists every field across every data model and dataset, with types, required/recommended flags, prescribed values, constraints, descriptions, base searches, and calculated-field expressions. Fields not marked as required or recommended are considered 'optional' fields. This data is the source of truth used by everything else in this repo (the `data_models` column of the [CIM Sourcetype Inventory](#cim-sourcetype-inventory), for example) as well as the [CIM Assessment Toolkit (CAT)](https://splunkbase.splunk.com/app/8962).  
+The core of this repo is a single flat CSV per CIM release that lists every field across every data model and dataset, with types, required/recommended flags, prescribed values, constraints, descriptions, base searches, and calculated-field expressions. Fields not marked as required or recommended are considered 'optional' fields. This data is the source of truth used by everything else in this repo (the `data_models` column of the [CIM Sourcetype Inventory](#3-cim-sourcetype-inventory), for example) as well as the [CIM Assessment Toolkit (CAT)](https://splunkbase.splunk.com/app/8962).  
 
 <img src="./images/splunk_data_model_objects_fields_2250x750.png" alt="Splunk CIM Data Model Objects & Fields CSV"/>
 
@@ -77,7 +77,7 @@ Notes on the data:
 
 ---
 
-## Data Model Field Reference
+## 2. Data Model Field Reference
 
 For reading and field-by-field reconciliation (rather than machine consumption), a rendered catalog of the preferred 8.7.0 reference is also included:
 
@@ -142,7 +142,7 @@ For the 27 data models tracked here, the 8.7.0 reference is schema-identical to 
 
 ---
 
-## CIM Sourcetype Inventory
+## 3. CIM Sourcetype Inventory
 
 A list of ~850 (and growing) common Splunk sourcetypes and metadata for each sourcetype.  
 
@@ -208,7 +208,7 @@ When delivering a customized `cim_sourcetype_inventory.csv` to the CIM Assessmen
 
 ---
 
-## Security Classification Taxonomy
+## 4. Security Classification Taxonomy
 
 <img src="./images/security_classifications_reference_700x415.png" alt="Security Classification Reference" width="500" />
 
@@ -223,7 +223,7 @@ When delivering a customized `cim_sourcetype_inventory.csv` to the CIM Assessmen
 
 ---
 
-## CIM Data Model Parsing Tools
+## 5. CIM Data Model Parsing Tools
 
 | File | Description |
 |------|-------------|
